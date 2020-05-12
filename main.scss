@@ -1,0 +1,370 @@
+//variables
+
+/*breakpoint*/
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1200px;
+$desktop-lg: 1440px;
+
+/*containers*/
+$main-container: 1440px;
+
+/*colors*/
+$body-bg-color: #E5E5E5;
+$default-bg-color: #FFFFFF;
+
+$text-primary-color: #FFFFFF;
+$text-secondary-color: #47394E;
+
+$additional-color: #FB961A;
+
+//variables end
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2 {
+  margin: 0;
+}
+
+body {
+  background: $body-bg-color;
+  color: $text-primary-color;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 32px;
+  margin: 0;
+}
+
+.text {
+  width: 100%;
+  &_dark {
+    color: $text-secondary-color;
+  }
+  p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 345px;
+  }
+  .delivery & {
+    margin-bottom: 40px;
+  }
+}
+
+.text-info {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.text-list {
+  padding: 20px 0;
+}
+
+.btn {
+  background: transparent;
+  border-radius: 0 18px;
+  border: 2px solid $text-primary-color;
+  color: $text-primary-color;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  line-height: 25px;
+  margin-left: auto;
+  outline: none;
+  padding: 12px 35px;
+  text-transform: uppercase;
+  &:hover,
+  &:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  &_colorful {
+    border: 2px solid $additional-color;
+    color: $additional-color;
+    &:hover,
+    &:active {
+      background: rgba(251, 150, 26, 0.1);
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 -10px 0 auto;
+}
+
+.main-container {
+  background: $default-bg-color;
+  margin: 0 auto;
+  max-width: $main-container;
+  overflow: hidden;
+  @media screen and (min-width: $desktop-lg + 1px) {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.main-inner {
+  padding: 0 32px;
+  @media screen and (min-width: $desktop) {
+    padding: 0 75px;
+  }
+  @media screen and (min-width: $desktop-lg) {
+    padding: 0 155px;
+  }
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 32px;
+  @media screen and (min-width: $desktop) {
+    padding-left: 64px;
+  }
+  @media screen and (min-width: $desktop-lg) {
+    padding-left: 144px;
+  }
+  &__item {
+    background: url("./images/header-bg.svg") bottom left no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    height: max-content;
+    padding: 120px 32px 35px 235px;
+    @media screen and (min-width: $desktop) {
+      padding: 120px 75px 35px 330px;
+    }
+    @media screen and (min-width: $desktop-lg) {
+      padding: 120px 155px 35px 235px;
+    }
+  }
+  &__title {
+    font-size: 32px;
+    line-height: 37px;
+    margin-bottom: 28px;
+    text-align: left;
+    white-space: normal;
+    @media screen and (min-width: $desktop-lg) {
+      white-space: nowrap;
+    }
+  }
+}
+
+.h1 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  @media screen and (min-width: $desktop) {
+    font-size: 65px;
+    line-height: 75px;
+  }
+}
+
+.h2 {
+  color: $text-secondary-color;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 22px;
+  &_white {
+    color: $text-primary-color;
+  }
+  &_purpure {
+    color: #82049F;
+  }
+}
+
+.main {
+  &__block {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+}
+
+.benefits {
+  background: linear-gradient(136.11deg, #B05AE6 25.66%, #76007C 85.25%);
+  padding: 52px 32px 82px;
+  @media screen and (min-width: $desktop) {
+    padding: 52px 75px 82px;
+  }
+  @media screen and (min-width: $desktop-lg) {
+    padding: 52px 155px 82px;
+  }
+}
+
+.list {
+  color: $text-secondary-color;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 35px 0 0 115px;
+  width: 100%;
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    position: relative;
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        background: #D9D9D9;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        left: 95px;
+        position: absolute;
+        width: 475px;
+        .benefits & {
+          @media screen and (min-width: $desktop-lg) {
+            width: 534px;
+          }
+        }
+        .delivery & {
+          @media screen and (min-width: $desktop-lg) {
+            width: 539px;
+          }
+        }
+      }
+    }
+    .delivery & {
+      align-items: flex-start;
+    }
+  }
+  .benefits & {
+    color: $text-primary-color;
+  }
+  .delivery & {
+    margin: 0 0 0 115px;
+  }
+}
+
+.delivery .list__item:first-child {
+  & .text-list {
+    padding-top: 0;
+  }
+  & .point-inner {
+    height: 32px;
+  }
+}
+
+.icon-img {
+  margin-right: 33px;
+}
+
+.point-inner {
+  align-items: center;
+  display: flex;
+  height: 72px;
+  justify-content: center;
+  margin-right: 33px;
+  min-width: 62px;
+  width: 62px;
+}
+
+.point{
+  background: $additional-color;
+  border-radius: 50%;
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+//footer
+.footer {
+  background: url("./images/footer-bg.svg") top left no-repeat;
+  background-size: cover;
+  padding: 55px 0 45px;
+}
+
+.contact {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 30px;
+  &__link {
+    color: $text-primary-color;
+    text-decoration: none;
+  }
+}
+
+.email {
+  opacity: 1;
+  &:hover,
+  &:active {
+    opacity: .8;
+  }
+}
+
+.line {
+  background: #ffffff;
+  height: 1px;
+  margin-bottom: 45px;
+  width: 100%;
+}
+
+.copyright {
+  font-size: 16px;
+  text-align: center;
+}
+
+//form
+.pageclip-form {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 75px;
+}
+
+.inputs-inner {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 64px ;
+  max-width: 785px;
+  width: 100%;
+}
+
+.pageclip-form__item {
+  background: rgba(255, 255, 255, 0.3);;
+  border: 1px solid #ffffff;
+  color: $text-primary-color;
+  padding: 0 12px;
+}
+
+.btn.btn_colorful.pageclip-form__submit:after {
+  border-left: 3px solid $additional-color;
+}
+
+.pageclip-form__submit {
+  margin-left: unset;
+}
+
+.label {
+  font-size: 16px;
+}
+
+.input {
+  height: 42px;
+  margin-bottom: 26px;
+  width: 100%;
+}
+
+.textarea {
+  height: 166px;
+  padding: 12px;
+  resize: none;
+  width: 100%;
+}
