@@ -294,7 +294,7 @@ body {
     }
   }
   @media screen and (min-width: $tablet) {
-    background: url("./images/header-bg.png") center center no-repeat;
+    background: url("./images/header-bg.svg") center center no-repeat;
     background-size: cover;
     margin-bottom: 0;
   }
@@ -608,7 +608,7 @@ body {
   }
 }
 
-.error {
+.validation-error {
   bottom: -24px;
   color: $additional-color;
   font-size: 12px;
