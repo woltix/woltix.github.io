@@ -8,9 +8,9 @@ $desktop-lg: 1440px;
 
 /*containers*/
 $main-container: 1440px;
+$main-container-sm: 1000px;
 
 /*colors*/
-$body-bg-color: #E5E5E5;
 $default-bg-color: #FFFFFF;
 
 $text-primary-color: #FFFFFF;
@@ -23,6 +23,10 @@ $additional-color: #FB961A;
   box-sizing: border-box;
 }
 
+.hide {
+  display: none;
+}
+
 p {
   margin: 0;
   padding: 0;
@@ -33,39 +37,100 @@ h1,h2 {
 }
 
 body {
-  background: $body-bg-color;
+  background: #FFFFFF;
   color: $text-primary-color;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 32px;
+  line-height: 22px;
   margin: 0;
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.h1 {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 44px;
+  margin-bottom: 10px;
+  @media screen and (min-width: $tablet) {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 65px;
+    line-height: 75px;
+  }
+}
+
+.h2 {
+  color: $text-secondary-color;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 22px;
+  @media screen and (min-width: $tablet) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
+  &_white {
+    color: $text-primary-color;
+  }
+  &_purpure {
+    color: #82049F;
+  }
 }
 
 .text {
-  width: 100%;
+  width: calc(100vw - 68px);
   &_dark {
     color: $text-secondary-color;
   }
   p:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    width: calc(100vw - 84px);
   }
   @media screen and (min-width: $desktop) {
     width: 345px;
   }
   .delivery & {
-    margin-bottom: 40px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 40px;
+    }
   }
 }
 
 .text-info {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
-  line-height: 26px;
+  line-height: 19px;
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 
 .text-list {
-  padding: 20px 0;
+  padding: 15px 0;
+  @media screen and (min-width: $tablet) {
+    padding: 20px 0;
+  }
 }
 
 .btn {
@@ -78,9 +143,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.06em;
   line-height: 25px;
-  margin-left: auto;
   outline: none;
-  padding: 12px 35px;
   text-transform: uppercase;
   &:hover,
   &:active {
@@ -94,29 +157,63 @@ body {
       background: rgba(251, 150, 26, 0.1);
     }
   }
-  a {
+  a, span {
     color: inherit;
+    display: block;
+    padding: 12px 35px;
     text-decoration: none;
   }
 }
 
-.logo {
-  display: block;
-  margin: 0 -10px 0 auto;
+.btn-desktop {
+  display: none;
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
 }
 
-.main-container {
-  background: $default-bg-color;
-  margin: 0 auto;
-  max-width: $main-container;
-  overflow: hidden;
-  @media screen and (min-width: $desktop-lg + 1px) {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+.btn-laptop {
+  align-self: center;
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    margin-top: 30px;
+    width: auto;
+  }
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.logo {
+  margin: 10px auto 13px;
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+  }
+  &__img {
+    display: block;
+    height: 76px;
+    width: 85px;
+    @media screen and (min-width: $tablet) {
+      height: 95px;
+      width: 106px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: auto;
+      width: auto;
+    }
+  }
+  a {
+    display: block;
   }
 }
 
 .main-inner {
-  padding: 0 32px;
+  padding: 0 24px;
+  @media screen and (min-width: $tablet) {
+    padding: 0 32px;
+  }
   @media screen and (min-width: $desktop) {
     padding: 0 75px;
   }
@@ -126,63 +223,80 @@ body {
 }
 
 .header {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding-left: 32px;
-  @media screen and (min-width: $desktop) {
-    padding-left: 64px;
-  }
-  @media screen and (min-width: $desktop-lg) {
-    padding-left: 144px;
-  }
+  background: #FFFFFF;
+  margin-bottom: 45px;
   &__item {
-    background: url("./images/header-bg.svg") bottom left no-repeat;
-    background-size: cover;
+    background: linear-gradient(89.58deg, #FF9C10 0.53%, #A20DFF 110.41%);
     display: flex;
     flex-flow: column nowrap;
-    flex-grow: 1;
     height: max-content;
-    padding: 120px 32px 35px 235px;
+    padding: 35px 24px 40px;
+    width: 100%;
+    @media screen and (min-width: $tablet) {
+      background: none;
+      padding: 0 32px 35px 0;
+      width: auto;
+    }
     @media screen and (min-width: $desktop) {
-      padding: 120px 75px 35px 330px;
+      padding: 0 75px 35px 0;
     }
     @media screen and (min-width: $desktop-lg) {
-      padding: 120px 155px 35px 235px;
+      padding: 0 155px 35px 0;
     }
   }
   &__title {
-    font-size: 32px;
-    line-height: 37px;
-    margin-bottom: 28px;
-    text-align: left;
+    font-size: 22px;
+    line-height: 25px;
+    margin-bottom: 30px;
+    text-align: center;
     white-space: normal;
-    @media screen and (min-width: $desktop-lg) {
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
+      line-height: 23px;
+      margin: 60px 0 0 0;
+      text-align: left;
       white-space: nowrap;
     }
+    @media screen and (min-width: $desktop) {
+      font-size: 32px;
+      line-height: 37px;
+      margin: 120px 0 28px 0;
+    }
+    @media screen and (min-width: $desktop-lg) {
+      margin: 120px 0 28px 0;
+    }
   }
-}
-
-.h1 {
-  font-weight: bold;
-  margin-bottom: 10px;
-  @media screen and (min-width: $desktop) {
-    font-size: 65px;
-    line-height: 75px;
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $main-container-sm;
+    overflow: hidden;
+    padding-left: 0;
+    @media screen and (min-width: $tablet) {
+      flex-flow: row nowrap;
+      padding-left: 24px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: $main-container;
+      padding-left: 62px;
+    }
+    @media screen and (min-width: $desktop-lg) {
+      padding-left: 142px;
+    }
   }
-}
-
-.h2 {
-  color: $text-secondary-color;
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 22px;
-  &_white {
-    color: $text-primary-color;
+  &__btn {
+    align-self: center;
+    @media screen and (min-width: $tablet) {
+      align-self: flex-end;
+    }
   }
-  &_purpure {
-    color: #82049F;
+  @media screen and (min-width: $tablet) {
+    background: url("./images/header-bg.png") center center no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
   }
 }
 
@@ -190,28 +304,51 @@ body {
   &__block {
     align-items: flex-start;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
-    margin-bottom: 60px;
+    margin: 0 auto 45px;
+    max-width: $main-container-sm;
+    overflow: hidden;
+    @media screen and (min-width: $desktop) {
+      flex-flow: row nowrap;
+      margin: 0 auto 60px;
+      max-width: $main-container;
+    }
   }
 }
 
 .benefits {
   background: linear-gradient(136.11deg, #B05AE6 25.66%, #76007C 85.25%);
-  padding: 52px 32px 82px;
-  @media screen and (min-width: $desktop) {
-    padding: 52px 75px 82px;
-  }
-  @media screen and (min-width: $desktop-lg) {
-    padding: 52px 155px 82px;
+  margin-bottom: 45px;
+  &__content {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $main-container-sm;
+    overflow: hidden;
+    padding: 42px 24px 40px;
+    @media screen and (min-width: $tablet) {
+      padding: 52px 32px 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      flex-flow: row nowrap;
+      margin-bottom: 60px;
+      max-width: $main-container;
+      padding: 52px 75px 82px;
+    }
+    @media screen and (min-width: $desktop-lg) {
+      padding: 52px 155px 82px;
+    }
   }
 }
 
 .list {
   color: $text-secondary-color;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 35px 0 0 115px;
+  margin: 20px 0 0 0;
   width: 100%;
   &__item {
     align-items: center;
@@ -226,9 +363,17 @@ body {
         bottom: 0;
         display: block;
         height: 1px;
-        left: 95px;
+        left: 56px;
         position: absolute;
-        width: 475px;
+        width: calc(100% - 56px);
+        @media screen and (min-width: $tablet) {
+          left: 82px;
+          width: calc(100% - 82px);
+        }
+        @media screen and (min-width: $desktop) {
+          left: 95px;
+          width: 475px;
+        }
         .benefits & {
           @media screen and (min-width: $desktop-lg) {
             width: 534px;
@@ -248,56 +393,121 @@ body {
   .benefits & {
     color: $text-primary-color;
   }
+
   .delivery & {
-    margin: 0 0 0 115px;
+    @media screen and (min-width: $desktop) {
+      margin: 0 0 0 115px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 22px;
+    margin: 35px 0 0 115px;
   }
 }
 
 .delivery .list__item:first-child {
-  & .text-list {
-    padding-top: 0;
-  }
-  & .point-inner {
-    height: 32px;
+  @media screen and (min-width: $desktop) {
+    & .text-list {
+      padding-top: 0;
+    }
+    & .point-inner {
+      height: 32px;
+    }
   }
 }
 
 .icon-img {
-  margin-right: 33px;
+  height: 40px;
+  margin: 0 16px 0 0;
+  min-height: 40px;
+  min-width: 40px;
+  width: 40px;
+  @media screen and (min-width: $tablet) {
+    height: 52px;
+    margin: 0 30px 0 0;
+    min-height: 52px;
+    min-width: 52px;
+    width: 52px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 62px;
+    margin: 0 33px 0 0;
+    min-height: 62px;
+    min-width: 62px;
+    width: 62px;
+  }
 }
 
 .point-inner {
   align-items: center;
   display: flex;
-  height: 72px;
+  height: 52px;
   justify-content: center;
-  margin-right: 33px;
-  min-width: 62px;
-  width: 62px;
+  margin-right: 16px;
+  min-width: 40px;
+  width: 40px;
+  @media screen and (min-width: $tablet) {
+    height: 62px;
+    margin-right: 30px;
+    min-width: 52px;
+    width: 52px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 72px;
+    margin-right: 33px;
+    min-width: 62px;
+    width: 62px;
+  }
 }
 
 .point{
   background: $additional-color;
   border-radius: 50%;
   display: block;
-  height: 16px;
-  width: 16px;
+  height: 12px;
+  width: 12px;
+  @media screen and (min-width: $tablet) {
+    height: 16px;
+    width: 16px;
+  }
 }
 
 //footer
 .footer {
   background: url("./images/footer-bg.svg") top left no-repeat;
   background-size: cover;
-  padding: 55px 0 45px;
+
+  &__content {
+    margin: 0 auto;
+    max-width: $main-container-sm;
+    overflow: hidden;
+    padding: 45px 0 0;
+    @media screen and (min-width: $desktop) {
+      max-width: $main-container;
+      padding: 55px 0 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    background: url("./images/footer-bg.svg") top center no-repeat;
+    background-size: cover;
+  }
 }
 
 .contact {
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   &__link {
     color: $text-primary-color;
     text-decoration: none;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 30px;
   }
 }
 
@@ -310,38 +520,48 @@ body {
 }
 
 .line {
-  background: #ffffff;
+  background: #FFFFFF;
   height: 1px;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   width: 100%;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 45px;
+  }
 }
 
 .copyright {
-  font-size: 16px;
+  font-size: 14px;
+  padding-bottom: 30px;
   text-align: center;
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    padding-bottom: 45px;
+  }
 }
 
 //form
 .pageclip-form {
-  align-items: flex-end;
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 75px;
-}
-
-.inputs-inner {
+  align-items: flex-start;
   display: flex;
   flex-flow: column nowrap;
-  margin-right: 64px ;
-  max-width: 785px;
-  width: 100%;
+  margin-bottom: 35px;
+  @media screen and (min-width: $desktop) {
+    align-items: flex-end;
+    flex-flow: row nowrap;
+    margin-bottom: 75px;
+  }
 }
 
 .pageclip-form__item {
   background: rgba(255, 255, 255, 0.3);;
+  border-radius: 2px;
   border: 1px solid #ffffff;
   color: $text-primary-color;
+  outline: none;
   padding: 0 12px;
+  &:focus {
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .btn.btn_colorful.pageclip-form__submit:after {
@@ -349,22 +569,79 @@ body {
 }
 
 .pageclip-form__submit {
-  margin-left: unset;
+  align-self: center;
+  margin-top: 30px;
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    margin-top: 45px;
+    width: 210px;
+  }
+  @media screen and (min-width: $desktop) {
+    align-self: flex-end;
+    margin-top: 0;
+    width: auto;
+  }
+}
+
+.inputs-inner {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-right: 0;
+  max-width: 810px;
+  width: 100%;
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+       margin-bottom: 25px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 64px;
+    max-width: 785px;
+  }
 }
 
 .label {
-  font-size: 16px;
+  font-size: 14px;
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+.error {
+  bottom: -24px;
+  color: $additional-color;
+  font-size: 12px;
+  left: 0;
+  line-height: 22px;
+  position: absolute;
 }
 
 .input {
-  height: 42px;
-  margin-bottom: 26px;
+  height: 32px;
   width: 100%;
+  @media screen and (min-width: $tablet) {
+    height: 42px;
+  }
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #c48dce inset;
+    -webkit-text-fill-color: #ffffff;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #c48dce inset;
+    -webkit-text-fill-color: #ffffff;
 }
 
 .textarea {
-  height: 166px;
+  display: block;
+  height: 175px;
   padding: 12px;
   resize: none;
   width: 100%;
+  @media screen and (min-width: $tablet) {
+    height: 166px;
+  }
 }
