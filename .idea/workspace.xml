@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8ab3bd1-9b48-450d-b640-56655b0f85f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/header-bg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/header-bg.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
@@ -21,13 +19,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6722866">
+    <splitter split-orientation="horizontal" split-proportion="0.77012193">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="107">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
+                <state relative-caret-position="483">
                   <caret line="172" column="16" lean-forward="true" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -36,11 +34,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="404">
-                  <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+                <state relative-caret-position="394">
+                  <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -51,8 +49,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="610" column="19" lean-forward="true" selection-start-line="610" selection-start-column="19" selection-end-line="610" selection-end-column="19" />
+                <state relative-caret-position="442">
+                  <caret line="62" column="20" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -74,7 +72,7 @@
             <entry file="file://$PROJECT_DIR$/main.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="133">
-                  <caret line="257" selection-start-line="257" selection-end-line="257" />
+                  <caret line="258" selection-start-line="258" selection-end-line="258" />
                 </state>
               </provider>
             </entry>
@@ -112,6 +110,8 @@
       <find>unset</find>
       <find>$main-container</find>
       <find>pageclip</find>
+      <find>contactUs</find>
+      <find>let</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,8 +131,8 @@
         <option value="$PROJECT_DIR$/../trashly-landing-page/main.scss" />
         <option value="$PROJECT_DIR$/../ami - finished/index.html" />
         <option value="$PROJECT_DIR$/../InfoNgen/index.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/main.scss" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
@@ -155,11 +155,6 @@
             <path>
               <item name="ls" type="b2602c69:ProjectViewProjectNode" />
               <item name="ls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ls" type="462c0819:PsiDirectoryNode" />
-              <item name="main.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -203,12 +198,12 @@
       <updated>1588796617976</updated>
       <workItem from="1588796619627" duration="42255000" />
       <workItem from="1589361168158" duration="257000" />
-      <workItem from="1589361452954" duration="44031000" />
+      <workItem from="1589361452954" duration="61073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121263000" />
+    <option name="totallyTimeSpent" value="138305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -221,14 +216,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13593256" />
       <window_info id="Structure" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Run" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49841937" weight="0.5411111" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5036881" side_tool="true" weight="0.31333333" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="3" sideWeight="0.4963119" visible="true" weight="0.47666666" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="3" sideWeight="0.4963119" visible="true" weight="0.033333335" />
       <window_info anchor="bottom" id="TODO" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
     </layout>
@@ -338,29 +336,43 @@
     <entry file="file://$PROJECT_DIR$/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.scss">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="610" column="19" lean-forward="true" selection-start-line="610" selection-start-column="19" selection-end-line="610" selection-end-column="19" />
+        <state relative-caret-position="279">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="172" column="16" lean-forward="true" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="62" column="20" lean-forward="true" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="394">
+          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="172" column="16" lean-forward="true" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

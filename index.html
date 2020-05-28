@@ -27,8 +27,8 @@
             for wealth professionals
           </p>
         </div>
-        <button class="btn header__btn">
-          <a href="#contactUs">CONTACT US</a>
+        <button class="btn header__btn" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+          <a href="#">CONTACT US</a>
         </button>
       </div>
     </div>
@@ -215,6 +215,37 @@
    });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/62760550" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+  window.smoothScrollTo = (function () {
+  var timer, start, factor;
+
+  return function (target, duration) {
+    var offset = window.pageYOffset,
+        delta  = target - window.pageYOffset; // Y-offset difference
+    duration = duration || 1000;              // default 1 sec animation
+    start = Date.now();                       // get start time
+    factor = 0;
+
+    if( timer ) {
+      clearInterval(timer); // stop any running animations
+    }
+
+    function step() {
+      var y;
+      factor = (Date.now() - start) / duration; // get interpolation factor
+      if( factor >= 1 ) {
+        clearInterval(timer); // stop animation
+        factor = 1;           // clip to max 1.0
+      }
+      y = factor * delta + offset;
+      window.scrollBy(0, y - window.pageYOffset);
+    }
+
+    timer = setInterval(step, 10);
+    return timer;
+  };
+}());
+</script>
 <script src="./index.js"></script>
 </body>
 </html>
