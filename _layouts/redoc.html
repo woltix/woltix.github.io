@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+<header class="redoc-header">
+  
+  <a class="redoc-logo" href="http://localhost:4000/index.html">
+    <img src="/assets/images/logo-secondary.svg" alt="logo">
+  </a>
+  <nav class="main-menu main-menu_dark redoc-menu">
+    <a class="main-menu__item" href="http://localhost:4000/index.html#product">
+      Product
+    </a>
+    <a class="main-menu__item" href="http://localhost:4000/index.html#advantages">
+      Benefits
+    </a>
+    <a class="main-menu__item" href="http://localhost:4000/index.html#delivery">
+      Delivery
+    </a>
+    <a class="main-menu__item" href="http://localhost:4000/index.html#contactUs">
+      Contact Us
+    </a>
+    <a class="main-menu__item " href="http://localhost:4000/pages/setup">Documentation</a>
+    <a class="main-menu__item active" href="http://localhost:4000/api-docs.html">API DOCS</a>
+  </nav>
+  
+  <div class="logo-menu-mobile">
+    <div class="logo">
+      <a href="http://localhost:4000/index.html">
+        <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
+      </a>
+    </div>
+    <span class="mobile-menu-btn"></span>
+  </div>
+  <section class="mobile-menu">
+    <div class="mobile-menu__header">
+      <a href="http://localhost:4000/index.html">
+        <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
+      </a>
+    </div>
+    <nav class="main-menu-mobile">
+      <a class="main-menu-mobile__item" href="http://localhost:4000/index.html#product">
+        Product
+      </a>
+      <a class="main-menu-mobile__item" href="http://localhost:4000/index.html#advantages">
+        Benefits
+      </a>
+      <a class="main-menu-mobile__item" href="http://localhost:4000/index.html#delivery">
+        Delivery
+      </a>
+      <a class="main-menu-mobile__item" href="http://localhost:4000/index.html#contactUs">
+        Contact Us
+      </a>
+      <a class="main-menu-mobile__item" href="http://localhost:4000/pages/setup">Documentation</a>
+      <a class="main-menu-mobile__item active" href="http://localhost:4000/api-docs.html">API DOCS</a>
+    </nav>
+  </section>
+  
+</header>
+
+<redoc spec-url='/assets/js/swagger.json'></redoc>
+{% include page-footer.html %}
+<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+<script src="/assets/js/index.js"></script>
+</body>
+</html>

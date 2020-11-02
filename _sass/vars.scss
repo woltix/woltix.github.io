@@ -1,0 +1,36 @@
+//variables
+
+/*breakpoint*/
+$mobile: 375px;
+$tablet: 768px;
+$tablet-lg: 1024px;
+$desktop: 1200px;
+$desktop-lg: 1440px;
+
+/*containers*/
+$main-container: 1440px;
+$main-container-sm: 1000px;
+
+/*colors*/
+$default-bg-color: #FFFFFF;
+$code-bg-color: #caeadc;
+
+$text-primary-color: #FFFFFF;
+$text-secondary-color: #47394E;
+
+$main-accent-color: #494ECE;
+$additional-color: #12A366;
+$supporting-color: #D9D9D9;
+
+$table-border-color: #C8C8C8;
+$table-header-color: #EFF4FF;
+
+$scrollbar-track-color: #F4F4F4;
+$scrollbar-thumb-color: #E4E4E4;
+
+$redoc-type-post: $main-accent-color;
+$redoc-type-get: $additional-color;
+$redoc-type-put: #9B28D1;
+$redoc-type-delete: #D92142;
+
+//variables end

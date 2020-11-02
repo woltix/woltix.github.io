@@ -1,0 +1,23 @@
+<div class="sidebar-wrapper">
+  <div class="logo-documentation">
+    <a href="http://localhost:4000/index.html">
+      <img class="logo-img" src="/assets/images/logo-secondary.svg" alt="logo">
+    </a>
+  </div>
+  <nav class="sidebar">
+    {%- assign pages_list = site.html_pages | sort:"nav_order" -%}
+    {%- for node in pages_list -%}
+      {%- unless node.nav_exclude -%}
+        {%- if node.parent == nil -%}
+            {%- if page.parent == node.title -%}
+              {%- assign first_level_url = node.url -%}
+            {%- endif -%}
+            <a href="{{ node.url }}" class="sidebar__item{% if page.url == node.url %} active-item{% endif %}">{{ node.title }}</a>
+                {%- if page.url == node.url -%}
+                  {% include toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+                {%- endif -%}
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  </nav>
+</div>

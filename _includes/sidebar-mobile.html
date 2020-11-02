@@ -1,0 +1,19 @@
+<div class="sidebar-mobile-wrapper">
+      {%- assign pages_list = site.html_pages | sort:"nav_order" -%}
+  <button class="sidebar-mobile-btn" id="sidebar-mobile-btn"></button>
+  <nav class="sidebar-mobile">
+    {%- for node in pages_list -%}
+      {%- unless node.nav_exclude -%}
+        {%- if node.parent == nil -%}
+            {%- if page.parent == node.title -%}
+              {%- assign first_level_url = node.url -%}
+            {%- endif -%}
+            <a href="{{ node.url }}" class="sidebar-mobile__item{% if page.url == node.url %} active-item{% endif %}">{{ node.title }}</a>
+                {%- if page.url == node.url -%}
+                  {% include toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+                {%- endif -%}
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  </nav>
+</div>

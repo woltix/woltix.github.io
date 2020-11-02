@@ -1,0 +1,520 @@
+.redoc-header {
+  align-items: flex-end;
+  background-color: $default-bg-color;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    height: 50px;
+    min-height: 50px;
+    padding: 0 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    align-items: center;
+    height: 80px;
+    min-height: 80px;
+  }
+}
+
+.redoc-logo {
+  display: none;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    height: 31px;
+    width: 104px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 43px;
+    width: 146px;
+  }
+}
+
+.main-menu.main-menu_dark.redoc-menu {
+  margin-bottom: 5px;
+  margin-top: 35px;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 44px;
+    margin-bottom: 22px;
+  }
+
+  @media screen and (min-width: 1560px) {
+    margin-right: calc((100% - 220px) * 0.4);
+    margin-left: 0;
+  }
+}
+
+redoc[spec-url] {
+  flex: 1 0 auto;
+
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !important;
+  }
+
+  //loader
+  .dwJFae {
+    color: $main-accent-color;
+  }
+
+  .bStedS path {
+    fill: $main-accent-color;
+  }
+
+  //
+
+  // download btn
+  a[download] {
+    background: transparent;
+    border-radius: 0 18px;
+    border: 2px solid $additional-color;
+    color: $additional-color !important;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    line-height: 25px;
+    margin: 20px 0;
+    outline: none;
+    padding: 12px 35px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+      background: rgba(18, 163, 102, 0.1);
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 290px;
+    }
+  }
+
+  //
+
+  h3.kBWwoV {
+    color: $text-primary-color;
+  }
+
+  .goYvPl,
+  .hgxMbQ,
+  .lcundD,
+  .eulAfj > .react-tabs__tab-panel {
+    background: #2b2b47;
+  }
+
+  .kjSShW,
+  .celZWI {
+    background: #3A3B55;
+  }
+
+  .kjSShW {
+    width: calc((100% - 310px) * 0.4);
+  }
+
+  .Dropdown-root {
+    background: transparent;
+  }
+
+  .cncswi {
+    @media screen and (min-width: $desktop + 1px) {
+      &:first-child {
+        padding: 40px 0 0;
+      }
+      padding: 20px 0 0;
+    }
+  }
+
+  .TPAYK {
+    padding: 12px 32px;
+    @media screen and (min-width: $desktop) {
+      padding: 0 32px;
+    }
+  }
+
+  .cncswi:first-child .TPAYK {
+    padding-top: 32px;
+    @media screen and (min-width: $tablet) {
+      padding-top: 22px;
+    }
+    @media screen and (min-width: $desktop) {
+      padding-top: 0;
+    }
+  }
+
+
+  .api-content {
+    width: 100%;
+    @media screen and (min-width: 801px) {
+      width: calc(100% - 222px);
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc(100% - 310px);
+    }
+  }
+
+  .menu-content {
+    background: $default-bg-color;
+    width: 100%;
+    z-index: 101;
+    @media screen and (min-width: 801px) {
+      background: linear-gradient(to right, $default-bg-color 216px, $scrollbar-track-color 6px);
+      width: 222px;
+    }
+    @media screen and (min-width: $desktop) {
+      background: linear-gradient(to right, $default-bg-color 304px, $scrollbar-track-color 6px);
+      width: 310px;
+    }
+
+    .eWtOBi {
+      padding: 28px 8px 25px 0;
+      @media screen and (min-width: $desktop) {
+        padding: 45px 8px 25px 0;
+      }
+    }
+
+    input::placeholder {
+      color: $table-border-color;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    input {
+      border-color: $table-border-color;
+      margin: 0 32px;
+      padding-left: 36px;
+      width: calc(100% - 64px);
+    }
+
+    & svg.search-icon {
+      height: 18px;
+      left: 32px;
+      width: 18px;
+
+      path {
+        fill: $text-secondary-color;
+      }
+    }
+  }
+
+  .ps__rail-y:hover > .ps__thumb-y,
+  .ps__rail-y:focus > .ps__thumb-y,
+  .ps__rail-y.ps--clicking .ps__thumb-y {
+    background-color: $supporting-color;
+    width: 6px;
+  }
+
+  .ps--active-x > .ps__rail-x,
+  .ps--active-y > .ps__rail-y {
+
+  }
+
+  .ps__thumb-y {
+    background-color: $scrollbar-thumb-color;
+    opacity: 1;
+    right: 0;
+    width: 6px;
+  }
+
+  .ps .ps__rail-x:hover,
+  .ps .ps__rail-y:hover,
+  .ps .ps__rail-x:focus,
+  .ps .ps__rail-y:focus,
+  .ps .ps__rail-x.ps--clicking,
+  .ps .ps__rail-y.ps--clicking {
+    background-color: $scrollbar-track-color;
+    opacity: 1;
+    position: static;
+    transition: none;
+    width: 6px;
+  }
+
+  .ps__rail-y {
+    background-color: $scrollbar-track-color;
+    opacity: 1;
+    width: 6px;
+  }
+
+  h1 {
+    color: $text-secondary-color;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    @media screen and (min-width: $desktop) {
+      font-size: 40px;
+      line-height: 1;
+    }
+  }
+
+  h2 {
+    color: $text-secondary-color;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 30px;
+    @media screen and (min-width: $desktop) {
+      font-size: 32px;
+      line-height: 37px;
+    }
+  }
+
+  h3 {
+    color: $text-secondary-color;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 24px;
+    @media screen and (min-width: $desktop) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  p, span, a, code, h4, h5, h6 {
+    font-size: 14px;
+    line-height: 22px;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  span.dpMbau {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  span[type='warning'] {
+    line-height: 37px;
+  }
+
+  span.fwYGJM {
+    font-size: 14px;
+    line-height: 21px;
+
+    p {
+      color: inherit;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  p {
+    color: $text-secondary-color;
+    font-weight: normal;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: $main-accent-color;
+    text-decoration: none;
+  }
+
+  .cxRqCB a {
+    font-size: 11px;
+  }
+
+  code,
+  p code {
+    background-color: $code-bg-color;
+    border: none;
+    color: $text-secondary-color;
+    font-weight: bold;
+    padding: 0 4px;
+  }
+
+  .redoc-json code {
+    background-color: transparent;
+    color: $text-primary-color;
+  }
+
+  .gsJOdw .Dropdown-control:hover {
+    color: $text-secondary-color;
+  }
+
+  .gsJOdw .Dropdown-arrow {
+    border-color: $text-secondary-color transparent transparent;
+  }
+
+  .kZbxUj::before {
+    line-height: 19px;
+    vertical-align: top;
+  }
+
+  span.operation-type {
+    font-size: 8px;
+    height: 10px;
+    line-height: 10px;
+    margin: 5px 7px 0 0;
+    width: 27px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 12px;
+      height: 19px;
+      line-height: 19px;
+      margin: 0 7px 0 0;
+      width: 41px;
+    }
+  }
+
+  span.post {
+    background-color: $redoc-type-post;
+  }
+
+  span.get {
+    background-color: $redoc-type-get;
+  }
+
+  span.put {
+    background-color: $redoc-type-put;
+  }
+
+  span.delete {
+    background-color: $redoc-type-delete;
+  }
+
+  .scrollbar-container label span:not(.operation-type) {
+    font-size: 12px;
+    line-height: 19px;
+    @media screen and (min-width: $tablet) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .scrollbar-container label {
+    svg polygon {
+      fill: $text-secondary-color;
+    }
+
+    svg {
+      height: 28px;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      span:not(.operation-type) {
+        color: $main-accent-color;
+      }
+    }
+
+    &.active {
+      background-color: transparent;
+
+      span:not(.operation-type) {
+        color: $main-accent-color;
+      }
+    }
+
+    &[type='section'] {
+      span {
+        font-size: 14px;
+        line-height: 24px;
+        @media screen and (min-width: $tablet) {
+          font-size: 18px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    &[type='tag'] {
+      span {
+        font-size: 14px;
+        line-height: 24px;
+        @media screen and (min-width: $tablet) {
+          font-size: 18px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    &[type='group'] {
+      display: block;
+      padding: 0 32px;
+
+      span {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+
+    &[role='menuitem']:not([type='group']) {
+      align-items: flex-start;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 5px 32px;
+    }
+  }
+
+  .hbBIxy {
+    margin-bottom: 10px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  .cxRqCB {
+    display: none;
+  }
+  .hkGCbn {
+    display: none;
+  }
+
+  .iXutXb {
+    background: $default-bg-color;
+    bottom: 25px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.16);
+    height: 60px;
+    right: 25px;
+    width: 60px;
+    z-index: 102;
+
+    svg {
+      color: $main-accent-color;
+    }
+
+    .menu-open & {
+      display: none;
+    }
+  }
+
+  table tr:nth-child(2n) {
+    background-color: #FBFBFB;
+  }
+
+  .brEFsR {
+    @media screen and (min-width: 1560px) {
+      top: -80px;
+    }
+  }
+
+  .kBPJSk {
+    @media screen and (max-width: $desktop - 1px) {
+      padding: 25px 0 0;
+    }
+  }
+}

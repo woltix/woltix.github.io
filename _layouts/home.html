@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <header class="header" id="header">
+    <div class="header__content">
+      <div class="logo">
+        <a href="http://localhost:4000/index.html">
+          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
+        </a>
+      </div>
+      <div class="logo-menu-mobile">
+        <div class="logo">
+          <a href="http://localhost:4000/index.html">
+            <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
+          </a>
+        </div>
+        <span class="mobile-menu-btn"></span>
+      </div>
+
+      <div class="header__item">
+        <nav class="main-menu">
+          <a class="main-menu__item active" href="#" onclick="smoothScrollTo(document.getElementById('product').offsetTop - 30)">
+            Product
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
+            Benefits
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('delivery').offsetTop - 30)">
+            Delivery
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+            Contact Us
+          </a>
+          <a class="main-menu__item" href="http://localhost:4000/pages/setup">Documentation</a>
+          <a class="main-menu__item" href="http://localhost:4000/api-docs.html">API DOCS</a>
+        </nav>
+        <div class="header__title">
+          <h1 class="h1">
+            Smart portfolio analytics
+          </h1>
+          <p>
+            for wealth professionals
+          </p>
+        </div>
+        <button class="btn btn_link header__btn header__btn_desktop" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+          <a href="#">CONTACT US &nbsp;&nbsp;<img src="/assets/images/icon-arrow.svg" alt="arrow"></a>
+        </button>
+        <button class="btn header__btn header__btn_mobile " onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+          <a href="#">CONTACT US</a>
+        </button>
+      </div>
+    </div>
+    
+    <section class="mobile-menu">
+      <div class="mobile-menu__header">
+        <a href="http://localhost:4000/index.html">
+          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
+        </a>
+      </div>
+      <nav class="main-menu-mobile">
+        <a class="main-menu-mobile__item active"
+           href="#"
+           onclick="smoothScrollTo(document.getElementById('product').offsetTop - 30)">
+          Product
+        </a>
+        <a class="main-menu-mobile__item"
+           href="#"
+           onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
+          Benefits
+        </a>
+        <a class="main-menu-mobile__item"
+           href="#"
+           onclick="smoothScrollTo(document.getElementById('delivery').offsetTop - 30)">
+          Delivery
+        </a>
+        <a class="main-menu-mobile__item"
+           href="#"
+           onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+          Contact Us
+        </a>
+        <a class="main-menu-mobile__item" href="http://localhost:4000/pages/setup">Documentation</a>
+        <a class="main-menu-mobile__item" href="http://localhost:4000/api-docs.html">API DOCS</a>
+      </nav>
+    </section>
+  </header>
+
+  <main class="main" id="main">
+    <section class="main__block main-inner" id="product">
+      <div>
+        <h2 class="h2 h2_accent">Product</h2>
+        <div class="text text_dark">
+          <p>Increase your customers' satisfaction with rich advanced metrics on investment portfolios.</p>
+          <p>Suitable for any scale, the analytics engine understands your data and self-adjusts to provide the most
+            accurate result.
+          </p>
+          <p>Enjoy the enhanced complex yet easy-to-use technology supporting your digitalization journey.</p>
+        </div>
+      </div>
+      <ul class="list">
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-performance.svg" alt="performance-icon">
+          <div class="text-list">
+            <p>Investment portfolio performance</p>
+            <p class="text-info">money-weighted return, true time-weighted return, hybrid models</p>
+          </div>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-return.svg" alt="return-icon">
+          <p class="text-list">Expected return</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-cashFlows.svg" alt="cash-flows-icon">
+          <p class="text-list">Projected cash-flows</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-attribution.svg" alt="attribution-icon">
+          <p class="text-list">Cash-flow attribution</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-risk.svg" alt="risk-icon">
+          <p class="text-list">Value at risk for cross-asset portfolios</p>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="benefits" id="advantages">
+      <div class="benefits__content">
+        <div>
+          <h2 class="h2 h2_white">Benefits</h2>
+          <div class="text">
+            <p>Woltix frees your resources for what matters most – your customers and your unique workflows.</p>
+            <p>Let our expertise in financial analysis, portfolio management, and market data work for you.</p>
+            <p>We offer you insights, not just technology.</p>
+          </div>
+        </div>
+        <ul class="list">
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-efficiency.svg" alt="efficiency-icon">
+            <p class="text-list">Operational efficiency and comprehensive expertise for your team and products</p>
+          </li>
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-basic.svg" alt="basic-icon">
+            <p class="text-list">Start with the basic portfolio data available – just the holdings are fine</p>
+          </li>
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-results.svg" alt="results-icon">
+            <p class="text-list">Get more results and analytics as your digital solution and data evolves</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="main__block main-inner delivery" id="delivery">
+      <div>
+        <h2 class="h2 h2_accent">Delivery</h2>
+        <div class="text text_dark">
+          <p>Woltix APIs are self-explanatory and well-documented to streamline the adoption of sophisticated analytics
+            and technology in your digital solution – deployed or in the cloud.
+          </p>
+        </div>
+        <div class="hide">
+            <button class="btn btn_colorful btn-desktop">
+              <a href="#">API Documentation</a>
+            </button>
+        </div>
+      </div>
+      <ul class="list">
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Cloud-ready API technology</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Low to zero upfront investment in technology development</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">No changes required to your technology architecture</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Good fit for microservices</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Fast learning curve and quick time to market</p>
+        </li>
+      </ul>
+      <div class="hide">
+          <button class="btn btn_colorful btn-laptop">
+             <a href="#">API Documentation</a>
+          </button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__content">
+      <div class="main-inner" id="contactUs">
+        <h2 class="h2 h2_white">Contact us</h2>
+        <div class="contact">
+          <a class="contact__link email" href="mailto:contact@woltix.com">contact@woltix.com</a>
+          <a class="contact__link phone" href="tel:+442045771365">+44 2045771365</a>
+          <span>25 Canada Square, Canary Wharf, London E14 5LB, United Kingdom</span>
+        </div>
+        <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
+              class="pageclip-form"
+              method="post">
+          <div class="inputs-inner">
+            <div class="inputs-inner__item">
+              <span class="label">Name *</span>
+              <input class="pageclip-form__item input" type="text" name="name" value="" required/>
+            </div>
+  
+            <div class="inputs-inner__item">
+              <span class="label">Email address *</span>
+              <input class="pageclip-form__item input" type="email" name="email" value="" required/>
+            </div>
+  
+            <div class="inputs-inner__item">
+              <span class="label">Message *</span>
+              <textarea class="pageclip-form__item textarea" name="message" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn pageclip-form__submit">
+            <span>SUBMIT</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="copyright">
+      ⓒ Woltix.2020
+    </div>
+  </footer>
+<script src="/assets/js/index.js"></script>
+</body>
+</html>
