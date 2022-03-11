@@ -3,10 +3,9 @@
   background-color: $default-bg-color;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-between;
   @media screen and (min-width: $tablet) {
     height: 50px;
-    justify-content: space-between;
     min-height: 50px;
     padding: 0 32px;
   }
@@ -163,7 +162,7 @@ redoc[spec-url] {
   .menu-content {
     background: $default-bg-color;
     width: 100%;
-    z-index: 100;
+    z-index: 101;
     @media screen and (min-width: 801px) {
       background: linear-gradient(to right, $default-bg-color 216px, $scrollbar-track-color 6px);
       width: 222px;
