@@ -2,369 +2,235 @@
 <html lang="en">
 {% include head.html %}
 <body>
-<header class="header" id="header">
-  <div class="header__content">
-    <nav class="main-menu">
-      <a class="main-menu__item active" href="#"
-         onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
-        About
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('clients').offsetTop)">
-        Clients
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('features').offsetTop)">
-        Features
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('product').offsetTop)">
-        Products
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
-        Benefits & Delivery
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
-        Contact Us
-      </a>
-    </nav>
-    
-    <div class="header__item" id="about">
+  <header class="header" id="header">
+    <div class="header__content">
       <div class="logo">
-        <a href="http://localhost:4000/index.html">
+        <a href="http://www.woltix.com">
           <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
         </a>
       </div>
-      
       <div class="logo-menu-mobile">
         <div class="logo">
-          <a href="http://localhost:4000/index.html">
+          <a href="http://www.woltix.com">
             <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
           </a>
         </div>
         <span class="mobile-menu-btn"></span>
       </div>
-      
-      <div class="header__title">
-        <h1 class="h1">
-          Smart portfolio analytics for wealth professionals
-        </h1>
-        <p>
-          Fair and transparent investment portfolio valuation. Portfolio historical performance and structure
-          overview, risk analysis and expected return. Model and rebalance portfolio to optimize return and mitigate
-          risks. Built with respect to GIPS recommendations and guidelines
-        </p>
-        <button class="btn header__btn" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
-          <a href="#">CONTACT US <img src="/assets/images/icon-arrow.svg" alt="arrow"></a>
+
+      <div class="header__item">
+        <nav class="main-menu">
+          <a class="main-menu__item active" href="#" onclick="smoothScrollTo(document.getElementById('product').offsetTop - 30)">
+            Product
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
+            Benefits
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('delivery').offsetTop - 30)">
+            Delivery
+          </a>
+          <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+            Contact Us
+          </a>
+        </nav>
+        <div class="header__title">
+          <h1 class="h1">
+            Smart portfolio analytics
+          </h1>
+          <p>
+            for wealth professionals
+          </p>
+        </div>
+        <button class="btn btn_link header__btn header__btn_desktop" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+          <a href="#">CONTACT US &nbsp;&nbsp;<img src="/assets/images/icon-arrow.svg" alt="arrow"></a>
+        </button>
+        <button class="btn header__btn header__btn_mobile " onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
+          <a href="#">CONTACT US</a>
         </button>
       </div>
     </div>
     
     <section class="mobile-menu">
       <div class="mobile-menu__header">
-        <a href="http://localhost:4000/index.html">
+        <a href="http://www.woltix.com">
           <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
         </a>
       </div>
       <nav class="main-menu-mobile">
         <a class="main-menu-mobile__item active"
            href="#"
-           onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
-          About
-        </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('clients').offsetTop)">
-          Clients
-        </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('features').offsetTop)">
-          Features
-        </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('product').offsetTop)">
-          Products
+           onclick="smoothScrollTo(document.getElementById('product').offsetTop - 30)">
+          Product
         </a>
         <a class="main-menu-mobile__item"
            href="#"
            onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
-          Benefits & Delivery
+          Benefits
         </a>
         <a class="main-menu-mobile__item"
            href="#"
-           onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+           onclick="smoothScrollTo(document.getElementById('delivery').offsetTop - 30)">
+          Delivery
+        </a>
+        <a class="main-menu-mobile__item"
+           href="#"
+           onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop - 30)">
           Contact Us
         </a>
+
       </nav>
     </section>
-  </div>
-</header>
+  </header>
 
-<main class="main" id="main">
-  
-  <section class="clients" id="clients">
-    <div class="clients__content">
-      <h2 class="h2 h2_white">Clients</h2>
-      <article class="client-cards-wrapper">
-        <div class="client-card">
-          Online brokers
-        </div>
-        <div class="client-card">
-          Private banks and <br> wealth managers
-        </div>
-        <div class="client-card">
-          Family offices
-        </div>
-        <div class="client-card">
-          Asset managers <br> and funds
-        </div>
-      </article>
-    </div>
-  </section>
-  
-  <section class="features" id="features">
-    <div class="features__content">
-      
-      <div class="features__section">
-        <div class="features__header">
-          <h3 class="h3">Investment Portfolio Analytics</h3>
-          <h2 class="h2 h2_white">Features</h2>
-        </div>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_green">Multiple asset classes</div>
-          <div class="feature-card  feature-card_cyan">Transactions or holdings-based</div>
-          <div class="feature-card">Multi-currencies reporting</div>
-          <div class="feature-card">Portfolio value and absolute return</div>
-          <div class="feature-card  feature-card_cyan">External flows</div>
-          <div class="feature-card">
-            <ul class="feature-card__list">
-              <li>Money-weighted return</li>
-              <li>Time weighted return</li>
-              <li>Hybrid return</li>
-              <li>CAGR</li>
-            </ul>
-          </div>
-          <div class="feature-card feature-card_green">Portfolio performance dynamics</div>
-          <div class="feature-card feature-card_green">Benchmarks and synthetic portfolios</div>
-          <div class="feature-card feature-card_tall">
-            Holding level
-            <ul class="feature-card__list">
-              <li>Average purchase price</li>
-              <li>Realized P&L</li>
-              <li>Unrealized P&L</li>
-              <li>Return</li>
-              <li>Dividends, coupons, fees</li>
-              <li>Value at Risk</li>
-            </ul>
-          </div>
-          <div class="feature-card  feature-card_cyan">Total return contribution structure</div>
-          <div class="feature-card  feature-card_cyan feature-card_wide">
-            Structure analysis
-            <ul class="feature-card__list">
-              <li>Portfolio structure dynamics</li>
-              <li>Comparison against model portfolios</li>
-              <li>Predefined or custom classifications</li>
-            </ul>
-          </div>
-          <div class="feature-card feature-card_green feature-card_flexible-position">
-            VaR
-            <ul class="feature-card__list">
-              <li>Historical</li>
-              <li>Parametric</li>
-              <li>Monte-Carlo</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-      
-      <div class="features__section">
-        <h3 class="h3 h3_ta-right">Portfolio Modeling</h3>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_green">
-            Auto rebalance
-          </div>
-          <div class="feature-card">
-            Manual rebalance
-          </div>
-          <div class="feature-card">
-            Liquidity analysis
-          </div>
-          <div class="feature-card feature-card_blue">
-            Expected return and VaR
-          </div>
-        </article>
-      </div>
-      
-      <div class="features__section">
-        <h3 class="h3">Practice Overview</h3>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_cyan">
-            Risk profile, advisor and bank group
-          </div>
-          <div class="feature-card">
-            AUM, total cash, fees, external flows
-          </div>
-          <div class="feature-card feature-card_blue">
-            Risk-Reward Map, Gain/Loss analysis
-          </div>
-          <div class="feature-card">
-            Aggregated position and structure
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <section class="products" id="product">
-    <div class="products__content">
-      <img class="products__bg-desktop" src="/assets/images/products_img_desktop.svg" alt="computer">
+  <main class="main" id="main">
+    <section class="main__block main-inner" id="product">
       <div>
-        <h2 class="h2 h2_accent">Products</h2>
-        <div class="products__text">
-          Enhance your mobile application, client or internal web-portal, information management system, back office
-          software, or your wealth management system with a complete set of analytics
-        </div>
-      </div>
-      
-      <img class="products__bg-tablet" src="/assets/images/products_img_tablet.svg" alt="computer">
-      
-      <section class="products__cards-inner">
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">Portfolio Analytics API</h3>
-          <p>Clear and easy to use API with a full range of analytical and modeling capabilities</p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_mobile.svg" alt="mobile">
-            <img src="/assets/images/ic_web.svg" alt="web">
-            <img src="/assets/images/ic_profi.svg" alt="profi">
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">Portfolio Transparency</h3>
-          <p>
-            Flexible transparent web reports powered by Portfolio Analytics API to boost your existing portfolio or
-            wealth management system
+        <h2 class="h2 h2_accent">Product</h2>
+        <div class="text text_dark">
+          <p>Increase your customers' satisfaction with rich advanced metrics on investment portfolios.</p>
+          <p>Suitable for any scale, the analytics engine understands your data and self-adjusts to provide the most
+            accurate result.
           </p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_web.svg" alt="web">
+          <p>Enjoy the enhanced complex yet easy-to-use technology supporting your digitalization journey.</p>
+        </div>
+      </div>
+      <ul class="list">
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-performance.svg" alt="performance-icon">
+          <div class="text-list">
+            <p>Investment portfolio performance</p>
+            <p class="text-info">money-weighted return, true time-weighted return, hybrid models</p>
+          </div>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-return.svg" alt="return-icon">
+          <p class="text-list">Expected return</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-cashFlows.svg" alt="cash-flows-icon">
+          <p class="text-list">Projected cash-flows</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-attribution.svg" alt="attribution-icon">
+          <p class="text-list">Cash-flow attribution</p>
+        </li>
+        <li class="list__item">
+          <img class="icon-img" src="/assets/images/icon-introduction-risk.svg" alt="risk-icon">
+          <p class="text-list">Value at risk for cross-asset portfolios</p>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="benefits" id="advantages">
+      <div class="benefits__content">
+        <div>
+          <h2 class="h2 h2_white">Benefits</h2>
+          <div class="text">
+            <p>Woltix frees your resources for what matters most – your customers and your unique workflows.</p>
+            <p>Let our expertise in financial analysis, portfolio management, and market data work for you.</p>
+            <p>We offer you insights, not just technology.</p>
           </div>
         </div>
-        
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">1-2-3 Wealth Practice</h3>
-          <p>
-            End-to-end ready to use workflow to manage wealth business from individual portfolios to practice oveview
+        <ul class="list">
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-efficiency.svg" alt="efficiency-icon">
+            <p class="text-list">Operational efficiency and comprehensive expertise for your team and products</p>
+          </li>
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-basic.svg" alt="basic-icon">
+            <p class="text-list">Start with the basic portfolio data available – just the holdings are fine</p>
+          </li>
+          <li class="list__item">
+            <img class="icon-img" src="/assets/images/icon-benefits-results.svg" alt="results-icon">
+            <p class="text-list">Get more results and analytics as your digital solution and data evolves</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="main__block main-inner delivery" id="delivery">
+      <div>
+        <h2 class="h2 h2_accent">Delivery</h2>
+        <div class="text text_dark">
+          <p>Woltix APIs are self-explanatory and well-documented to streamline the adoption of sophisticated analytics
+            and technology in your digital solution – deployed or in the cloud.
           </p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_profi.svg" alt="profi">
-          </div>
         </div>
-      </section>
-    </div>
-  </section>
-  
-  <section class="benefits" id="advantages">
-    <div class="benefits__item">
-      <div class="benefits__text">
-        <h2 class="h2 h2_accent">Benefits</h2>
-        Woltix frees your resources for what matters most – your customers and your unique workflows. <br>
-        Let our expertise in financial analysis, portfolio management, and market data work for you. <br>
-        We offer you insights, not just technology
-      </div>
-      <img class="benefits__img benefits__img_desk" src="/assets/images/benefits_img.svg" alt="point">
-      <img class="benefits__img benefits__img_mob" src="/assets/images/benefits_img_mob.svg" alt="point">
-    </div>
-    <ul class="list">
-      <li class="list__item">
-        Operational efficiency and comprehensive expertise for your team and products
-      </li>
-      <li class="list__item">
-        Start with the basic portfolio data available – just the holdings are fine
-      </li>
-      <li class="list__item">
-        Get more results and analytics as your digital solution and data evolves
-      </li>
-    </ul>
-  </section>
-  
-  <section class="delivery" id="delivery">
-    <ul class="list">
-      <li class="list__item">
-        Cloud-ready API technology
-      </li>
-      <li class="list__item">
-        Low to zero upfront investment in technology development
-      </li>
-      <li class="list__item">
-        No changes required to your technology architecture
-      </li>
-      <li class="list__item">
-        Good fit for microservices
-      </li>
-      <li class="list__item">
-        Fast learning curve and quick time to market
-      </li>
-    </ul>
-    <div class="delivery__item">
-      <img class="delivery__img delivery__img_desk" src="/assets/images/delivery_img.svg" alt="point">
-      <img class="delivery__img delivery__img_mob" src="/assets/images/delivery_img_mob.svg" alt="point">
-      <div class="delivery__text">
-        <h2 class="h2 h2_additional">Delivery</h2>
-        Woltix APIs are self-explanatory and well-documented to streamline the adoption of sophisticated analytics and
-        technology in your digital solution – deployed or in the cloud
-      </div>
-    </div>
-  </section>
-  
-  <section class="advice" id="advice">
-    <div class="advice__content">
-      <p>
-        Evolve as you grow. Avoid spending on all-in-one system implementation and reduce single vendor dependency
-      </p>
-      <p>
-        Secure investments in your own tech and operations
-      </p>
-    </div>
-  </section>
-  
-</main>
-<footer class="footer" id="footer">
-  <div class="footer__content" id="contactUs">
-    <h2 class="h2 h2_white">Contact us</h2>
-    <div class="contact">
-        <a class="contact__link email" href="mailto:contact@woltix.com">contact@woltix.com</a>
-        <a class="contact__link phone" href="tel:+442045771365">+44 2045771365</a>
-        <span>25 Canada Square, Canary Wharf, London E14 5LB, United Kingdom</span>
-      </div>
-    <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
-            class="pageclip-form"
-            method="post">
-        <div class="inputs-inner">
-          <div class="inputs-inner__item">
-            <span class="label">Name *</span>
-            <input class="pageclip-form__item input" type="text" name="name" value="" required/>
+
+      <ul class="list">
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
           </div>
-          
-          <div class="inputs-inner__item">
-            <span class="label">Email address *</span>
-            <input class="pageclip-form__item input" type="email" name="email" value="" required/>
+          <p class="text-list">Cloud-ready API technology</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
           </div>
-          
-          <div class="inputs-inner__item">
-            <span class="label">Message *</span>
-            <textarea class="pageclip-form__item textarea" name="message" required></textarea>
+          <p class="text-list">Low to zero upfront investment in technology development</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
           </div>
+          <p class="text-list">No changes required to your technology architecture</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Good fit for microservices</p>
+        </li>
+        <li class="list__item">
+          <div class="point-inner">
+            <span class="point"></span>
+          </div>
+          <p class="text-list">Fast learning curve and quick time to market</p>
+        </li>
+      </ul>
+
+    </section>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__content">
+      <div class="main-inner" id="contactUs">
+        <h2 class="h2 h2_white">Contact us</h2>
+        <div class="contact">
+          <a class="contact__link email" href="mailto:contact@woltix.com">contact@woltix.com</a>
+          <a class="contact__link phone" href="tel:+442045771365">+44 2045771365</a>
+          <span>25 Canada Square, Canary Wharf, London E14 5LB, United Kingdom</span>
         </div>
-        <button type="submit" class="btn pageclip-form__submit">
-          <span>SUBMIT</span>
-        </button>
-      </form>
-  </div>
-  <div class="line"></div>
-  <div class="copyright">
-    Woltix.
-    <script type="text/javascript">document.write(new Date().getFullYear());</script>
-  </div>
-</footer>
+        <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
+              class="pageclip-form"
+              method="post">
+          <div class="inputs-inner">
+            <div class="inputs-inner__item">
+              <span class="label">Name *</span>
+              <input class="pageclip-form__item input" type="text" name="name" value="" required/>
+            </div>
+  
+            <div class="inputs-inner__item">
+              <span class="label">Email address *</span>
+              <input class="pageclip-form__item input" type="email" name="email" value="" required/>
+            </div>
+  
+            <div class="inputs-inner__item">
+              <span class="label">Message *</span>
+              <textarea class="pageclip-form__item textarea" name="message" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn pageclip-form__submit">
+            <span>SUBMIT</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="copyright">
+      ⓒ Woltix.2020
+    </div>
+  </footer>
 <script src="/assets/js/index.js"></script>
 </body>
 </html>
