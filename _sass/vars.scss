@@ -1,3 +1,25 @@
+//fonts
+
+@font-face {
+  font-family: 'Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SemiBold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+
 //variables
 
 /*breakpoint*/

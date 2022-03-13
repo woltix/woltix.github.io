@@ -7,6 +7,7 @@ const customMessages = {
 const inputs = Array.prototype.slice.call(document.querySelectorAll('input, select, textarea'));
 const validationErrorClass = 'validation-error';
 const parentErrorClass = 'has-validation-error';
+const form = document.querySelector('.pageclip-form');
 
 function getCustomMessage(type, validity) {
   if (validity.typeMismatch) {
@@ -69,13 +70,19 @@ inputs.forEach(function (input) {
   })
 });
 
-var form = document.querySelector('.pageclip-form')
-Pageclip.form(form, {
-  onSubmit: function (event) { },
-  onResponse: function (error, response) { },
-  successTemplate: '<span>Thank you!</span>'
-})
-
+if(form) {
+  Pageclip.form(form, {
+    onSubmit: function (event) { },
+    onResponse: function (error, response) { },
+    successTemplate: `
+      <div class="success-template-inner">
+        <span>Thank you for your message!</span>
+        <button class="btn" type="button">
+          <span>Send new Message</span>
+        </button>
+      </div>`
+  })
+}
 
 ////Jquery////
 
