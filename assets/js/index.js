@@ -91,7 +91,6 @@ $("body").bind("DOMSubtreeModified", function () {
   } else {
     $("body").removeClass("success-template-view");
   }
-  console.log(formSuccessTemplate);
 });
 
 ////Jquery////
