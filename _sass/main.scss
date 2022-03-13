@@ -1446,10 +1446,12 @@ select:-webkit-autofill:focus {
   justify-content: flex-start;
   line-height: 38px;
   padding: 90px 0 0;
+  pointer-events: none;
   text-align: left;
 
   & .btn {
     margin-top: 30px;
+    pointer-events: auto;
   }
 
   @media screen and (min-width: $tablet) {
