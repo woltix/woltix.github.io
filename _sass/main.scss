@@ -1342,6 +1342,10 @@ body {
   margin-top: 30px;
   width: 100%;
 
+  .success-template-view & {
+    visibility: hidden;
+  }
+
   @media screen and (min-width: $tablet) {
     margin-top: 45px;
     width: 210px;
@@ -1368,6 +1372,10 @@ body {
     &:not(:last-child) {
       margin-bottom: 25px;
     }
+  }
+
+  .success-template-view & {
+    visibility: hidden;
   }
 
   @media screen and (min-width: $desktop) {
@@ -1429,6 +1437,22 @@ select:-webkit-autofill:focus {
 
   @media screen and (min-width: $tablet) {
     height: 166px;
+  }
+}
+
+.pageclip-form__success {
+  background: transparent;
+  font-size: 32px;
+  justify-content: flex-start;
+  line-height: 38px;
+
+  & .btn {
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 34px;
+    line-height: 41px;
   }
 }
 

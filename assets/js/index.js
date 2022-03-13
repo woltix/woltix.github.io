@@ -8,7 +8,6 @@ const inputs = Array.prototype.slice.call(document.querySelectorAll('input, sele
 const validationErrorClass = 'validation-error';
 const parentErrorClass = 'has-validation-error';
 const form = document.querySelector('.pageclip-form');
-const formSuccessTemplate = document.querySelector('.pageclip-form__success');
 
 function getCustomMessage(type, validity) {
   if (validity.typeMismatch) {
@@ -86,11 +85,13 @@ if(form) {
 }
 
 $("body").bind("DOMSubtreeModified", function () {
+  const formSuccessTemplate = document.querySelector('.pageclip-form__success');
   if (formSuccessTemplate) {
     $("body").addClass("success-template-view");
   } else {
     $("body").removeClass("success-template-view");
   }
+  console.log(formSuccessTemplate);
 });
 
 ////Jquery////
