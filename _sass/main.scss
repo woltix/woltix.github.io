@@ -740,12 +740,12 @@ body {
     padding: 36px 24px 32px;
 
     @media screen and (min-width: $tablet) {
-      padding: 80px 0 64px;
+      padding: 60px 0 64px;
     }
 
     @media screen and (min-width: $desktop) {
       max-width: $main-container-middle;
-      padding: 90px 0 92px;
+      padding: 80px 0 92px;
     }
   }
 
@@ -765,7 +765,7 @@ body {
 .features-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 2px;
+  grid-gap: 10px;
   grid-auto-rows: minmax(165px, auto);
 
   @media screen and (min-width: $tablet) {
@@ -858,7 +858,7 @@ body {
 
   &__list {
     font-size: 20px;
-    line-height: 25px;
+    line-height: 30px;
     margin: 6px 0 0;
     padding: 0 0 0 30px;
 
@@ -937,7 +937,7 @@ body {
     @media screen and (min-width: $desktop) {
       font-size: 28px;
       line-height: 40px;
-      padding: 12px 0 40px;
+      padding: 0 0 40px;
       width: 516px;
     }
   }
