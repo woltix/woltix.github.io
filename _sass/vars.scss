@@ -35,6 +35,12 @@ $main-container-middle: 1140px;
 $main-container-sm: 714px;
 
 /*colors*/
+$main-accent-color: #494ECE;
+$additional-color: #12A366;
+$supporting-color: #D9D9D9;
+$additional-accent-color: #33E284;
+$attention-color: #D92142;
+
 $default-bg-color: #FFFFFF;
 $code-bg-color: #caeadc;
 $dark-bg-color: #39394E;
@@ -46,12 +52,7 @@ $feature-card-green-bg: #1ECA8C;
 
 $text-primary-color: #FFFFFF;
 $text-secondary-color: #39394E;
-$text-error: #D92142;
-
-$main-accent-color: #494ECE;
-$additional-color: #12A366;
-$supporting-color: #D9D9D9;
-$additional-accent-color: #33E284;
+$text-error: $attention-color;
 
 $table-border-color: #C8C8C8;
 $table-header-color: #EFF4FF;
@@ -62,6 +63,6 @@ $scrollbar-thumb-color: #E4E4E4;
 $redoc-type-post: $main-accent-color;
 $redoc-type-get: $additional-color;
 $redoc-type-put: #9B28D1;
-$redoc-type-delete: #D92142;
+$redoc-type-delete: $attention-color;
 
 //variables end

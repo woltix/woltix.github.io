@@ -152,6 +152,28 @@ body {
     padding: 12px 24px;
     text-decoration: none;
   }
+
+  &_cookie {
+    background: $attention-color;
+    border: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:active {
+      background: lighten($attention-color, 11%);
+    }
+
+    a {
+      padding: 4px 24px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 14px;
+      @media screen and (min-width: $tablet) {
+        margin-right: 24px;
+      }
+    }
+  }
 }
 
 .logo {
@@ -174,7 +196,8 @@ body {
       width: 134px;
 
       .logo-documentation &,
-      .page-error & {
+      .page-error &,
+      .page-privacy & {
         display: block;
         height: 31px;
         width: 104px;
@@ -186,7 +209,8 @@ body {
       width: 167px;
 
       .logo-documentation &,
-      .page-error & {
+      .page-error &,
+      .page-privacy & {
         height: auto;
         width: auto;
       }
@@ -235,6 +259,7 @@ body {
 
     .menu-open &,
     .page-error &,
+    .page-privacy &,
     .documentation-body &,
     .redoc-header & {
       background: linear-gradient(270.42deg, #8259FF 0.44%, #2330FA 68.36%, #6070FF 97.14%);
@@ -2144,6 +2169,161 @@ mjx-container {
 
     &_lg {
       font-size: 263px;
+    }
+  }
+}
+
+
+/*Privacy Policy*/
+.page-privacy {
+  color: $text-secondary-color;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: $main-container-sm;
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    max-width: $main-container-middle;
+    padding: 0;
+  }
+
+  &__header {
+    align-items: flex-start;
+    background-color: $default-bg-color;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: $tablet) {
+      padding: 27px 0 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 18px 0 0;
+    }
+  }
+
+  &__title {
+    font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 51px;
+    margin: 0 0 16px;
+    @media screen and (min-width: $tablet) {
+      margin: 0 0 24px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 40px;
+      line-height: 64px;
+      margin: 0 0 32px;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 36px;
+    margin: 0 0 12px;
+
+    @media screen and (min-width: $tablet) {
+      margin: 0 0 8px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 32px;
+      line-height: 43px;
+    }
+  }
+
+  &__section-title {
+    font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+    margin: 0 0 12px;
+
+    @media screen and (min-width: $tablet) {
+      margin: 0 0 8px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+
+  &__main {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 24px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      line-height: 29px;
+    }
+  }
+
+  &__section {
+    margin: 0 0 24px;
+
+    & p:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+
+  & .main-menu {
+    margin-top: 26px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 46px;
+      margin-top: 17px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 26px;
+    }
+  }
+}
+
+/*Cookie*/
+
+.cookie-notice {
+  align-items: flex-start;
+  background: $dark-bg-color;
+  bottom: 0;
+  color: $text-primary-color;
+  display: none;
+  flex-flow: column nowrap;
+  font-size: 12px;
+  justify-content: center;
+  line-height: 20px;
+  padding: 20px 24px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  @media screen and (min-width: $tablet) {
+    align-items: center;
+    flex-flow: row nowrap;
+    font-size: 14px;
+    justify-content: center;
+    padding: 14px 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 20px 32px;
+  }
+
+  &__btns {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 14px 0 0;
+    @media screen and (min-width: $tablet) {
+      margin: 0 0 0 32px;
     }
   }
 }
