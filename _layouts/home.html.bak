@@ -330,6 +330,8 @@
     <h2 class="h2 h2_white">Contact us</h2>
     <div class="contact">
         <a class="contact__link email" href="mailto:contact@woltix.com">contact@woltix.com</a>
+        <a class="contact__link phone" href="tel:+442045771365">+44 2045771365</a>
+        <span>25 Canada Square, Canary Wharf, London E14 5LB, United Kingdom</span>
       </div>
     <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
             class="pageclip-form"
