@@ -5,9 +5,9 @@
   flex-flow: row nowrap;
   justify-content: center;
   @media screen and (min-width: $tablet) {
-    height: 50px;
+    height: 56px;
     justify-content: space-between;
-    min-height: 50px;
+    min-height: 56px;
     padding: 0 32px;
   }
   @media screen and (min-width: $desktop) {
@@ -38,14 +38,14 @@
 
 .main-menu.main-menu_dark.redoc-menu {
   margin-bottom: 5px;
-  margin-top: 35px;
+  margin-top: 44px;
 
   @media screen and (min-width: $desktop) {
     margin-top: 44px;
     margin-bottom: 22px;
   }
 
-  @media screen and (min-width: 1560px) {
+  @media screen and (min-width: 1770px) {
     margin-right: calc((100% - 220px) * 0.4);
     margin-left: 0;
   }
@@ -132,6 +132,24 @@ redoc[spec-url] {
     }
   }
 
+  .chOOHy,
+  .kzhJjR {
+    &:first-child {
+      padding: 0;
+      @media screen and (min-width: $tablet) {
+        padding: 40px 0 0;
+      }
+    }
+    padding: 20px 0 0;
+  }
+
+  .hutltu {
+    padding: 0 24px;
+    @media screen and (min-width: $tablet) {
+      padding: 0 40px;
+    }
+  }
+
   .TPAYK {
     padding: 12px 32px;
     @media screen and (min-width: $desktop) {
@@ -149,6 +167,10 @@ redoc[spec-url] {
     }
   }
 
+  .cSSWmS {
+    z-index: 21;
+  }
+
 
   .api-content {
     width: 100%;
@@ -162,14 +184,16 @@ redoc[spec-url] {
 
   .menu-content {
     background: $default-bg-color;
+    padding: 60px 0 0;
     width: 100%;
-    z-index: 100;
     @media screen and (min-width: 801px) {
       background: linear-gradient(to right, $default-bg-color 216px, $scrollbar-track-color 6px);
+      padding: 36px 0 0;
       width: 222px;
     }
     @media screen and (min-width: $desktop) {
       background: linear-gradient(to right, $default-bg-color 304px, $scrollbar-track-color 6px);
+      padding: 44px 0 0;
       width: 310px;
     }
 
@@ -184,10 +208,12 @@ redoc[spec-url] {
       color: $table-border-color;
       font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
       font-size: 16px;
+      font-weight: normal;
     }
 
     input {
       border-color: $table-border-color;
+      font-weight: normal;
       margin: 0 32px;
       padding-left: 36px;
       width: calc(100% - 64px);
@@ -201,6 +227,16 @@ redoc[spec-url] {
       path {
         fill: $text-secondary-color;
       }
+    }
+
+    .hPwpOF {
+      background: $default-bg-color;
+      padding: 5px 32px;
+      width: calc(100% - 64px);
+    }
+
+    .scrollbar-container > ul {
+      padding: 20px 0 15px;
     }
   }
 
@@ -269,9 +305,15 @@ redoc[spec-url] {
     font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 24px;
+    margin: 20px 0 10px;
+
     @media screen and (min-width: $desktop) {
       font-size: 24px;
       line-height: 30px;
+    }
+
+    &.cAMyfw {
+      color:$text-primary-color;
     }
   }
 

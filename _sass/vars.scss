@@ -2,21 +2,27 @@
 
 @font-face {
   font-family: 'Regular';
-  font-style: normal;
   font-weight: normal;
+  font-style: normal;
   src: url('/assets/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'SemiBold';
-  font-style: normal;
   font-weight: normal;
+  font-style: normal;
   src: url('/assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Bold';
-  font-style: normal;
   font-weight: normal;
+  font-style: normal;
   src: url('/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Italic';
+  font-weight: normal;
+  font-style: italic;
+  src: url('/assets/fonts/OpenSans-Italic.ttf') format('truetype');
 }
 
 
@@ -44,15 +50,14 @@ $attention-color: #D92142;
 $default-bg-color: #FFFFFF;
 $code-bg-color: #caeadc;
 $dark-bg-color: #39394E;
-
-$feature-card-default-bg: #536AFF;
-$feature-card-cyan-bg: #36A0DB;
-$feature-card-blue-bg: #3340CE;
-$feature-card-green-bg: #1ECA8C;
+$line-bg-color: #F5F5F5;
 
 $text-primary-color: #FFFFFF;
 $text-secondary-color: #39394E;
 $text-error: $attention-color;
+
+$text-header-top-color: #47394E;
+$text-very-dark-color: #000000;
 
 $table-border-color: #C8C8C8;
 $table-header-color: #EFF4FF;
@@ -66,3 +71,7 @@ $redoc-type-put: #9B28D1;
 $redoc-type-delete: $attention-color;
 
 //variables end
+
+
+// sizes
+$documentation-sidebar-width-tablet: 180px;

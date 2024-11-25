@@ -1,25 +1,20 @@
 window.dataLayer = window.dataLayer || [];
-
-function gtag() {
-  dataLayer.push(arguments);
-}
-
+function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'UA-166327934-1');
+gtag('config', 'G-ZNPYHBG9EQ');
 
 
-(function (m, e, t, r, i, k, a) {
-  m[i] = m[i] || function () {
-    (m[i].a = m[i].a || []).push(arguments)
-  };
-  m[i].l = 1 * new Date();
-  k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-})
-(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-ym(62760550, "init", {
-  clickmap: true,
-  trackLinks: true,
-  accurateTrackBounce: true
-});
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(99029622, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+

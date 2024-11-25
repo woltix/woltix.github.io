@@ -1,13 +1,27 @@
 
-title: Woltix - smart portfolio analytics for wealth professionals
-description: Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-
+title: Woltix | Real-Time Portfolio Management Software
+description: Reliable software for transparent portfolio management,
+            performance evaluation, clear reporting, and effective
+            communication for wealth professionals and retail
+            investors
+keywords: Portfolio Management Software, Real-Time Investment Tracking, Transparent Portfolio Evaluation, Financial Reporting for Investors, Wealth Management Tools, Investment Performance Analysis"
 
 
 baseurl: ""
-url: ""
+url: "https://woltix.com"
+
+author:
+  name: "Woltix"
+  email: "contact@woltix.com"
+  twitter: "" # Without @ symbol
+  linkedin: "https://linkedin.com/company/woltix"
+
+# SEO and social sharing settings
+twitter_username: "YourTwitterHandle" # Without @ symbol
+facebook_app_id: "" # Optional: Add your Facebook App ID here if you have one
+default_og_image: "/assets/images/default-og-image.jpg" # Default Open Graph image path
+default_twitter_image: "/assets/images/default-twitter-image.jpg" # Default Twitter image path
+language: "en" # Default language for HTML <html lang="en">
 
 
 markdown: kramdown
@@ -44,3 +58,7 @@ defaults:
       # without extension, and relative to the pages version root folder.
       # Example: 'Foo/Bar/SomePage' to a v2 page would resolve to '/pages/v2/Foo/Bar/SomePage.html'
       formerPaths: []
+      og_image: "/assets/images/default-og-image.jpg" # Default Open Graph image
+      twitter_image: "/assets/images/default-twitter-image.jpg" # Default Twitter image
+
+

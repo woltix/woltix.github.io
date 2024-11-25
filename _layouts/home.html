@@ -1,350 +1,282 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en">
 {% include head.html %}
+
 <body>
-<header class="header" id="header">
-  <div class="header__content">
-    <nav class="main-menu">
-      <a class="main-menu__item active" href="#"
-         onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
-        About
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('clients').offsetTop)">
-        Clients
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('features').offsetTop)">
-        Features
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('product').offsetTop)">
-        Products
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
-        Benefits & Delivery
-      </a>
-      <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
-        Contact Us
-      </a>
-    </nav>
-    
-    <div class="header__item" id="about">
-      <div class="logo">
-        <a href="https://woltix.com">
-          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
-        </a>
-      </div>
-      
-      <div class="logo-menu-mobile">
-        <div class="logo">
-          <a href="https://woltix.com">
-            <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
-          </a>
-        </div>
-        <span class="mobile-menu-btn"></span>
-      </div>
-      
-      <div class="header__title">
-        <h1 class="h1">
-          Smart portfolio analytics for wealth professionals
-        </h1>
-        <p>
-          Fair and transparent investment portfolio valuation. Portfolio historical performance and structure
-          overview, risk analysis and expected return. Model and rebalance portfolio to optimize return and mitigate
-          risks. Built with respect to GIPS recommendations and guidelines
-        </p>
-        <button class="btn header__btn" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
-          <a href="#">CONTACT US <img src="/assets/images/icon-arrow.svg" alt="arrow"></a>
-        </button>
-      </div>
-    </div>
-    
-    <section class="mobile-menu">
-      <div class="mobile-menu__header">
-        <a href="https://woltix.com">
-          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
-        </a>
-      </div>
-      <nav class="main-menu-mobile">
-        <a class="main-menu-mobile__item active"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
+  <header class="header" id="header">
+    <div class="header__content">
+      <nav class="main-menu">
+        <a class="main-menu__item active" href="#"
+          onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
           About
         </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('clients').offsetTop)">
-          Clients
+        <a class="main-menu__item" href="#"
+          onclick="smoothScrollTo(document.getElementById('solutions').offsetTop + 1)">
+          Solutions
         </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('features').offsetTop)">
-          Features
+        <a class="main-menu__item" href="#"
+          onclick="smoothScrollTo(document.getElementById('platform').offsetTop + 25)">
+          Platform
         </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('product').offsetTop)">
-          Products
-        </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('advantages').offsetTop)">
-          Benefits & Delivery
-        </a>
-        <a class="main-menu-mobile__item"
-           href="#"
-           onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+        <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
           Contact Us
         </a>
       </nav>
-    </section>
-  </div>
-</header>
 
-<main class="main" id="main">
-  
-  <section class="clients" id="clients">
-    <div class="clients__bg">
-      <div class="clients__content">
-        <h2 class="h2 h2_white">Clients</h2>
-        <article class="client-cards-wrapper">
-          <div class="client-card">
-            Online brokers
-          </div>
-          <div class="client-card">
-            Private banks and <br> wealth managers
-          </div>
-          <div class="client-card">
-            Family offices
-          </div>
-          <div class="client-card">
-            Asset managers <br> and funds
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <section class="features" id="features">
-    <div class="features__content">
-      
-      <div class="features__section">
-        <div class="features__header">
-          <h3 class="h3">Investment Portfolio Analytics</h3>
-          <h2 class="h2 h2_white">Features</h2>
+      <div class="header__item" id="about">
+        <div class="logo">
+          <a href="https://woltix.com">
+            <img class="logo-img" src="/assets/images/logo.svg" alt="Woltix Logo - Reliable Investment Management Software" />
+          </a>
         </div>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_green">Multiple asset classes</div>
-          <div class="feature-card  feature-card_cyan">Transactions or holdings-based</div>
-          <div class="feature-card">Multi-currencies reporting</div>
-          <div class="feature-card">Portfolio value and absolute return</div>
-          <div class="feature-card  feature-card_cyan">External flows</div>
-          <div class="feature-card">
-            <ul class="feature-card__list">
-              <li>Money-weighted return</li>
-              <li>Time weighted return</li>
-              <li>Hybrid return</li>
-              <li>CAGR</li>
-            </ul>
+
+        <div class="logo-menu-mobile">
+          <div class="logo">
+            <a href="https://woltix.com">
+              <img class="logo-img" src="/assets/images/logo.svg" alt="logo" />
+            </a>
           </div>
-          <div class="feature-card feature-card_green">Portfolio performance dynamics</div>
-          <div class="feature-card feature-card_green">Benchmarks and synthetic portfolios</div>
-          <div class="feature-card feature-card_tall">
-            Holding level
-            <ul class="feature-card__list">
-              <li>Average purchase price</li>
-              <li>Realized P&L</li>
-              <li>Unrealized P&L</li>
-              <li>Return</li>
-              <li>Dividends, coupons, fees</li>
-              <li>Value at Risk</li>
-            </ul>
-          </div>
-          <div class="feature-card  feature-card_cyan">Total return contribution structure</div>
-          <div class="feature-card  feature-card_cyan feature-card_wide">
-            Structure analysis
-            <ul class="feature-card__list">
-              <li>Portfolio structure dynamics</li>
-              <li>Comparison against model portfolios</li>
-              <li>Predefined or custom classifications</li>
-            </ul>
-          </div>
-          <div class="feature-card feature-card_green feature-card_flexible-position">
-            VaR
-            <ul class="feature-card__list">
-              <li>Historical</li>
-              <li>Parametric</li>
-              <li>Monte-Carlo</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-      
-      <div class="features__section">
-        <h3 class="h3 h3_ta-right">Portfolio Modeling</h3>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_green">
-            Auto rebalance
-          </div>
-          <div class="feature-card">
-            Manual rebalance
-          </div>
-          <div class="feature-card">
-            Liquidity analysis
-          </div>
-          <div class="feature-card feature-card_blue">
-            Expected return and VaR
-          </div>
-        </article>
-      </div>
-      
-      <div class="features__section">
-        <h3 class="h3">Practice Overview</h3>
-        <article class="features-cards-wrapper">
-          <div class="feature-card feature-card_cyan">
-            Risk profile, advisor and bank group
-          </div>
-          <div class="feature-card">
-            AUM, total cash, fees, external flows
-          </div>
-          <div class="feature-card feature-card_blue">
-            Risk-Reward Map, Gain/Loss analysis
-          </div>
-          <div class="feature-card">
-            Aggregated position and structure
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <section class="products" id="product">
-    <div class="products__content">
-      <img class="products__bg-desktop" src="/assets/images/products_img_desktop.svg" alt="computer">
-      <div>
-        <h2 class="h2 h2_accent">Products</h2>
-        <div class="products__text">
-          Enhance your mobile application, client or internal web-portal, information management system, back office
-          software, or your wealth management system with a complete set of analytics
+          <span class="mobile-menu-btn"></span>
         </div>
-      </div>
-      
-      <img class="products__bg-tablet" src="/assets/images/products_img_tablet.svg" alt="computer">
-      
-      <section class="products__cards-inner">
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">Portfolio Analytics API</h3>
-          <p>Clear and easy to use API with a full range of analytical and modeling capabilities</p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_mobile.svg" alt="mobile">
-            <img src="/assets/images/ic_web.svg" alt="web">
-            <img src="/assets/images/ic_profi.svg" alt="profi">
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">Portfolio Transparency</h3>
+
+        <div class="header__title">
+          <h1 class="h1">Real-time portfolio management and evaluation</h1>
           <p>
-            Flexible transparent web reports powered by Portfolio Analytics API to boost your existing portfolio or
-            wealth management system
+            Reliable software for transparent portfolio management,
+            performance evaluation, clear reporting, and effective
+            communication&nbsp;&mdash; for wealth professionals and retail
+            investors
           </p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_web.svg" alt="web">
-          </div>
+          <button class="btn header__btn" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+            <a href="#">CONTACT US
+              <img src="/assets/images/icon-arrow.svg" alt="Contact Woltix for Portfolio Solutions" /></a>
+          </button>
         </div>
-        
-        <div class="product-card">
-          <h3 class="h3 h3_mb-10">1-2-3 Wealth Practice</h3>
-          <p>
-            End-to-end ready to use workflow to manage wealth business from individual portfolios to practice oveview
-          </p>
-          <div class="icons-wrapper">
-            <img src="/assets/images/ic_profi.svg" alt="profi">
-          </div>
+      </div>
+
+      <section class="mobile-menu">
+        <div class="mobile-menu__header">
+          <a href="https://woltix.com">
+            <img class="logo-img" src="/assets/images/logo.svg" alt="logo" />
+          </a>
         </div>
+        <nav class="main-menu-mobile">
+          <a class="main-menu-mobile__item active" href="#"
+            onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
+            About
+          </a>
+          <a class="main-menu-mobile__item" href="#"
+            onclick="smoothScrollTo(document.getElementById('solutions').offsetTop)">
+            Solutions
+          </a>
+          <a class="main-menu-mobile__item" href="#"
+            onclick="smoothScrollTo(document.getElementById('platform').offsetTop)">
+            Platform
+          </a>
+          <a class="main-menu-mobile__item" href="#"
+            onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+            Contact Us
+          </a>
+        </nav>
       </section>
     </div>
-  </section>
-  
-  <section class="benefits" id="advantages">
-    <div class="benefits__item">
-      <div class="benefits__text">
-        <h2 class="h2 h2_accent">Benefits</h2>
-        Woltix frees your resources for what matters most – your customers and your unique workflows. <br>
-        Let our expertise in financial analysis, portfolio management, and market data work for you. <br>
-        We offer you insights, not just technology
+  </header>
+
+  <main class="main" id="main">
+    <section class="solutions" id="solutions">
+      <div class="solutions__title">
+        <h2 class="h2">Solutions</h2>
+        <p class="solutions__text">
+          Client-friendly insights&nbsp;&mdash; detailed reports that clarify
+          complex portfolio and investment information
+          in&nbsp;an&nbsp;accessible way, helping clients understand
+          performance, P&amp;L, and strategic goals
+        </p>
       </div>
-      <img class="benefits__img benefits__img_desk" src="/assets/images/benefits_img.svg" alt="point">
-    </div>
-    <ul class="list">
-      <li class="list__item">
-        Operational efficiency and comprehensive expertise for your team and products
-      </li>
-      <li class="list__item">
-        Start with the basic portfolio data available – just the holdings are fine
-      </li>
-      <li class="list__item">
-        Get more results and analytics as your digital solution and data evolves
-      </li>
-    </ul>
-  </section>
-  
-  <section class="delivery" id="delivery">
-    <ul class="list">
-      <li class="list__item">
-        Cloud-ready API technology
-      </li>
-      <li class="list__item">
-        Low to zero upfront investment in technology development
-      </li>
-      <li class="list__item">
-        No changes required to your technology architecture
-      </li>
-      <li class="list__item">
-        Good fit for microservices
-      </li>
-      <li class="list__item">
-        Fast learning curve and quick time to market
-      </li>
-    </ul>
-    <div class="delivery__item">
-      <img class="delivery__img delivery__img_desk" src="/assets/images/delivery_img.svg" alt="point">
-      <div class="delivery__text">
-        <h2 class="h2 h2_additional">Delivery</h2>
-        Woltix APIs are self-explanatory and well-documented to streamline the adoption of sophisticated analytics and
-        technology in your digital solution – deployed or in the cloud
+      <div class="solutions__chips">
+        <div class="chips-inner">
+          <span class="chip">
+            <img class="chip__img" src="/assets/images/solutions/icon-tick-mark.svg" alt="point" />
+            Private bank
+          </span>
+          <span class="chip">
+            <img class="chip__img" src="/assets/images/solutions/icon-tick-mark.svg" alt="point" />
+            Family office
+          </span>
+          <span class="chip">
+            <img class="chip__img" src="/assets/images/solutions/icon-tick-mark.svg" alt="point" />
+            Brokerage firm
+          </span>
+          <span class="chip">
+            <img class="chip__img" src="/assets/images/solutions/icon-tick-mark.svg" alt="point" />
+            Advisors and portfolio managers
+          </span>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <section class="quote" id="quote">
-    <div class="quote__bg">
-      <div class="quote__content">
-        Evolve as you grow. Avoid spending on all-in-one system implementation and reduce single vendor dependency.
-        Secure investments in your own technology and operations.
+    </section>
+
+    <section class="solutions-details">
+      <div class="solutions-details__content">
+        <article class="details-block">
+          <h4 class="details-block__title">
+            <img class="details-block__img" src="/assets/images/solutions/icon-percent.svg" alt="point" />
+            Brokerage firm
+          </h4>
+          <p>
+            Client reporting. Deliver clear, transparent reports that simplify
+            complex financial data, helping clients understand transactions,
+            holdings, and profit &amp;&nbsp;loss with ease. Quick Integration.
+            Solution easily plugs into mobile app or&nbsp;client portal,
+            enabling rapid time-to-market and reducing implementation and
+            integration efforts
+          </p>
+        </article>
+        <article class="details-block">
+          <h4 class="details-block__title">
+            <img class="details-block__img" src="/assets/images/solutions/icon-wallet.svg" alt="point" />
+            Private Banks and family offices
+          </h4>
+          <p>
+            External asset management and advisory. Consolidate all client
+            assets into a&nbsp;cohesive view, reducing time on&nbsp;reporting
+            and providing a&nbsp;seamless portfolio overview. Comprehensive
+            client account management. Manage individual and grouped client
+            accounts in&nbsp;a&nbsp;consolidated view, ensuring organized and
+            efficient asset handling
+          </p>
+        </article>
+        <article class="details-block">
+          <h4 class="details-block__title">
+            <img class="details-block__img" src="/assets/images/solutions/icon-diagram.svg" alt="point" />
+            In-House Analytics and Market Research 
+          </h4>
+          <p>
+            Strategies and investment ideas management. Develop and track
+            investment strategies and ideas, with tools for sharing virtual
+            portfolio returns. Easily prepare client-facing materials
+            to&nbsp;showcase strategy performance and potential returns,
+            encouraging informed client engagement
+          </p>
+        </article>
       </div>
-    </div>
-  </section>
-  
-</main>
-<footer class="footer" id="footer">
-  <div class="footer__content" id="contactUs">
-    <h2 class="h2 h2_white">Contact us</h2>
-    <div class="contact">
+      <div class="solutions-details-img-inner">
+        <img class="solutions-details-img" src="/assets/images/solutions/solutions_details_img.png" alt="solutions details" />
+      </div>
+    </section>
+
+    <section class="platform" id="platform">
+      <div class="platform__content">
+        <h2 class="h2">Platform</h2>
+        <div class="platform-description">
+          <div class="description-item">
+            <img class="description-item__img" src="/assets/images/platform/icon_platform_1.svg" alt="point" />
+            <span class="description-item__text">Consolidated Multi-Custody Portfolio View</span>
+          </div>
+          <div class="description-item">
+            <img class="description-item__img" src="/assets/images/platform/icon_platform_2.svg" alt="point" />
+            <span class="description-item__text">Flexible Reporting Across Multiple Accounts</span>
+          </div>
+          <div class="description-item">
+            <img class="description-item__img" src="/assets/images/platform/icon_platform_3.svg" alt="point" />
+            <span class="description-item__text">Virtual Portfolios for Scenario Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-chips">
+        <div class="platform-chips__content">
+          <div class="platform-chip platform-chip_lg">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_1.svg" alt="point" />
+            <span>
+              Portfolio Profit &amp;&nbsp;Loss (P&amp;L) down to&nbsp;single
+              assets, with detailed performance breakdowns by&nbsp;sector,
+              asset class, or&nbsp;individual holdings
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_lg">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_2.svg" alt="point" />
+            <span>
+              Consolidated position view across accounts, custodians, and
+              asset classes for accurate tracking
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_lg">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_3.svg" alt="point" />
+            <span>
+              Real-time consolidation of&nbsp;IBOR and PBOR data, from
+              transactions to&nbsp;holdings
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_md">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_4.svg" alt="point" />
+            <span>
+              Portfolio performance compared to&nbsp;benchmarks and indices
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_sm">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_5.svg" alt="point" />
+            <span> Projected cash flow </span>
+          </div>
+          <div class="platform-chip platform-chip_md">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_6.svg" alt="point" />
+            <span>
+              Streamlined tracking of&nbsp;operations, including trades and
+              orders
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_sm">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_7.svg" alt="point" />
+            <span> Portfolio rebalancing </span>
+          </div>
+          <div class="platform-chip platform-chip_md">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_8.svg" alt="point" />
+            <span>
+              Comprehensive view of&nbsp;portfolio structure and composition
+            </span>
+          </div>
+          <div class="platform-chip platform-chip_sm">
+            <img class="platform-chip__img" src="/assets/images/platform/chips/icon_chip_9.svg" alt="point" />
+            <span> Expected return and VaR </span>
+          </div>
+        </div>
+      </div>
+      <div class="platform-value">
+        <img class="value-img" src="/assets/images/platform/platform-value.png" alt="platform value" />
+        <div>
+          <p class="value-text">
+            Our platform empowers financial firms to&nbsp;serve clients more
+            efficiently, reduce routine tasks, and focus on&nbsp;meaningful,
+            high-value activities
+          </p>
+          <p class="value-text">
+            Aligned with industry standards and in&nbsp;accordance with GIPS
+            guidance
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__content" id="contactUs">
+      <h2 class="h2 h2_white">Contact us</h2>
+      <div class="contact">
         <a class="contact__link email" href="mailto:contact@woltix.com">contact@woltix.com</a>
+        <span>Dubai International Financial Centre,
+          Dubai, United Arab Emirates</span>
       </div>
-    <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
-            class="pageclip-form"
-            method="post">
+      <form action="https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form" class="pageclip-form"
+        method="post">
         <div class="inputs-inner">
           <div class="inputs-inner__item">
             <span class="label">Name *</span>
-            <input class="pageclip-form__item input" type="text" name="name" value="" required/>
+            <input class="pageclip-form__item input" type="text" name="name" value="" required />
           </div>
-          
+
           <div class="inputs-inner__item">
             <span class="label">Email address *</span>
-            <input class="pageclip-form__item input" type="email" name="email" value="" required/>
+            <input class="pageclip-form__item input" type="email" name="email" value="" required />
           </div>
-          
+
           <div class="inputs-inner__item">
             <span class="label">Message *</span>
             <textarea class="pageclip-form__item textarea" name="message" required></textarea>
@@ -354,14 +286,12 @@
           <span>SUBMIT</span>
         </button>
       </form>
-  </div>
-  <div class="line"></div>
-  <div class="copyright">
-    Woltix.
-    <script type="text/javascript">document.write(new Date().getFullYear());</script>
-  </div>
-</footer>
-<script src="/assets/js/index.js"></script>
-{% include cookie-consent.html %}
+    </div>
+    <div class="line"></div>
+    {% include copyright.html %}
+  </footer>
+  <script src="/assets/js/index.js"></script>
+  {% include cookie-consent.html %}
 </body>
+
 </html>

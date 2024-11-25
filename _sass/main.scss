@@ -20,17 +20,17 @@ p {
   padding: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
 body {
-  background: $default-bg-color;
-  color: $text-primary-color;
+  margin: 0;
   font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
-  margin: 0;
+  color: $text-primary-color;
+  background: $default-bg-color;
 
   @media screen and (min-width: $tablet) {
     font-size: 16px;
@@ -44,28 +44,28 @@ body {
 }
 
 .h1 {
+  margin-bottom: 20px;
   font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 32px;
   line-height: 1.1;
-  margin-bottom: 20px;
 
   @media screen and (min-width: $tablet) {
-    font-size: 42px;
     margin-bottom: 26px;
+    font-size: 42px;
   }
 
   @media screen and (min-width: $desktop) {
-    font-size: 68px;
     margin-bottom: 46px;
+    font-size: 48px;
   }
 }
 
 .h2 {
-  color: $text-secondary-color;
+  margin-bottom: 24px;
   font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 26px;
   line-height: 1;
-  margin-bottom: 24px;
+  color: $text-header-top-color;
 
   @media screen and (min-width: $tablet) {
     font-size: 38px;
@@ -89,20 +89,20 @@ body {
 }
 
 .h3 {
-  color: $text-primary-color;
+  margin: 0 0 8px;
   font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.25;
-  margin: 0 0 8px;
+  color: $text-primary-color;
 
   @media screen and (min-width: $tablet) {
-    font-size: 24px;
     margin: 0 0 14px;
+    font-size: 24px;
   }
 
   @media screen and (min-width: $desktop) {
-    font-size: 32px;
     margin: 0 0 20px;
+    font-size: 32px;
   }
 
   &_ta-right {
@@ -118,18 +118,18 @@ body {
 }
 
 .btn {
-  background: transparent;
-  border-radius: 0 18px;
-  border: 2px solid $additional-accent-color;
-  color: $text-primary-color;
-  cursor: pointer;
+  padding: 0;
   font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.06em;
   line-height: 25px;
-  outline: none;
-  padding: 0;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: $text-primary-color;
+  cursor: pointer;
+  border: 2px solid $additional-accent-color;
+  border-radius: 0 18px;
+  outline: none;
+  background: transparent;
 
   &:hover,
   &:active {
@@ -137,8 +137,8 @@ body {
   }
 
   &_colorful {
-    border: 2px solid $additional-color;
     color: $additional-color;
+    border: 2px solid $additional-color;
 
     &:hover,
     &:active {
@@ -147,16 +147,16 @@ body {
   }
 
   a, span {
-    color: inherit;
     display: block;
     padding: 12px 24px;
     text-decoration: none;
+    color: inherit;
   }
 
   &_cookie {
-    background: $attention-color;
-    border: none;
     white-space: nowrap;
+    border: none;
+    background: $attention-color;
 
     &:hover,
     &:active {
@@ -180,39 +180,39 @@ body {
   display: none;
 
   @media screen and (min-width: $tablet) {
-    align-items: flex-start;
     display: flex;
+    align-items: flex-start;
     justify-content: flex-start;
     margin: 0;
   }
 
   &-img {
     display: block;
-    height: 73px;
     width: 73px;
+    height: 73px;
 
     @media screen and (min-width: $tablet) {
-      height: 134px;
       width: 134px;
+      height: 134px;
 
       .logo-documentation &,
       .page-error &,
       .page-privacy & {
         display: block;
-        height: 31px;
         width: 104px;
+        height: 31px;
       }
     }
 
     @media screen and (min-width: $desktop) {
-      height: 167px;
       width: 167px;
+      height: 167px;
 
       .logo-documentation &,
       .page-error &,
       .page-privacy & {
-        height: auto;
         width: auto;
+        height: auto;
       }
     }
   }
@@ -225,27 +225,27 @@ body {
 .logo-menu-mobile {
   display: none;
 
-  @media screen and (max-width: $tablet - 1px) {
-    align-items: flex-start;
-    background: transparent;
+  @media screen and (max-width: ($tablet - 1px)) {
     display: flex;
+    align-items: flex-start;
     flex-flow: row nowrap;
     justify-content: space-between;
+    width: 100%;
     max-width: $main-container-sm;
     padding: 24px 24px 24px 21px;
-    width: 100%;
+    background: transparent;
   }
 
   .menu-open & {
-    background: $default-bg-color;
     position: fixed;
     top: 0;
     z-index: 27;
+    background: $default-bg-color;
   }
 
   .documentation & {
-    margin: 0 -24px;
     width: calc(100% + 48px);
+    margin: 0 -24px;
 
     .menu-open & {
       width: 100%;
@@ -253,9 +253,9 @@ body {
   }
 
   & .logo {
-    border-radius: 50%;
     display: block;
     padding: 3px;
+    border-radius: 50%;
 
     .menu-open &,
     .page-error &,
@@ -268,16 +268,16 @@ body {
 }
 
 .mobile-menu-btn {
-  cursor: pointer;
-  background: linear-gradient(89.27deg, #5345FD 0.58%, #7353FF 98.11%);
-  border-radius: 50%;
-  height: 40px;
   position: fixed;
-  right: 24px;
   top: 24px;
-  transition: 0.3s;
-  width: 40px;
+  right: 24px;
   z-index: 1000;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: linear-gradient(89.27deg, #5345FD 0.58%, #7353FF 98.11%);
+  transition: 0.3s;
 
   .menu-open &,
   .page-error & {
@@ -290,14 +290,14 @@ body {
 
   &:before {
     content: '';
-    background-color: $text-primary-color;
-    border-radius: 5px;
-    height: 2px;
     position: absolute;
-    left: 8px;
     top: 16px;
-    transition: 0.3s;
+    left: 8px;
     width: 24px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: $text-primary-color;
+    transition: 0.3s;
 
     .menu-open &,
     .page-error & {
@@ -307,14 +307,14 @@ body {
 
   &:after {
     content: '';
-    background-color: $text-primary-color;
-    border-radius: 5px;
-    height: 2px;
     position: absolute;
-    left: 8px;
     top: 24px;
-    transition: 0.3s;
+    left: 8px;
     width: 24px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: $text-primary-color;
+    transition: 0.3s;
 
     .menu-open &,
     .page-error & {
@@ -323,44 +323,40 @@ body {
   }
 
   &.menu-open:before {
-    left: 8px;
     top: 20px;
+    left: 8px;
     transform: rotate(45deg);
   }
 
   &.menu-open:after {
-    left: 8px;
     top: 20px;
+    left: 8px;
     transform: rotate(-45deg);
   }
 }
 
 .main-menu {
   &__item {
-    color: $text-primary-color;
-    display: none;
-    letter-spacing: 0.075em;
     position: relative;
+    display: none;
     text-decoration: none;
+    letter-spacing: 0.075em;
     text-transform: uppercase;
+    color: $text-primary-color;
 
     &:not(:last-child) {
       margin-right: 20px;
-
-      .documentation-body & {
-        margin-bottom: 10px;
-      }
     }
 
     &:before {
       content: "";
-      background: #63C89D;
-      bottom: -4px;
-      display: none;
-      height: 2px;
-      left: 0;
       position: absolute;
+      bottom: -4px;
+      left: 0;
+      display: none;
       width: 100%;
+      height: 2px;
+      background: #63C89D;
     }
 
     &:hover:before {
@@ -377,22 +373,28 @@ body {
 
     @media screen and (min-width: $desktop) {
       &:not(:last-child) {
-        margin-right: 40px;
+        margin-right: 28px;
       }
     }
   }
 
   @media screen and (min-width: $tablet) {
     align-self: flex-start;
+    margin-bottom: 36px;
+    margin-left: auto;
     font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 14px;
-    margin-bottom: 36px;
-    margin-left: auto;
+
+    .documentation & {
+      margin-bottom: 0;
+    }
   }
   
   @media screen and (min-width: $desktop) {
     margin-bottom: 80px;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   &_dark {
@@ -407,57 +409,57 @@ body {
 }
 
 .mobile-menu {
-  align-items: center;
-  background: $default-bg-color;
-  display: none;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  padding: 20px 24px 24px 24px;
   position: fixed;
   top: 0;
-  transform: translateY(-100%);
-  transition: 0.5s;
+  display: none;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   width: 100%;
+  padding: 20px 24px 24px 24px;
+  background: $default-bg-color;
+  transition: 0.5s;
+  transform: translateY(-100%);
 
   &.menu-open {
+    z-index: 26;
     display: flex;
     height: 100vh;
-    transform: translateY(0);
     transition: 0.5s;
-    z-index: 26;
+    transform: translateY(0);
   }
 
   &__header {
-    align-items: flex-start;
-    display: flex;
-    flex-flow: row nowrap;
-    height: 80px;
-    justify-content: space-between;
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     width: 100%;
+    height: 80px;
   }
 }
 
 .main-menu-mobile {
-  align-items: center;
   display: flex;
+  overflow: auto;
+  align-items: center;
   flex-flow: column nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100vh - 151px); //151 -header + margin
+  padding: 0;
   font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 12px;
-  height: calc(100vh - 151px); //151 -header + margin
-  justify-content: flex-start;
-  letter-spacing: 0.075em;
   line-height: 14px;
-  overflow: auto;
-  padding: 0;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
-  width: 100%;
 
   &__item {
-    color: $text-secondary-color;
-    display: inline-block;
     position: relative;
+    display: inline-block;
     text-decoration: none;
+    color: $text-secondary-color;
     transition: 0.5s;
 
     &:not(:last-child) {
@@ -466,13 +468,13 @@ body {
 
     &:before {
       content: '';
-      background: $additional-color;
-      bottom: -3px;
-      display: none;
-      height: 2px;
-      left: 0;
       position: absolute;
+      bottom: -3px;
+      left: 0;
+      display: none;
       width: 100%;
+      height: 2px;
+      background: $additional-color;
     }
 
     &:hover:before {
@@ -493,8 +495,8 @@ body {
   background: linear-gradient(270.42deg, #8259FF 0.44%, #2330FA 68.36%, #6070FF 97.14%);
 
   &__item {
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-flow: column nowrap;
 
     @media screen and (min-width: $tablet) {
@@ -504,22 +506,22 @@ body {
   }
 
   &__title {
-    font-size: 14px;
-    line-height: 23px;
     padding: 0 24px;
+    font-size: 16px;
+    line-height: 23px;
     text-align: left;
 
     @media screen and (min-width: $tablet) {
-      font-size: 19px;
-      line-height: 31px;
       margin: 24px 0 0 47px;
       padding: 0;
+      font-size: 19px;
+      line-height: 31px;
     }
 
     @media screen and (min-width: $desktop) {
+      margin: 12px 12px 0 60px;
       font-size: 28px;
       line-height: 45px;
-      margin: 12px 12px 0 60px;
     }
   }
 
@@ -527,8 +529,8 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    margin: 0 auto;
     max-width: $main-container-sm;
+    margin: 0 auto;
     padding: 0 0 40px;
 
     @media screen and (min-width: $tablet) {
@@ -541,7 +543,7 @@ body {
     }
 
     .menu-open & {
-      max-width: 100%;
+      max-width: 100%; 
     }
   }
 
@@ -567,679 +569,421 @@ body {
 }
 
 
-/*Clients*/
+/*Common font styles */
 
-.clients {
-  background: linear-gradient(89.96deg, #00E0AB -7.77%, #33E28A 10.18%, #01C4A1 99.97%);
+%font-description-italic {
+  position: relative;
+  font-family: 'Italic', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: $text-secondary-color;
 
-  &__bg {
-    background: url(/assets/images/clients-bg.svg) top left no-repeat;
-    background-size: cover;
-
-    @media screen and (min-width: $desktop) {
-      background: url(/assets/images/clients-bg.svg) top left repeat;
-      background-size: contain;
-    }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 5px;
+    height: 50px;
+    background: $line-bg-color;
+    transform: translateY(-50%);
   }
 
-  &__content {
-    margin: 0 auto;
-    max-width: $main-container-sm;
-    padding: 36px 24px 60px;
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+  }
 
-    @media screen and (min-width: $tablet) {
-      padding: 42px 0 64px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      max-width: $main-container-middle;
-      padding: 80px 0 90px;
-    }
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
   }
 }
 
-.client-cards-wrapper {
+%font-base-regular {
+  font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
+}
+
+%font-title-bold {
+  font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+  }
+}
+/*Common font styles end*/
+
+
+/*Solutions*/
+
+.solutions {
   display: grid;
+  max-width: $main-container-sm;
+  margin: 0 auto;
+  padding: 40px 24px;
+  color: $text-secondary-color;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
 
   @media screen and (min-width: $tablet) {
+    padding: 40px 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: $main-container-middle;
+    padding: 40px 0 28px;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
 
-  @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(4, 1fr);
+  &__chips {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__text {
+    @extend %font-description-italic;
+    padding: 8px 0 8px 20px;
+
+    @media screen and (min-width: $desktop) {
+      padding: 16px 0 16px 20px;
+    }
   }
 }
 
-.client-card {
-  align-items: center;
-  background: $default-bg-color;
-  box-shadow: 0 0 36.0314px rgba(0, 0, 0, 0.24);
-  color: $text-secondary-color;
+.chips-inner {
   display: flex;
-  font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  height: 102px;
-  justify-content: center;
-  line-height: 28px;
-  position: relative;
-  text-align: center;
-
-  &:not(:last-child) {
-    &:after {
-      content: '';
-      border-radius: 50%;
-      bottom: -29px;
-      display: block;
-      height: 38px;
-      left: 50%;
-      position: absolute;
-      transform: translateX(-50%);
-      width: 38px;
-      z-index: 1;
-    }
-  }
-
-  &:nth-child(1) {
-    &:after {
-      background: #1FBE81;
-    }
-  }
-
-  &:nth-child(2) {
-    &:after {
-      background: #17B985;
-    }
-  }
-
-  &:nth-child(3) {
-    &:after {
-      background: #17B985;
-    }
-  }
-
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-    height: 120px;
-    line-height: 34px;
-
-    &:not(:last-child) {
-      &:after {
-        content: '';
-        border-radius: 50%;
-        bottom: -29px;
-        display: block;
-        height: 38px;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 38px;
-        z-index: 1;
-      }
-    }
-
-    &:nth-child(1) {
-      &:after {
-        background: #24C07E;
-      }
-    }
-
-    &:nth-child(2) {
-      &:after {
-        background: #0EB289;
-      }
-    }
-
-    &:nth-child(3) {
-      &:after {
-        background: transparent;
-      }
-    }
-  }
+  flex-flow: column nowrap;
 
   @media screen and (min-width: $desktop) {
-    height: 162px;
-
-    &:not(:last-child) {
-      &:after {
-        content: '';
-        border-radius: 50%;
-        bottom: unset;
-        display: block;
-        height: 38px;
-        left: unset;
-        position: absolute;
-        right: -29px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 38px;
-        z-index: 1;
-      }
-    }
-
-    &:nth-child(1) {
-      &:after {
-        background: #25C280;
-      }
-    }
-
-    &:nth-child(2) {
-      &:after {
-        background: #1BBB83;
-      }
-    }
-
-    &:nth-child(3) {
-      &:after {
-        background: #12B788;
-      }
-    }
-  }
-}
-
-
-/*Features*/
-
-.features {
-  background: $dark-bg-color;
-
-  &__section {
-    &:not(:last-child) {
-      margin-bottom: 42px;
-
-      @media screen and (min-width: $tablet) {
-        margin-bottom: 52px;
-      }
-
-      @media screen and (min-width: $desktop) {
-        margin-bottom: 42px;
-      }
-    }
-  }
-
-  &__content {
-    margin: 0 auto;
-    max-width: $main-container-sm;
-    padding: 36px 24px 32px;
-
-    @media screen and (min-width: $tablet) {
-      padding: 60px 0 64px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      max-width: $main-container-middle;
-      padding: 80px 0 92px;
-    }
-  }
-
-  &__header {
-    align-items: flex-start;
-    display: flex;
-    flex-flow: column-reverse wrap;
-    justify-content: space-between;
-
-    @media screen and (min-width: $tablet) {
-      align-items: baseline;
-      flex-flow: row nowrap;
-    }
-  }
-}
-
-.features-cards-wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(165px, auto);
-
-  @media screen and (min-width: $tablet) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 12px;
-    grid-auto-rows: minmax(180px, auto);
-  }
-
-  @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    grid-auto-rows: minmax(228px, auto);
-  }
-}
-
-.feature-card {
-  background: $feature-card-default-bg;
-  font-size: 32px;
-  line-height: 40px;
-  padding: 26px;
-  text-align: left;
-
-  &_tall {
-    grid-row-start: 9;
-    grid-row-end: 11;
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-    @media screen and (min-width: $tablet) {
-      font-size: 32px;
-      grid-row-start: 5;
-      grid-row-end: 7;
-    }
-
-    @media screen and (min-width: $desktop) {
-      font-size: 34px;
-      grid-row-start: 3;
-      grid-row-end: 5;
-    }
-  }
-
-  &_wide {
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-    @media screen and (min-width: $tablet) {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-
-    @media screen and (min-width: $desktop) {
-      grid-column-start: 3;
-      grid-column-end: 5;
-    }
-  }
-
-  &_cyan {
-    background: $feature-card-cyan-bg;
-  }
-
-  &_blue {
-    background: $feature-card-blue-bg;
-  }
-
-  &_green {
-    background: $feature-card-green-bg;
-  }
-
-  &_flexible-position {
-    grid-row: auto;
-
-    @media screen and (min-width: $tablet) {
-      grid-row: 6;
-    }
-
-    @media screen and (min-width: $desktop) {
-      grid-row: auto;
-    }
-  }
-
-  @media screen and (min-width: $tablet) {
-    font-size: 34px;
-    line-height: 43px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  &__list {
-    font-size: 20px;
-    line-height: 30px;
-    margin: 6px 0 0;
-    padding: 0 0 0 30px;
-
-    @media screen and (min-width: $tablet) {
-      font-size: 22px;
-      line-height: 28px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      font-size: 20px;
-      line-height: 28px;
-    }
-  }
-}
-
-
-/*Products*/
-
-.products {
-  background: linear-gradient(286.38deg, #434AF4 13.77%, #04BC9B 48.47%, #5AE69A 91.64%);
-  overflow: hidden;
-
-  &__bg-desktop {
-    display: none;
-    left: 612px;
     position: absolute;
     top: 0;
-
-    @media screen and (min-width: $desktop) {
-      display: block;
-    }
+    left: 0;
+    padding: 8px 80px 21px 80px;
+    border-radius: 30px;
+    background: $default-bg-color;
   }
 
-  &__bg-tablet {
-    display: block;
-    height: 327px;
-    margin: 24px auto;
-    width: 327px;
-
-    @media screen and (min-width: $tablet) {
-      height: 427px;
-      margin: 48px auto;
-      width: 427px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      display: none;
-    }
-  }
-
-  &__content {
-    margin: 0 auto;
-    max-width: $main-container-sm;
-    padding: 38px 24px 0;
-    position: relative;
-
-    @media screen and (min-width: $tablet) {
-      padding: 48px 0 10px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      max-width: $main-container-middle;
-      padding: 72px 0 58px;
-    }
-  }
-
-  &__text {
-    font-size: 20px;
-    line-height: 28px;
-
-    @media screen and (min-width: $tablet) {
-      font-size: 26px;
-      line-height: 36px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      font-size: 28px;
-      line-height: 40px;
-      padding: 0 0 40px;
-      width: 516px;
-    }
-  }
-
-  &__cards-inner {
-    align-items: flex-start;
-    display: flex;
-    flex-flow: column wrap;
-
-    @media screen and (min-width: $desktop) {
-      align-items: flex-start;
-      flex-flow: column wrap;
-      height: 548px;
-      justify-content: flex-end;
-    }
+  @media screen and (min-width: $desktop-lg) {
+    padding: 8px 132px 21px 132px;
   }
 }
 
-.product-card {
-  align-items: flex-start;
+.chip {
+  @extend %font-base-regular;
   display: flex;
-  flex-flow: column nowrap;
-  font-size: 20px;
-  justify-content: flex-start;
-  line-height: 28px;
-  margin-bottom: 46px;
-
-  @media screen and (min-width: $tablet) {
-    margin-bottom: 50px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    height: 272px;
-    margin-bottom: 0;
-    width: 462px;
-  }
-}
-
-.icons-wrapper {
-  border-top: 1px solid $text-primary-color;
-  display: flex;
+  align-items: center;
   flex-flow: row nowrap;
-  margin: 20px 0 0;
-  padding: 20px 0 0;
-  width: 100%;
+  flex-shrink: 0;
+  margin: 0 6px 10px 0;
+  padding: 10px 20px 10px 10px;
+  color: $text-very-dark-color;
+  border: 1px solid $supporting-color;
+  border-radius: 30px;
 
-  & img {
+  &:last-of-type {
+    margin: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: max-content;
+  }
+
+  &__img {
     display: block;
-    height: 70px;
-    margin: 0 24px 0 0;
-    width: 70px;
-
-    @media screen and (min-width: $tablet) {
-      height: 80px;
-      margin: 0 30px 0 0;
-      width: 80px;
-    }
+    width: 35px;
+    height: 35px;
+    margin: 0 10px 0 0;
   }
 }
 
 
-/*Benefits*/
+/* Solutions details*/
 
-.benefits {
-  align-items: flex-start;
+.solutions-details {
+  position: relative;
+  padding: 0 0 50px;
+  background: $dark-bg-color;
+  background: rgba(57, 57, 78, 0.8);
+
+  @media screen and (min-width: $desktop) {
+    padding: 0;
+  }
+  
+  &__content {
+    display: grid;
+    max-width: $main-container-sm;
+    margin: 0 auto;
+    padding: 50px 24px 40px;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 40px;
+    
+    @media screen and (min-width: $tablet) {
+      max-width: $main-container-sm;
+      padding: 50px 0 40px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: $main-container-middle;
+      padding: 70px 0;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 60px;
+      row-gap: 95px;
+    }
+  }
+}
+
+.solutions-details-img-inner {
+  display: flex;
+  width: max-content;
+  max-width: 80%;
+  border-radius: 0 30px 30px 0;
+  background: $default-bg-color;
+  
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: -48px;
+    left: 0;
+    width: 48vw;
+    max-width: 48vw;
+  }
+}
+
+.solutions-details-img {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+
+  @media screen and (min-width: $desktop) {
+    margin-left: auto;
+  }
+}
+
+.details-block {
+  @extend %font-base-regular;
   display: flex;
   flex-flow: column nowrap;
-  margin: 0 auto;
-  max-width: $main-container-sm;
-  padding: 40px 24px 0;
+  color: $text-primary-color;
 
-  @media screen and (min-width: $tablet) {
-    padding: 36px 0 0;
-  }
-
-  @media screen and (min-width: $desktop) {
+  &__title {
+    @extend %font-title-bold;
+    display: flex;
     align-items: center;
     flex-flow: row nowrap;
-    max-width: $main-container-middle;
-    padding: 56px 0 6px;
-  }
-
-  &__img {
-    @media screen and (min-width: $tablet) {
-      height: 225px;
-      margin: 0 0 0 23px;
-      width: 56px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      height: 227px;
-      width: 72px;
-    }
-
-    &_desk {
-      display: none;
-      @media screen and (min-width: $tablet) {
-        display: block;
-      }
-    }
-  }
-
-  &__item {
-    align-items: flex-start;
-    background: url(/assets/images/benefits_img_mob.svg) center right no-repeat;
-    background-size: contain;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    margin: 0 0 12px 0;
-    padding: 0 84px 0 0;
+    margin-bottom: 16px;
 
     @media screen and (min-width: $tablet) {
-      background: none;
-      margin: 0 0 20px 0;
-      padding: 0;
-    }
-
-    @media screen and (min-width: $desktop) {
-      margin: 0 42px 0 0;
-    }
-  }
-
-  &__text {
-    color: $text-secondary-color;
-    font-size: 18px;
-    line-height: 29px;
-    width: 100%;
-
-    @media screen and (min-width: $tablet) {
-      font-size: 20px;
-      line-height: 32px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      width: 455px;
-    }
-  }
-}
-
-
-/*Delivery*/
-
-.delivery {
-  align-items: flex-start;
-  display: flex;
-  flex-flow: column-reverse nowrap;
-  margin: 0 auto;
-  max-width: $main-container-sm;
-  padding: 40px 24px 44px;
-
-  @media screen and (min-width: $tablet) {
-    padding: 40px 0 40px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    align-items: center;
-    flex-flow: row nowrap;
-    max-width: $main-container-middle;
-    padding: 17px 0 94px;
-  }
-
-  &__item {
-    align-items: flex-start;
-    background: url(/assets/images/delivery_img_mob.svg) center left no-repeat;
-    background-size: contain;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    margin: 0 0 12px 0;
-    padding: 0 0 0 84px;
-
-    @media screen and (min-width: $tablet) {
-      background: none;
-      margin: 0 0 20px 100px;
-      padding: 0;
-    }
-
-    @media screen and (min-width: $desktop) {
-      margin: 0 0 0 118px;
-    }
-  }
-
-  &__text {
-    color: $text-secondary-color;
-    font-size: 18px;
-    line-height: 29px;
-    width: 100%;
-
-    @media screen and (min-width: $tablet) {
-      font-size: 20px;
-      line-height: 32px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      width: 401px;
+      margin-bottom: 24px;
     }
   }
 
   &__img {
-    @media screen and (min-width: $tablet) {
-      height: 192px;
-      margin: 0 16px 0 0;
-      width: 60px;
-    }
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin: 0 12px 0 0;
 
-    @media screen and (min-width: $desktop) {
-      height: 239px;
+    @media screen and (min-width: $tablet) {
+      width: 64px;
+      height: 64px;
       margin: 0 20px 0 0;
-      width: 77px;
-    }
-
-    &_desk {
-      display: none;
-      @media screen and (min-width: $tablet) {
-        display: block;
-      }
     }
   }
-}
 
-.list {
-  color: $additional-color;
-  display: block;
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  padding: 0 0 0 24px;
-
-  &__item {
-    padding: 0 0 6px 0;
-  }
-
-  .benefits & {
-    color: $main-accent-color;
-  }
-
-  @media screen and (min-width: $tablet) {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
-
-
-/*Quote*/
-
-.quote {
-  background: $dark-bg-color;
-
-  &__bg {
-    background: url(/assets/images/quote-bg.svg) top left no-repeat;
-    background-size: cover;
-
+  &:last-of-type {
     @media screen and (min-width: $desktop) {
-      background: url(/assets/images/quote-bg.svg) top left repeat;
-      background-size: contain;
+      grid-column-end: -1;
     }
   }
+}
+
+
+/*Platform*/
+
+.platform {
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    max-width: $main-container-sm;
+    margin: 0 auto;
+    padding: 50px 24px 20px;
+  
+    @media screen and (min-width: $tablet) {
+      padding: 50px 0 20px;
+    }
+  
+    @media screen and (min-width: $desktop) {
+      max-width: $main-container-middle;
+      padding: 70px 0 35px 0;
+    }
+  }
+}
+
+.platform-description {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  @media screen and (min-width: $desktop) {
+    flex-flow: row nowrap;
+    margin-top: 24px;
+  }
+}
+
+.description-item {
+  @extend %font-title-bold;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: $text-secondary-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 30%;
+  }
+
+  &__img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 0 10px;
+  }
+}
+
+.platform-chips {
+  background: linear-gradient(283.73deg, #04BC9B 0.98%, #0CADA7 25.69%, #149EB3 43.07%, #434AF4 87.98%);
 
   &__content {
-    font-family: 'SemiBold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-    font-size: 24px;
-    line-height: 34px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     margin: 0 auto;
-    max-width: $main-container-sm;
-    padding: 52px 65px;
-
+    padding: 40px 24px;
+  
     @media screen and (min-width: $tablet) {
-      padding: 54px 108px;
+      max-width: $main-container-sm;
+      padding: 40px 0;
     }
+  
+    @media screen and (min-width: $desktop) {
+      max-width: $main-container-middle;
+      padding: 55px 0;
+    }
+  }
+}
+
+.platform-chip {
+  @extend %font-base-regular;
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  min-height: 90px;
+  margin-bottom: 14px;
+  padding: 20px 12px 20px 16px;
+  color: $text-primary-color;
+  border: 1px solid $text-primary-color;
+  border-radius: 30px;
+
+  &__img {
+    display: block;
+    margin-right: 22px;
+  }
+
+  &_lg {
+    width: 100%;
+  }
+
+  &_md {
+    width: 100%;
 
     @media screen and (min-width: $desktop) {
-      font-size: 32px;
-      line-height: 46px;
-      max-width: $main-container-middle;
-      padding: 140px 200px 160px;
+      width: calc(69% - 7px);
     }
+  }
+
+  &_sm {
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      width: calc(31% - 7px);
+    }
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    height: 90px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.platform-value {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  padding: 40px 24px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $main-container-sm;
+    padding: 40px 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    max-width: $main-container-middle;
+    padding: 55px 0;
+  }
+}
+
+.value-img {
+  display: block;
+  width: 100%;
+  max-width: 558px;
+  margin: 0 0 20px 0;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 64px 0 0;
+  }
+}
+
+.value-text {
+  @extend %font-description-italic;
+  margin: 0 0 14px 0;
+  padding: 12px 0 12px 20px;
+
+  &:last-child {
+    margin: 0;
   }
 }
 
@@ -1247,13 +991,13 @@ body {
 /*Footer*/
 
 .footer {
-  background: linear-gradient(68.91deg, #33E284 -3.06%, #5258E8 59.07%);;
   flex: 0 0 auto;
+  background: linear-gradient(68.91deg, #33E284 -3.06%, #5258E8 59.07%);
 
   &__content {
-    margin: 0 auto;
-    max-width: $main-container-sm;
     overflow: hidden;
+    max-width: $main-container-sm;
+    margin: 0 auto;
     padding: 30px 24px 0;
 
     @media screen and (min-width: $tablet) {
@@ -1273,8 +1017,8 @@ body {
   margin-bottom: 20px;
 
   &__link {
-    color: $text-primary-color;
     text-decoration: none;
+    color: $text-primary-color;
   }
 
   @media screen and (min-width: $desktop) {
@@ -1293,11 +1037,11 @@ body {
 }
 
 .line {
-  background: $default-bg-color;
+  width: 100%;
   height: 1px;
   margin-bottom: 24px;
   opacity: .4;
-  width: 100%;
+  background: $default-bg-color;
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 44px;
@@ -1309,19 +1053,19 @@ body {
 }
 
 .copyright {
+  padding-bottom: 24px;
   font-size: 14px;
   line-height: 1;
-  padding-bottom: 24px;
   text-align: center;
 
   @media screen and (min-width: $tablet) {
-    font-size: 16px;
     padding-bottom: 44px;
+    font-size: 16px;
   }
 
   @media screen and (min-width: $desktop-lg) {
-    font-size: 18px;
     padding-bottom: 44px;
+    font-size: 18px;
   }
 
   .page-footer & {
@@ -1333,8 +1077,8 @@ body {
 /*Form*/
 
 .pageclip-form {
-  align-items: flex-start;
   display: flex;
+  align-items: flex-start;
   flex-flow: column nowrap;
   margin-bottom: 35px;
 
@@ -1346,12 +1090,12 @@ body {
 }
 
 .pageclip-form__item {
-  background: rgba(255, 255, 255, 0.3);;
-  border-radius: 2px;
-  border: 1px solid $default-bg-color;
-  color: $text-primary-color;
-  outline: none;
   padding: 0 12px;
+  color: $text-primary-color;
+  border: 1px solid $default-bg-color;;
+  border-radius: 2px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
 
   &:focus {
     background: rgba(255, 255, 255, 0.5);
@@ -1364,32 +1108,32 @@ body {
 
 .pageclip-form__submit {
   align-self: center;
-  margin-top: 30px;
   width: 100%;
+  margin-top: 30px;
 
   .success-template-view & {
     visibility: hidden;
   }
 
   @media screen and (min-width: $tablet) {
-    margin-top: 45px;
     width: 210px;
+    margin-top: 45px;
   }
 
   @media screen and (min-width: $desktop) {
     align-self: flex-end;
-    margin-top: 0;
-    min-width: 212px;
     width: auto;
+    min-width: 212px;
+    margin-top: 0;
   }
 }
 
 .inputs-inner {
   display: flex;
   flex-flow: column nowrap;
-  margin-right: 0;
-  max-width: 810px;
   width: 100%;
+  max-width: 810px;
+  margin-right: 0;
 
   &__item {
     position: relative;
@@ -1404,8 +1148,8 @@ body {
   }
 
   @media screen and (min-width: $desktop) {
-    margin-right: 64px;
     max-width: 785px;
+    margin-right: 64px;
   }
 }
 
@@ -1417,22 +1161,22 @@ body {
 }
 
 .validation-error {
-  bottom: -24px;
-  color: $text-error;
-  font-size: 12px;
-  left: 0;
-  line-height: 22px;
   position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-size: 12px;
+  line-height: 22px;
+  color: $text-error;
 }
 
 .input {
-  font-size: 16px;
-  height: 32px;
   width: 100%;
+  height: 32px;
+  font-size: 16px;
 
   @media screen and (min-width: $tablet) {
-    font-size: 18px;
     height: 42px;
+    font-size: 18px;
   }
 }
 
@@ -1447,18 +1191,18 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 0;
-  -webkit-text-fill-color: $text-primary-color;
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
   -webkit-box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+  -webkit-text-fill-color: $text-primary-color;
 }
 
 .textarea {
   display: block;
+  width: 100%;
   height: 175px;
   padding: 12px;
   resize: none;
-  width: 100%;
 
   @media screen and (min-width: $tablet) {
     height: 166px;
@@ -1466,13 +1210,13 @@ select:-webkit-autofill:focus {
 }
 
 .pageclip-form__success {
-  background: transparent;
-  font-size: 32px;
   justify-content: flex-start;
-  line-height: 38px;
   padding: 90px 0 0;
-  pointer-events: none;
+  font-size: 32px;
+  line-height: 38px;
   text-align: left;
+  pointer-events: none;
+  background: transparent;
 
   & .btn {
     margin-top: 30px;
@@ -1480,15 +1224,15 @@ select:-webkit-autofill:focus {
   }
 
   @media screen and (min-width: $tablet) {
+    padding: 80px 0 0;
     font-size: 34px;
     line-height: 41px;
-    padding: 80px 0 0;
   }
 }
 
 .success-template-inner {
-  align-items: flex-start;
   display: flex;
+  align-items: flex-start;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
@@ -1497,15 +1241,15 @@ select:-webkit-autofill:focus {
 /*Documentation Page*/
 
 .documentation {
-  color: $text-secondary-color;
   flex: 1 0 auto;
-  margin: 0 auto;
-  max-width: $main-container-sm;
   width: 100%;
+  max-width: $main-container-sm;
+  margin: 0 auto;
+  color: $text-secondary-color;
 
   img {
-    height: auto;
     max-width: 100%;
+    height: auto;
   }
 
   @media screen and (min-width: $desktop) {
@@ -1518,48 +1262,48 @@ select:-webkit-autofill:focus {
 }
 
 .logo-documentation {
-  align-items: flex-end;
-  background-color: $default-bg-color;
-  box-shadow: -14px 15px 15px $default-bg-color;
-  display: flex;
-  height: 50px;
   position: fixed;
   top: 0;
-  width: 190px;
   z-index: 22;
+  display: flex;
+  align-items: center;
+  width: $documentation-sidebar-width-tablet;
+  height: 82px;
+  background-color: $default-bg-color;
+  box-shadow: -14px 8px 15px $default-bg-color;
 
   &::after {
     content: '';
-    background: linear-gradient(180deg, $default-bg-color 36.87%, rgba(255, 255, 255, 0) 117.98%);
-    display: none;
-    height: 50px;
     position: absolute;
     top: 50px;
+    display: none;
     width: 184px;
+    height: 50px;
+    background: linear-gradient(180deg, $default-bg-color 36.87%, rgba(255, 255, 255, 0) 117.98%);
 
     @media screen and (min-width: $desktop) {
-      height: 80px;
       top: 80px;
       width: 302px;
+      height: 80px;
     }
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      height: 0;
       width: 0;
+      height: 0;
     }
   }
 
   @media screen and (min-width: $desktop) {
     align-items: center;
-    box-shadow: -14px 30px 20px $default-bg-color;
-    height: 80px;
     width: 310px;
+    height: 80px;
+    box-shadow: -14px 30px 20px $default-bg-color;
   }
 
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    box-shadow: none;
     position: static;
     width: 170px;
+    box-shadow: none;
   }
 }
 
@@ -1574,7 +1318,7 @@ select:-webkit-autofill:focus {
 
   @media screen and (min-width: $tablet) {
     flex-flow: row nowrap;
-    margin: 0 32px;
+    margin: 0;
   }
 
   @media screen and (min-width: $desktop) {
@@ -1583,9 +1327,9 @@ select:-webkit-autofill:focus {
 }
 
 .sidebar-wrapper {
-  background: $default-bg-color;
   display: none;
-  width: 190px;
+  width: $documentation-sidebar-width-tablet;
+  background: $default-bg-color;
 
   @media screen and (min-width: $tablet) {
     display: block;
@@ -1597,53 +1341,58 @@ select:-webkit-autofill:focus {
 }
 
 .sidebar-mobile-wrapper {
-  background: $default-bg-color;
-  border-radius: 2px;
-  display: none;
   z-index: 25;
+  display: none;
+  border-radius: 2px;
+  background: $default-bg-color;
 
-  @media screen and (max-width: $tablet - 1px) {
+  @media screen and (max-width: ($tablet - 1px)) {
     display: flex;
     flex-flow: column nowrap;
   }
 }
 
 .sidebar-mobile {
-  background: $default-bg-color;
-  display: none;
-  flex-flow: column nowrap;
-  left: 0;
-  padding: 12px 24px;
   position: fixed;
   top: 0;
-  transition: 0.5s;
-  width: 100%;
+  left: 0;
   z-index: 20;
+  display: none;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 80px 24px 12px;
+  background: $default-bg-color;
+  transition: 0.5s;
+
+  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+  scrollbar-width: thin;
+  scrollbar-face-color: $scrollbar-thumb-color;
+  scrollbar-track-color: $scrollbar-track-color;
 
   &__item {
     display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
     font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 5px;
-    margin-top: 12px;
     text-transform: uppercase;
     transition: 0.5s;
   }
 
   &.sidebar-open {
-    display: flex;
-    height: 100vh;
-    overflow: auto;
     top: 0;
+    display: flex;
+    overflow: auto;
+    height: 100vh;
     transition: 0.5s;
   }
 
   &::-webkit-scrollbar {
-    height: 6px;
-    max-width: 6px;
-    min-height: 0;
     width: 6px;
+    max-width: 6px;
+    height: 6px;
+    min-height: 0;
   }
 
   &::-webkit-scrollbar-track-piece {
@@ -1651,63 +1400,58 @@ select:-webkit-autofill:focus {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $scrollbar-thumb-color;
-    border-radius: 3px;
-    max-width: 6px;
     width: 6px;
+    max-width: 6px;
+    border-radius: 3px;
+    background: $scrollbar-thumb-color;
 
     &:hover {
       background: $supporting-color;
     }
   }
-
-  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
-  scrollbar-width: thin;
-  scrollbar-face-color: $scrollbar-thumb-color;
-  scrollbar-track-color: $scrollbar-track-color;
 }
 
 .sidebar-mobile-btn {
-  background: $default-bg-color;
-  border-radius: 50%;
-  border: none;
-  bottom: 25px;
-  box-shadow: 0 0 32px rgba(0, 0, 0, 0.16);
-  display: block;
-  height: 60px;
-  outline: none;
-  padding: 0 20px;
   position: fixed;
   right: 25px;
-  width: 60px;
+  bottom: 25px;
   z-index: 25;
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background: $default-bg-color;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.16);
 
   &:before {
     content: '';
-    border-bottom: 2px solid $main-accent-color;
-    border-left: 2px solid $main-accent-color;
-    display: block;
-    height: 8px;
-    left: 25px;
     position: absolute;
     top: 20px;
-    transform: rotate(135deg);
-    transition: 0.3s;
+    left: 25px;
+    display: block;
     width: 8px;
+    height: 8px;
+    border-bottom: 2px solid $main-accent-color;
+    border-left: 2px solid $main-accent-color;
+    transition: 0.3s;
+    transform: rotate(135deg);
   }
 
   &:after {
     content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    display: block;
+    width: 8px;
+    height: 8px;
     border-bottom: 2px solid $main-accent-color;
     border-left: 2px solid $main-accent-color;
-    bottom: 20px;
-    display: block;
-    height: 8px;
-    left: 25px;
-    position: absolute;
-    transform: rotate(-45deg);
     transition: 0.3s;
-    width: 8px;
+    transform: rotate(-45deg);
   }
 
   &.sidebar-open {
@@ -1726,22 +1470,27 @@ select:-webkit-autofill:focus {
 }
 
 .sidebar {
-  background: linear-gradient(to right, $default-bg-color 184px, $scrollbar-track-color 6px);
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100vh;
-  min-width: 190px;
-  overflow: auto;
-  padding: 78px 32px 16px 0;
   position: sticky;
   top: 0;
-  width: 190px;
+  display: flex;
+  overflow: auto;
+  flex-flow: column nowrap;
+  width: $documentation-sidebar-width-tablet;
+  min-width: $documentation-sidebar-width-tablet;
+  height: 100vh;
+  padding: 95px 22px 16px 0;
+  background: linear-gradient(to right, $default-bg-color 174px, $scrollbar-track-color 6px);
+
+  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+  scrollbar-width: thin;
+  scrollbar-face-color: $scrollbar-thumb-color;
+  scrollbar-track-color: $scrollbar-track-color;
 
   &::-webkit-scrollbar {
-    height: 6px;
-    max-width: 6px;
-    min-height: 0;
     width: 6px;
+    max-width: 6px;
+    height: 6px;
+    min-height: 0;
   }
 
   &::-webkit-scrollbar-track-piece {
@@ -1749,27 +1498,22 @@ select:-webkit-autofill:focus {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $scrollbar-thumb-color;
-    border-radius: 3px;
-    max-width: 6px;
     width: 6px;
+    max-width: 6px;
+    border-radius: 3px;
+    background: $scrollbar-thumb-color;
 
     &:hover {
       background: $supporting-color;
     }
   }
 
-  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
-  scrollbar-width: thin;
-  scrollbar-face-color: $scrollbar-thumb-color;
-  scrollbar-track-color: $scrollbar-track-color;
-
   &__item {
     display: block;
+    margin-bottom: 15px;
     font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 16px;
-    margin-bottom: 15px;
     text-transform: uppercase;
 
     &:not(:first-child) {
@@ -1787,26 +1531,26 @@ select:-webkit-autofill:focus {
   }
 
   @media screen and (min-width: $desktop) {
-    background: linear-gradient(to right, $default-bg-color 304px, $scrollbar-track-color 6px);
+    width: 310px;
     min-width: 310px;
     padding: 118px 44px 36px 0;
-    width: 310px;
+    background: linear-gradient(to right, $default-bg-color 304px, $scrollbar-track-color 6px);
   }
 
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    background: $default-bg-color;
+    position: static;
     height: auto;
     padding: 40px 36px 36px 0;
-    position: static;
+    background: $default-bg-color;
   }
 }
 
 .sidebar,
 .sidebar-mobile {
   ul {
-    list-style: none;
     margin: 0;
     padding-left: 0;
+    list-style: none;
   }
 
   ul ul {
@@ -1836,8 +1580,8 @@ select:-webkit-autofill:focus {
   }
 
   a {
-    color: $text-secondary-color;
     text-decoration: none;
+    color: $text-secondary-color;
 
     &:hover {
       color: $main-accent-color;
@@ -1862,54 +1606,57 @@ select:-webkit-autofill:focus {
   }
 
   & ul li ul li {
-    line-height: 1;
     margin: 0;
+    line-height: 1;
   }
 }
 
 .main-content {
   display: flex;
   flex-flow: column nowrap;
+  width: 100%;
+  padding: 0 0 24px;
   font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
-  padding: 0 0 24px;
-  width: 100%;
 
   h1 {
+    margin: 0 0 16px;
     font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 32px;
     line-height: 1;
-    margin: 32px 0 16px;
+    @media screen and (min-width: $tablet) {
+      margin: 32px 0 16px;
+    }
     @media screen and (min-width: $desktop) {
+      margin: 60px 0 32px;
       font-size: 40px;
       line-height: 1;
-      margin: 60px 0 32px;
     }
   }
 
 
   h2 {
+    margin: 12px 0 8px;
     font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 26px;
     line-height: 30px;
-    margin: 12px 0 8px;
     @media screen and (min-width: $desktop) {
+      margin: 32px 0 16px;
       font-size: 32px;
       line-height: 37px;
-      margin: 32px 0 16px;
     }
   }
 
   h3 {
+    margin: 8px 0 4px;
     font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 24px;
-    margin: 8px 0 4px;
     @media screen and (min-width: $desktop) {
+      margin: 16px 0 8px;
       font-size: 24px;
       line-height: 30px;
-      margin: 16px 0 8px;
     }
   }
 
@@ -1928,14 +1675,14 @@ select:-webkit-autofill:focus {
   }
 
   a {
-    color: $main-accent-color;
     text-decoration: none;
+    color: $main-accent-color;
   }
 
   code {
-    background: $code-bg-color;
-    font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     padding: 0 4px;
+    font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    background: $code-bg-color;
   }
 
   pre {
@@ -1947,24 +1694,24 @@ select:-webkit-autofill:focus {
   }
 
   ul {
-    list-style: none;
     margin: 0;
     padding: 0 0 0 65px;
+    list-style: none;
 
     li {
-      margin-bottom: 12px;
       position: relative;
+      margin-bottom: 12px;
 
       &:before {
         content: '';
-        background: $text-secondary-color;
-        border-radius: 50%;
-        display: block;
-        height: 8px;
-        left: -24px;
         position: absolute;
         top: 10px;
+        left: -24px;
+        display: block;
         width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $text-secondary-color;
       }
     }
   }
@@ -1994,16 +1741,21 @@ select:-webkit-autofill:focus {
   }
 
   .table-wrapper {
-    margin: 8px 0 24px;
-    max-height: 90vh;
     overflow: auto;
     width: 100%;
+    max-height: 90vh;
+    margin: 8px 0 24px;
+
+    scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+    scrollbar-width: thin;
+    scrollbar-face-color: $scrollbar-thumb-color;
+    scrollbar-track-color: $scrollbar-track-color;
 
     &::-webkit-scrollbar {
-      height: 6px;
-      max-width: 6px;
-      min-height: 0;
       width: 6px;
+      max-width: 6px;
+      height: 6px;
+      min-height: 0;
     }
 
     &::-webkit-scrollbar-track-piece {
@@ -2011,27 +1763,22 @@ select:-webkit-autofill:focus {
     }
 
     &::-webkit-scrollbar-thumb {
-      background: $scrollbar-thumb-color;
-      border-radius: 3px;
-      max-width: 6px;
       width: 6px;
+      max-width: 6px;
+      border-radius: 3px;
+      background: $scrollbar-thumb-color;
 
       &:hover {
         background: $supporting-color;
       }
     }
 
-    scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
-    scrollbar-width: thin;
-    scrollbar-face-color: $scrollbar-thumb-color;
-    scrollbar-track-color: $scrollbar-track-color;
-
   }
 
   table {
+    width: 100%;
     border-collapse: collapse;
     white-space: nowrap;
-    width: 100%;
   }
 
   table tr:nth-child(2n) {
@@ -2040,8 +1787,8 @@ select:-webkit-autofill:focus {
 
   th,
   td {
-    border: 1px solid $table-border-color;
     padding: 12px;
+    border: 1px solid $table-border-color;
     @media screen and (min-width: $desktop) {
       padding: 17px;
     }
@@ -2052,15 +1799,15 @@ select:-webkit-autofill:focus {
   }
 
   @media screen and (min-width: $tablet) {
-    padding: 31px 0 30px 32px;
-    width: calc(100% - 190px); //190-sidebar
+    width: calc(100% - 180px); //$documentation-sidebar-width-tablet
+    padding: 44px 0 30px 22px;
   }
 
   @media screen and (min-width: $desktop) {
+    width: calc(100% - 310px); //310-sidebar
+    padding: 44px 0 30px 44px;
     font-size: 18px;
     line-height: 29px;
-    padding: 44px 0 30px 44px;
-    width: calc(100% - 310px); //310-sidebar
   }
 
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -2076,11 +1823,11 @@ mjx-container {
 /*Page Error*/
 
 .page-error {
-  color: $text-secondary-color;
   flex: 1 0 auto;
-  margin: 0 auto;
-  max-width: $main-container-sm;
   width: 100%;
+  max-width: $main-container-sm;
+  margin: 0 auto;
+  color: $text-secondary-color;
 
   @media screen and (min-width: $desktop) {
     max-width: $main-container-middle;
@@ -2088,11 +1835,11 @@ mjx-container {
   }
 
   &__header {
-    align-items: flex-start;
-    background-color: $default-bg-color;
     display: flex;
+    align-items: flex-start;
     flex-flow: row nowrap;
     justify-content: space-between;
+    background-color: $default-bg-color;
 
     @media screen and (min-width: $tablet) {
       padding: 27px 0 0;
@@ -2104,11 +1851,11 @@ mjx-container {
   }
 
   &__main {
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-flow: column nowrap;
-    height: calc(100% - 127px); //127-header
     justify-content: center;
+    height: calc(100% - 127px); //127-header
     padding: 0 32px 48px;
 
     @media screen and (min-width: $tablet) {
@@ -2136,20 +1883,20 @@ mjx-container {
 }
 
 .error-text-block {
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-flow: column nowrap;
 }
 
 .error-text {
-  color: $text-secondary-color;
   font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 19px;
   line-height: 0.9;
+  color: $text-secondary-color;
 
   &_bg {
-    font-size: 32px;
     padding-bottom: 20px;
+    font-size: 32px;
   }
 
   &_lg {
@@ -2176,11 +1923,11 @@ mjx-container {
 
 /*Privacy Policy*/
 .page-privacy {
-  color: $text-secondary-color;
   flex: 1 0 auto;
-  margin: 0 auto;
-  max-width: $main-container-sm;
   width: 100%;
+  max-width: $main-container-sm;
+  margin: 0 auto;
+  color: $text-secondary-color;
 
   @media screen and (min-width: $desktop) {
     max-width: $main-container-middle;
@@ -2188,11 +1935,11 @@ mjx-container {
   }
 
   &__header {
-    align-items: flex-start;
-    background-color: $default-bg-color;
     display: flex;
+    align-items: flex-start;
     flex-flow: row nowrap;
     justify-content: space-between;
+    background-color: $default-bg-color;
 
     @media screen and (min-width: $tablet) {
       padding: 27px 0 0;
@@ -2204,27 +1951,27 @@ mjx-container {
   }
 
   &__title {
+    margin: 0 0 16px;
     font-family: 'Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 32px;
     line-height: 51px;
-    margin: 0 0 16px;
     @media screen and (min-width: $tablet) {
       margin: 0 0 24px;
     }
 
     @media screen and (min-width: $desktop) {
+      margin: 0 0 32px;
       font-size: 40px;
       line-height: 64px;
-      margin: 0 0 32px;
     }
   }
 
   &__subtitle {
+    margin: 0 0 12px;
     font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 26px;
     font-weight: normal;
     line-height: 36px;
-    margin: 0 0 12px;
 
     @media screen and (min-width: $tablet) {
       margin: 0 0 8px;
@@ -2237,11 +1984,11 @@ mjx-container {
   }
 
   &__section-title {
+    margin: 0 0 12px;
     font-family: 'Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: normal;
     line-height: 28px;
-    margin: 0 0 12px;
 
     @media screen and (min-width: $tablet) {
       margin: 0 0 8px;
@@ -2254,9 +2001,9 @@ mjx-container {
   }
 
   &__main {
+    padding: 0 24px;
     font-size: 14px;
     line-height: 22px;
-    padding: 0 24px;
 
     @media screen and (min-width: $tablet) {
       padding: 0;
@@ -2280,8 +2027,8 @@ mjx-container {
     margin-top: 26px;
 
     @media screen and (min-width: $tablet) {
-      margin-bottom: 46px;
       margin-top: 17px;
+      margin-bottom: 46px;
     }
 
     @media screen and (min-width: $desktop) {
@@ -2293,25 +2040,25 @@ mjx-container {
 /*Cookie*/
 
 .cookie-notice {
-  align-items: flex-start;
-  background: $dark-bg-color;
-  bottom: 0;
-  color: $text-primary-color;
-  display: none;
-  flex-flow: column nowrap;
-  font-size: 12px;
-  justify-content: center;
-  line-height: 20px;
-  padding: 20px 24px;
   position: fixed;
-  width: 100%;
+  bottom: 0;
   z-index: 10000;
+  display: none;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 12px;
+  line-height: 20px;
+  color: $text-primary-color;
+  background: $dark-bg-color;
   @media screen and (min-width: $tablet) {
     align-items: center;
     flex-flow: row nowrap;
-    font-size: 14px;
     justify-content: center;
     padding: 14px 32px;
+    font-size: 14px;
   }
 
   @media screen and (min-width: $desktop) {
