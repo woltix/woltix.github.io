@@ -4,21 +4,21 @@ window.smoothScrollTo = (function () {
 
   return function (target, duration) {
     var offset = window.pageYOffset,
-      delta  = target - window.pageYOffset; // Y-offset difference
-    duration = duration || 600;              // default 1 sec animation
-    start = Date.now();                       // get start time
+      delta = target - window.pageYOffset; // Y-offset difference
+    duration = duration || 600; // default 1 sec animation
+    start = Date.now(); // get start time
     factor = 0;
 
-    if( timer ) {
+    if (timer) {
       clearInterval(timer); // stop any running animations
     }
 
     function step() {
       var y;
       factor = (Date.now() - start) / duration; // get interpolation factor
-      if( factor >= 1 ) {
+      if (factor >= 1) {
         clearInterval(timer); // stop animation
-        factor = 1;           // clip to max 1.0
+        factor = 1; // clip to max 1.0
       }
       y = factor * delta + offset;
       window.scrollBy(0, y - window.pageYOffset);
@@ -27,27 +27,28 @@ window.smoothScrollTo = (function () {
     timer = setInterval(step, 10);
     return timer;
   };
-}());
-
+})();
 
 // The keys (e.g. valueMissing) map onto
 // a key in the `input.validity` object
 const customMessages = {
-  valueMissing: 'This field is required',       // `required` attr
-  emailMismatch: 'Fill valid email address',  // Invalid email
+  valueMissing: 'This field is required', // `required` attr
+  emailMismatch: 'Fill valid email address', // Invalid email
 };
-const inputs = Array.prototype.slice.call(document.querySelectorAll('input, select, textarea'));
+const inputs = Array.prototype.slice.call(
+  document.querySelectorAll('input, select, textarea'),
+);
 const validationErrorClass = 'validation-error';
 const parentErrorClass = 'has-validation-error';
 const form = document.querySelector('.pageclip-form');
 
 function getCustomMessage(type, validity) {
   if (validity.typeMismatch) {
-    return customMessages[type + "Mismatch"]
+    return customMessages[type + 'Mismatch'];
   } else {
     for (let invalidKey in customMessages) {
       if (validity[invalidKey]) {
-        return customMessages[invalidKey]
+        return customMessages[invalidKey];
       }
     }
   }
@@ -60,7 +61,7 @@ inputs.forEach(function (input) {
     const message = input.validity.valid
       ? null
       : getCustomMessage(input.type, input.validity, customMessages);
-    input.setCustomValidity(message || '')
+    input.setCustomValidity(message || '');
   }
 
   input.addEventListener('input', checkValidity);
@@ -71,8 +72,9 @@ inputs.forEach(function (input) {
   function checkValidity(options) {
     const insertError = options.insertError;
     const parent = input.parentNode;
-    const error = parent.querySelector("." + validationErrorClass)
-      || document.createElement('div');
+    const error =
+      parent.querySelector('.' + validationErrorClass) ||
+      document.createElement('div');
 
     if (!input.validity.valid && input.validationMessage) {
       error.className = validationErrorClass;
@@ -91,38 +93,44 @@ inputs.forEach(function (input) {
   input.addEventListener('input', function () {
     // We can only update the error or hide it on input.
     // Otherwise it will show when typing.
-    checkValidity({insertError: false})
+    checkValidity({ insertError: false });
   });
   input.addEventListener('invalid', function (e) {
     // prevent showing the default display
     e.preventDefault();
 
     // We can also create the error in invalid.
-    checkValidity({insertError: true})
-  })
+    checkValidity({ insertError: true });
+  });
 });
 
-if(form) {
+if (form) {
   Pageclip.form(form, {
-    onSubmit: function (event) { },
-    onResponse: function (error, response) { },
+    onSubmit: function (event) {},
+    onResponse: function (error, response) {},
     successTemplate: `
       <div class="success-template-inner">
         <span>Thank you for your message!</span>
         <button class="btn" type="button">
           <span>Send new Message</span>
         </button>
-      </div>`
-  })
+      </div>`,
+  });
 }
 
-$("body").bind("DOMSubtreeModified", function () {
+const observer = new MutationObserver((observer) => {
   const formSuccessTemplate = document.querySelector('.pageclip-form__success');
   if (formSuccessTemplate) {
-    $("body").addClass("success-template-view");
+    $('body').addClass('success-template-view');
   } else {
-    $("body").removeClass("success-template-view");
+    $('body').removeClass('success-template-view');
   }
+  console.log('callback that runs when observer is triggered', observer);
+});
+
+observer.observe(document.querySelector('#element-to-observe'), {
+  subtree: true,
+  childList: true,
 });
 
 ////Jquery////
@@ -130,93 +138,86 @@ $("body").bind("DOMSubtreeModified", function () {
 //Sidebar
 $('ul li a').click(function (e) {
   var goto = $(this).attr('href');
-  $('html,body').stop().animate({scrollTop: $(goto).offset().top - 100}, 1000);
+  $('html,body')
+    .stop()
+    .animate({ scrollTop: $(goto).offset().top - 100 }, 1000);
   e.preventDefault();
 });
 
 $('nav a').click(function () {
-  $('a').removeClass("active");
-  $(this).addClass("active");
+  $('a').removeClass('active');
+  $(this).addClass('active');
 });
 
 $('nav a.main-menu__item').click(function (e) {
   var goto = $(this).attr('href');
-  $('html,body').stop().animate({scrollTop: $(goto).offset().top - 30}, 1000);
+  $('html,body')
+    .stop()
+    .animate({ scrollTop: $(goto).offset().top - 30 }, 1000);
   e.preventDefault();
 });
 
 $('ul li a').click(function () {
-  $('a').removeClass("active");
-  $(this).addClass("active");
+  $('a').removeClass('active');
+  $(this).addClass('active');
 });
 
-$("nav.sidebar").scroll(function () {
-  var scroll = $("nav.sidebar").scrollTop();
+$('nav.sidebar').scroll(function () {
+  var scroll = $('nav.sidebar').scrollTop();
 
   if (scroll > 0) {
-    $(".logo-documentation").addClass("blur");
+    $('.logo-documentation').addClass('blur');
   } else {
-    $(".logo-documentation").removeClass("blur");
+    $('.logo-documentation').removeClass('blur');
   }
 });
 
 // Mobile menu
-$(".mobile-menu-btn").click(function () {
+$('.mobile-menu-btn').click(function () {
+  $('.mobile-menu-btn').toggleClass('menu-open');
 
-  $(".mobile-menu-btn").toggleClass("menu-open");
+  $('.mobile-menu').toggleClass('menu-open');
 
-  $(".mobile-menu").toggleClass("menu-open");
-
-  $("body").toggleClass("menu-open");
-
+  $('body').toggleClass('menu-open');
 });
 
-$(".main-menu-mobile__item").click(function () {
+$('.main-menu-mobile__item').click(function () {
+  $('.mobile-menu-btn').removeClass('menu-open');
 
-  $(".mobile-menu-btn").removeClass("menu-open");
+  $('.mobile-menu').removeClass('menu-open');
 
-  $(".mobile-menu").removeClass("menu-open");
-
-  $("body").removeClass("menu-open");
-
+  $('body').removeClass('menu-open');
 });
 
 // Mobile sidebar
 
 if (localStorage.getItem('sidebarState') == 'sidebar-close') {
-  $(".sidebar-mobile-btn").removeClass("sidebar-open");
+  $('.sidebar-mobile-btn').removeClass('sidebar-open');
 
-  $(".sidebar-mobile").removeClass("sidebar-open");
-
+  $('.sidebar-mobile').removeClass('sidebar-open');
 }
 
 if (localStorage.getItem('sidebarState') == 'sidebar-open') {
-  $(".sidebar-mobile-btn").toggleClass("sidebar-open");
+  $('.sidebar-mobile-btn').toggleClass('sidebar-open');
 
-  $(".sidebar-mobile").toggleClass("sidebar-open");
-
+  $('.sidebar-mobile').toggleClass('sidebar-open');
 }
 
+$('.sidebar-mobile-btn').click(function () {
+  $('.sidebar-mobile-btn').toggleClass('sidebar-open');
 
-$(".sidebar-mobile-btn").click(function () {
-
-  $(".sidebar-mobile-btn").toggleClass("sidebar-open");
-
-  $(".sidebar-mobile").toggleClass("sidebar-open");
+  $('.sidebar-mobile').toggleClass('sidebar-open');
 
   localStorage.setItem('sidebarState', 'sidebar-open');
-
 });
 
-$(".sidebar-mobile ul li a").click(function () {
+$('.sidebar-mobile ul li a').click(function () {
+  $('.sidebar-mobile-btn').removeClass('sidebar-open');
 
-  $(".sidebar-mobile-btn").removeClass("sidebar-open");
-
-  $(".sidebar-mobile").removeClass("sidebar-open");
+  $('.sidebar-mobile').removeClass('sidebar-open');
 
   localStorage.setItem('sidebarState', 'sidebar-close');
-
 });
 
 //Table
-$("table").wrap("<div class='table-wrapper'></div>");
+$('table').wrap("<div class='table-wrapper'></div>");
