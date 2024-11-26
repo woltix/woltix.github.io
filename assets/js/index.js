@@ -118,14 +118,13 @@ if (form) {
   });
 }
 
-const observer = new MutationObserver((observer) => {
+const observer = new MutationObserver(() => {
   const formSuccessTemplate = document.querySelector('.pageclip-form__success');
   if (formSuccessTemplate) {
     $('body').addClass('success-template-view');
   } else {
     $('body').removeClass('success-template-view');
   }
-  console.log('callback that runs when observer is triggered', observer);
 });
 
 observer.observe(document.querySelector('#element-to-observe'), {
