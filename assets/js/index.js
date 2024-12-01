@@ -1,33 +1,35 @@
 // smooth Scroll for main menu
-window.smoothScrollTo = (function () {
-  var timer, start, factor;
+function smoothScrollTo(targetSelector, offset = 0, duration = 600) {
+  const targetElement = document.querySelector(targetSelector);
 
-  return function (target, duration) {
-    var offset = window.pageYOffset,
-      delta = target - window.pageYOffset; // Y-offset difference
-    duration = duration || 600; // default 1 sec animation
-    start = Date.now(); // get start time
-    factor = 0;
+  if (!targetElement) return;
 
-    if (timer) {
-      clearInterval(timer); // stop any running animations
+  const targetPosition =
+    targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (!startTime) startTime = currentTime;
+
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutQuad(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
     }
+  }
 
-    function step() {
-      var y;
-      factor = (Date.now() - start) / duration; // get interpolation factor
-      if (factor >= 1) {
-        clearInterval(timer); // stop animation
-        factor = 1; // clip to max 1.0
-      }
-      y = factor * delta + offset;
-      window.scrollBy(0, y - window.pageYOffset);
-    }
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
 
-    timer = setInterval(step, 10);
-    return timer;
-  };
-})();
+  requestAnimationFrame(animation);
+}
 
 // The keys (e.g. valueMissing) map onto
 // a key in the `input.validity` object

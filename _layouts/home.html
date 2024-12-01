@@ -7,18 +7,18 @@
     <div class="header__content">
       <nav class="main-menu">
         <a class="main-menu__item active" href="#"
-          onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
+          onclick="smoothScrollTo('#about', 30); return false;">
           About
         </a>
         <a class="main-menu__item" href="#"
-          onclick="smoothScrollTo(document.getElementById('solutions').offsetTop + 1)">
+          onclick="smoothScrollTo('#solutions', -2); return false;">
           Solutions
         </a>
         <a class="main-menu__item" href="#"
-          onclick="smoothScrollTo(document.getElementById('platform').offsetTop + 25)">
+          onclick="smoothScrollTo('#platform', -30); return false;">
           Platform
         </a>
-        <a class="main-menu__item" href="#" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+        <a class="main-menu__item" href="#" onclick="smoothScrollTo('#contactUs', -2); return false;">
           Contact Us
         </a>
       </nav>
@@ -47,7 +47,7 @@
             communication&nbsp;&mdash; for wealth professionals and retail
             investors
           </p>
-          <button class="btn header__btn" onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+          <button class="btn header__btn" onclick="smoothScrollTo('#contactUs', -2); return false;">
             <a href="#">CONTACT US
               <img src="/assets/images/icon-arrow.svg" alt="Contact Woltix for Portfolio Solutions" /></a>
           </button>
@@ -62,19 +62,19 @@
         </div>
         <nav class="main-menu-mobile">
           <a class="main-menu-mobile__item active" href="#"
-            onclick="smoothScrollTo(document.getElementById('about').offsetTop - 30)">
+            onclick="smoothScrollTo('#about'); return false;">
             About
           </a>
           <a class="main-menu-mobile__item" href="#"
-            onclick="smoothScrollTo(document.getElementById('solutions').offsetTop + 130)">
+            onclick="smoothScrollTo('#solutions', -130); return false;">
             Solutions
           </a>
           <a class="main-menu-mobile__item" href="#"
-            onclick="smoothScrollTo(document.getElementById('platform').offsetTop + 130)">
+            onclick="smoothScrollTo('#platform', -130); return false;">
             Platform
           </a>
           <a class="main-menu-mobile__item" href="#"
-            onclick="smoothScrollTo(document.getElementById('contactUs').offsetTop)">
+            onclick="smoothScrollTo('#contactUs', -130); return false;">
             Contact Us
           </a>
         </nav>
