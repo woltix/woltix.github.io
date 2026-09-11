@@ -1,0 +1,9 @@
+# The gem set GitHub Pages' classic build actually runs, pinned by GitHub.
+# Used only to verify locally and in CI that the site still builds the way
+# production builds it. Day-to-day development uses the main Gemfile.
+#
+#   BUNDLE_GEMFILE=Gemfile.pages bundle install
+#   BUNDLE_GEMFILE=Gemfile.pages bundle exec jekyll build
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.9"

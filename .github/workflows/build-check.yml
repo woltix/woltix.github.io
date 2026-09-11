@@ -1,0 +1,86 @@
+# Build check — this does NOT deploy anything.
+#
+# woltix.com is published by GitHub Pages' own classic build ("Deploy from a
+# branch"), which runs automatically on every push to master. Nothing here
+# affects that, and no repository setting needs changing.
+#
+# What this adds: GitHub's classic build tells you only whether Jekyll crashed.
+# It does not tell you whether the output is correct. This job builds the site
+# with the *same gem set GitHub runs* and then checks the things that have
+# actually gone wrong before — a missing page, a canonical URL pointing at
+# localhost, an unrendered Liquid tag in robots.txt or llms.txt.
+#
+# It runs in parallel with the real deploy, so it cannot block a bad push; it
+# tells you afterwards, in the Actions tab, that something needs fixing.
+#
+# If you would rather have no Actions at all, delete this file. The site is
+# unaffected.
+name: Build check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build the way GitHub Pages does, then verify the output
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_GEMFILE: Gemfile.pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
+
+      - name: Verify the output
+        run: |
+          set -euo pipefail
+          fail() { echo "::error::$1"; exit 1; }
+
+          for f in index.html privacy/index.html cookies/index.html \
+                   terms/index.html 404.html robots.txt sitemap.xml \
+                   llms.txt site.webmanifest CNAME \
+                   assets/css/woltix.css assets/js/site.js; do
+            test -s "_site/$f" || fail "missing or empty _site/$f"
+          done
+
+          grep -q 'rel="canonical" href="https://woltix.com/"' _site/index.html \
+            || fail "home page canonical is not https://woltix.com/"
+
+          if grep -rn "localhost" _site --include="*.html" --include="*.txt" \
+                                        --include="*.xml" --include="*.webmanifest"; then
+            fail "a localhost URL leaked into the build"
+          fi
+
+          # Liquid that failed to render would ship braces to visitors.
+          if grep -rn '{{\|{%' _site/robots.txt _site/sitemap.xml \
+                               _site/llms.txt _site/site.webmanifest; then
+            fail "unrendered Liquid in a generated file"
+          fi
+
+          python3 -c "import json;json.load(open('_site/site.webmanifest'))" \
+            || fail "site.webmanifest is not valid JSON"
+          python3 -c "import xml.etree.ElementTree as E;E.parse('_site/sitemap.xml')" \
+            || fail "sitemap.xml is not valid XML"
+
+          # Every page must carry exactly one H1.
+          for f in _site/index.html _site/privacy/index.html \
+                   _site/cookies/index.html _site/terms/index.html _site/404.html; do
+            n=$(grep -o '<h1' "$f" | wc -l | tr -d ' ')
+            [ "$n" = "1" ] || fail "$f has $n <h1> elements, expected 1"
+          done
+
+          echo "All checks passed."

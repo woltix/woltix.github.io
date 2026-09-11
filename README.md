@@ -72,15 +72,28 @@ page out of Google and the sitemap, set `noindex: true`.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` builds with the Jekyll version pinned in the
-`Gemfile` and deploys to GitHub Pages, with a post-build check that the
-expected files exist, the canonical URL is right and no `localhost` URL
-leaked in.
+**GitHub Pages' own classic build publishes the site** on every push to
+`master` ("Deploy from a branch"). There is nothing to configure and no
+workflow in the deployment path.
 
-**One-time setup:** repository **Settings → Pages → Build and deployment →
-Source** must be set to **GitHub Actions**. Until then the older classic build
-is what actually serves the site (it still works — the site is plugin-free —
-but it runs Jekyll 3.10 rather than the version in the `Gemfile`).
+That build runs GitHub's pinned gem set (Jekyll 3.10), not the `Gemfile` used
+for local development (Jekyll 4.4). The site is written to be indifferent to
+which one runs it — no plugins, no theme, plain Liquid — and that is verified,
+not assumed: building with both gem sets produces byte-identical output.
+
+To reproduce production exactly:
+
+```bash
+BUNDLE_GEMFILE=Gemfile.pages bundle install
+BUNDLE_GEMFILE=Gemfile.pages bundle exec jekyll build
+```
+
+`.github/workflows/build-check.yml` runs that same build on every push and
+then checks the output — every page present, canonical on the live domain, no
+`localhost` leak, no unrendered Liquid, valid manifest and sitemap, one `<h1>`
+per page. **It does not deploy.** It runs alongside the real build, so it
+reports problems rather than preventing them. Delete the file if you would
+rather have no Actions at all; the site is unaffected.
 
 ## Editing copy
 

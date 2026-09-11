@@ -65,6 +65,9 @@ sass:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Gemfile.pages
+  - Gemfile.pages.lock
+  - _site_pages
   - README.md
   - vendor
   - .idea
