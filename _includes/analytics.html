@@ -24,9 +24,23 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
 
-  // Read a previously stored choice before anything else runs.
+  // How long a recorded choice stays valid. Defined here because this file
+  // runs first; _includes/cookie-consent.html reads the same value, so the two
+  // can never disagree about when consent has expired.
+  window.WX_CONSENT_MAX_AGE = 1000 * 60 * 60 * 24 * 182; // ~6 months
+
+  // Read a previously stored choice before anything else runs. A choice that
+  // is older than WX_CONSENT_MAX_AGE is treated as absent, so an expired
+  // "granted" cannot silently re-enable analytics before the visitor is asked
+  // again.
   var wxConsent = null;
-  try { wxConsent = window.localStorage.getItem('wx-consent'); } catch (e) { /* storage blocked */ }
+  try {
+    var wxStored = window.localStorage.getItem('wx-consent');
+    var wxAt     = parseInt(window.localStorage.getItem('wx-consent-at') || '0', 10);
+    if (wxStored && wxAt && (Date.now() - wxAt) <= window.WX_CONSENT_MAX_AGE) {
+      wxConsent = wxStored;
+    }
+  } catch (e) { /* storage blocked */ }
 
   // Defaults are DENIED. This must execute before gtag.js is fetched.
   gtag('consent', 'default', {

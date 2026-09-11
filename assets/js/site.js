@@ -94,12 +94,15 @@
       }
       email.removeAttribute('aria-invalid');
 
-      if (!window.fetch || !form.action) { form.submit(); return; }
+      // form.action resolves to the document URL when the attribute is
+      // absent, so the attribute itself is what tells us there is an endpoint.
+      var endpoint = form.getAttribute('action');
+      if (!window.fetch || !endpoint) { form.submit(); return; }
 
       form.classList.add('is-busy');
       if (button) button.disabled = true;
 
-      fetch(form.action, {
+      fetch(endpoint, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' }

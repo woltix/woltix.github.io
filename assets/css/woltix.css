@@ -226,7 +226,8 @@
     }
     .wx-topbar__inner { display: flex; align-items: baseline; gap: 36px; }
     .wx-topbar__logo { display: inline-block; line-height: 0; }
-    .wx-topbar__logo svg { height: 36px; width: auto; vertical-align: baseline; display: inline-block; }
+    .wx-topbar__logo svg,
+    .wx-topbar__logo-svg { height: 36px; width: auto; vertical-align: baseline; display: inline-block; }
     .wx-topbar__nav { display: flex; align-items: baseline; gap: 28px; }
     .wx-topbar__nav a {
       font-size: 14px;
@@ -792,7 +793,8 @@
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .wx-footer__logo svg { height: 32px; width: auto; display: block; }
+    .wx-footer__logo svg,
+    .wx-footer__logo-svg { height: 32px; width: auto; display: block; }
     .wx-footer__about {
       margin-top: 18px;
       font-size: 13px; line-height: 1.55;
@@ -1256,7 +1258,7 @@ a{color:var(--wx-blue-3)}a:hover{color:var(--wx-green)}
 .wx-topbar__inner{align-items:center;gap:12px}
 .wx-topbar__inner .wx-btn{align-self:center;height:38px;padding:0 16px;font-size:13px}
 .wx-topbar__inner .wx-btn svg{display:none}
-.wx-topbar__logo svg{height:28px}
+.wx-topbar__logo svg,.wx-topbar__logo-svg{height:28px}
 .wx-topbar__spacer{flex:1}
 .wx-navtoggle{order:3;margin-left:2px}
 .wx-mobnav{position:absolute;left:0;right:0;top:100%;box-shadow:0 18px 40px rgba(0,0,0,.35)}
