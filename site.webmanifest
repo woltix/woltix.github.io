@@ -10,7 +10,7 @@ sitemap: false
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#2F324A",
+  "background_color": "#FFFFFF",
   "theme_color": "#2F324A",
   "icons": [
     { "src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },

@@ -34,7 +34,7 @@ _layouts/
   page.html             legal / prose pages
   404.html
 assets/
-  css/woltix.css        the whole design system, one file
+  css/woltix.css        the whole design system, one file (~36 KB, 8 KB gzipped)
   js/site.js            mobile nav + demo form (~3 KB, no dependencies)
   fonts/                Manrope, self-hosted (variable, weights 400–800)
 ```
@@ -60,6 +60,11 @@ classic build injects `jekyll-theme-primer` and its stylesheet.
 `page.title`, because the classic build force-enables
 `jekyll-titles-from-headings`, which would otherwise overwrite it with the
 hero H1.
+
+**The stylesheet carries no dead rules.** Every selector matches something on
+some page in some state; `--wx-*` variables are all referenced. If you delete a
+component from the markup, delete its CSS too — and if you add one, take it
+from the original design export rather than reviving old selectors from git.
 
 **A new legal page** gets `layout: page`, a `title:`, a `description:` and an
 `updated:` date. It is picked up by `sitemap.xml` automatically. To keep a
