@@ -1,0 +1,19 @@
+---
+permalink: /site.webmanifest
+layout: null
+sitemap: false
+---
+{
+  "name": "Woltix — Unified wealth management platform",
+  "short_name": "Woltix",
+  "description": {{ site.description | strip_newlines | strip | jsonify }},
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#2F324A",
+  "theme_color": "#2F324A",
+  "icons": [
+    { "src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

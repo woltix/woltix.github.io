@@ -1,64 +1,83 @@
+# ==============================================================================
+# Woltix — site configuration
+#
+# This site deliberately uses NO Jekyll plugins, so it builds identically
+# under GitHub Pages' classic build and under a local `bundle exec jekyll`.
+# sitemap.xml and robots.txt are generated from Liquid templates in the repo
+# root rather than by jekyll-sitemap.
+# ==============================================================================
 
-title: Woltix | Real-Time Portfolio Management Software
-description: Reliable software for transparent portfolio management,
-            performance evaluation, clear reporting, and effective
-            communication for wealth professionals and retail
-            investors
-keywords: Portfolio Management Software, Real-Time Investment Tracking, Transparent Portfolio Evaluation, Financial Reporting for Investors, Wealth Management Tools, Investment Performance Analysis"
+title: "Woltix"
+tagline: "Unified wealth management platform"
+description: >-
+  Woltix consolidates multi-custody portfolios into a real-time book of
+  records, with performance, risk, rebalancing and client and regulatory
+  reporting on top.
 
-
-baseurl: ""
 url: "https://woltix.com"
+baseurl: ""
+lang: "en"
+encoding: "utf-8"
 
-author:
-  name: "Woltix"
+# No theme. The site ships its own stylesheet; without this, GitHub Pages'
+# classic build silently injects jekyll-theme-primer and its stylesheet.
+theme: null
+
+# ── Company ──────────────────────────────────────────────────────────────────
+company:
+  legal_name: "Woltix"
   email: "contact@woltix.com"
-  twitter: "" # Without @ symbol
-  linkedin: "https://linkedin.com/company/woltix"
+  street: "HDS Business Centre, Tower Cluster"
+  city: "Dubai"
+  country: "United Arab Emirates"
+  country_code: "AE"
+  linkedin: "https://www.linkedin.com/company/woltix"
 
-# SEO and social sharing settings
-twitter_username: "YourTwitterHandle" # Without @ symbol
-facebook_app_id: "" # Optional: Add your Facebook App ID here if you have one
-default_og_image: "/assets/images/default-og-image.jpg" # Default Open Graph image path
-default_twitter_image: "/assets/images/default-twitter-image.jpg" # Default Twitter image path
-language: "en" # Default language for HTML <html lang="en">
+# ── Search engine verification ───────────────────────────────────────────────
+# These verify domain ownership in Search Console / Webmaster. They are
+# unrelated to analytics and are safe to serve without consent.
+verification:
+  google: "UwcAsghYVeWxHOHeE1snkkfFICt-3PGln0P0CUeU8oc"
+  yandex: "7f5d9e35262393e5"
 
+# ── Analytics ────────────────────────────────────────────────────────────────
+# GA4 only. Loaded through Google Consent Mode v2 and gated on opt-in —
+# see _includes/analytics.html. Leave blank to disable analytics entirely.
+analytics:
+  ga4_id: "G-ZNPYHBG9EQ"
 
+# ── Forms ────────────────────────────────────────────────────────────────────
+forms:
+  pageclip_endpoint: "https://send.pageclip.co/J3apqUgEMiWapr2MUAe81pPRVcOJ0Chs/contact-form"
+
+# ── Social sharing ───────────────────────────────────────────────────────────
+og_image: "/assets/images/og-default.png"
+
+# ── Build ────────────────────────────────────────────────────────────────────
 markdown: kramdown
-highlighter: rouge
 kramdown:
   input: GFM
+  hard_wrap: false
 
+sass:
+  style: compressed
 
-# Default values for front matter variables
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .idea
+  - .ruby-lsp
+  - node_modules
+
 defaults:
-  - scope: # Applies to all pages
+  - scope:
       path: ""
-      type: "pages"
     values:
-      # Which layout HTML to use
-      layout: "default"
-      # The display title of the page
-      title:
-      # Parent page, as path without extension relative to the pages version root folder.
-      # Example: 'Foo/Bar/SomePage' on a v2 page would resolve to '/pages/v2/Foo/Bar/SomePage.html'
-      parent:
-      # The category this page belongs to. If no parent is set, the page will be displayed
-      # under this category in the top-level chapter overview.
-      category:
-      # Whether this page should not use an auto-generated table of contents in the sidebar
-      # and instead display nav links to its sibling pages.
-      notoc: false
-      # The order in which sidebar page links are displayed. Higher values will move this page
-      # further down, lower values will move it further up.
-      displayOrder: 0
-      # Version identifier of this page, e.g. 'v2', 'v3' or similar
-      version:
-      # An array of paths under which previous versions of this page were found. Paths are formatted
-      # without extension, and relative to the pages version root folder.
-      # Example: 'Foo/Bar/SomePage' to a v2 page would resolve to '/pages/v2/Foo/Bar/SomePage.html'
-      formerPaths: []
-      og_image: "/assets/images/default-og-image.jpg" # Default Open Graph image
-      twitter_image: "/assets/images/default-twitter-image.jpg" # Default Twitter image
-
-
+      layout: "page"
+      # Pages opt in to indexing; anything that forgets to is still indexed,
+      # but set `noindex: true` in front matter to keep a page out of Google
+      # and out of sitemap.xml.
+      noindex: false
+      sitemap: true

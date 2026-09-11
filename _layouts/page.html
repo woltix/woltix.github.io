@@ -1,0 +1,12 @@
+---
+layout: base
+---
+<main id="top" class="wx-prose">
+  <div class="wx-container">
+    <div class="wx-prose__inner">
+      <h1>{{ page.title }}</h1>
+      {% if page.updated %}<p class="wx-prose__meta">Last updated: {{ page.updated | date: "%d %B %Y" }}</p>{% endif %}
+      {{ content }}
+    </div>
+  </div>
+</main>

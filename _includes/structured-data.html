@@ -1,0 +1,122 @@
+{%- comment -%}
+  Schema.org graph. Emitted on every page so that a crawler landing on any
+  URL can resolve the organisation. The home page additionally describes the
+  product itself, which is what Google and LLM crawlers quote back.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ '/#organization' | absolute_url }}",
+      "name": {{ site.company.legal_name | jsonify }},
+      "url": "{{ '/' | absolute_url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/logo.svg' | absolute_url }}"
+      },
+      "email": {{ site.company.email | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ site.company.street | jsonify }},
+        "addressLocality": {{ site.company.city | jsonify }},
+        "addressCountry": {{ site.company.country_code | jsonify }}
+      },
+      "sameAs": [{{ site.company.linkedin | jsonify }}],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": {{ site.company.email | jsonify }},
+        "availableLanguage": ["en"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ '/#website' | absolute_url }}",
+      "url": "{{ '/' | absolute_url }}",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "publisher": { "@id": "{{ '/#organization' | absolute_url }}" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ page.url | replace: 'index.html', '' | absolute_url }}#webpage",
+      "url": "{{ page.url | replace: 'index.html', '' | absolute_url }}",
+      "name": {{ page.title | default: site.tagline | jsonify }},
+      "isPartOf": { "@id": "{{ '/#website' | absolute_url }}" },
+      "about": { "@id": "{{ '/#organization' | absolute_url }}" },
+      "inLanguage": "en"
+    }{% if page.url == '/' %},
+    {
+      "@type": "SoftwareApplication",
+      "@id": "{{ '/#software' | absolute_url }}",
+      "name": "Woltix",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Wealth and portfolio management",
+      "operatingSystem": "Web",
+      "url": "{{ '/' | absolute_url }}",
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "provider": { "@id": "{{ '/#organization' | absolute_url }}" },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Private banks, family offices, fund managers, brokerage firms, independent advisors"
+      },
+      "featureList": [
+        "Portfolio Consolidation — multi-custodian ingestion, mapping and reconciliation",
+        "Market Data — multi-source pricing, FX and corporate actions, plus valuation of real estate, private equity and structured notes",
+        "Portfolio Management — real-time positions, P&L attribution, structure versus model, Value at Risk, return forecasting and rebalancing",
+        "Reporting — client statements, regulatory reporting, multi-portfolio and household views",
+        "REST API and MCP server for AI agents"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Pricing on request — contact Woltix for a quote."
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ '/#faq' | absolute_url }}",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Woltix do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Woltix is a unified wealth management platform. It consolidates portfolios from every custodian and data source into one real-time book of records, then runs performance, risk, rebalancing and client and regulatory reporting on top of that single book."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is Woltix for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private banks, family offices, fund managers, brokerage firms and independent advisors who manage portfolios held across more than one custodian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Woltix value private and illiquid assets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Alongside multi-source pricing, FX and corporate actions for listed instruments, Woltix values real estate, private equity and structured notes — holdings that market data vendors typically do not cover."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Woltix offer an API or support AI agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Woltix is API-first: every position, valuation and rule is reachable over REST and through an MCP server, so AI agents can query the same numbers the team sees on screen, with lineage back to the source file."
+          }
+        }
+      ]
+    }{% endif %}
+  ]
+}
+</script>

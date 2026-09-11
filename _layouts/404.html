@@ -1,76 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include head.html %}
-<body>
-<div class="page-error">
-  <div class="page-error__header">
-    <div class="logo">
-      <a href="https://woltix.com">
-        <img class="logo-img" src="/assets/images/logo-secondary.svg" alt="logo">
+---
+layout: base
+---
+<main id="top" class="wx-404">
+  <div class="wx-container">
+    <p class="wx-404__code">404</p>
+    <h1 class="wx-404__title">This page doesn&rsquo;t exist</h1>
+    <p class="wx-404__sub">
+      The link may be out of date, or the page may have moved. Try the platform
+      overview, or get in touch and we&rsquo;ll point you the right way.
+    </p>
+    <div class="wx-hero__ctas wx-404__ctas">
+      <a href="/" class="wx-btn wx-btn--primary">Go to the homepage
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
       </a>
-    </div>
-    <div class="logo-menu-mobile">
-      <div class="logo">
-        <a href="https://woltix.com">
-          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
-        </a>
-      </div>
-      <span class="mobile-menu-btn"></span>
-    </div>
-    <nav class="main-menu main-menu_dark">
-      <a class="main-menu__item"
-         href="https://woltix.com/#about">
-        About
-      </a>
-      <a class="main-menu__item"
-         href="https://woltix.com/#solutions">
-         Solutions
-      </a>
-      <a class="main-menu__item"
-         href="https://woltix.com/#platform">
-         Platform
-      </a>
-      <a class="main-menu__item"
-         href="https://woltix.com/#contactUs">
-        Contact Us
-      </a>
-    </nav>
-    
-    <section class="mobile-menu">
-      <div class="mobile-menu__header">
-        <a href="https://woltix.com">
-          <img class="logo-img" src="/assets/images/logo.svg" alt="logo">
-        </a>
-      </div>
-      <nav class="main-menu-mobile">
-        <a class="main-menu-mobile__item"
-           href="https://woltix.com/#about">
-          About
-        </a>
-        <a class="main-menu-mobile__item"
-           href="https://woltix.com/#solutions">
-           Solutions
-        </a>
-        <a class="main-menu-mobile__item"
-           href="https://woltix.com/#platform">
-           Platform
-        </a>
-        <a class="main-menu-mobile__item"
-           href="https://woltix.com/#contactUs">
-          Contact Us
-        </a>
-      </nav>
-    </section>
-  </div>
-  <div class="page-error__main">
-    <div class="error-text-block">
-      <p class="error-text error-text_lg error-text_light">404</p>
-      <p class="error-text error-text_bg">Page not found</p>
-      <p class="error-text">Please, use the site menu</p>
+      <a href="mailto:contact@woltix.com" class="wx-btn wx-btn--ghost">Email us</a>
     </div>
   </div>
-</div>
-{% include page-footer.html %}
-<script src="/assets/js/index.js"></script>
-</body>
-</html>
+</main>

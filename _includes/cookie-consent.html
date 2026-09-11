@@ -1,45 +1,116 @@
-<div id="cookie-notice" class="cookie-notice">
-  <span>
-    We use cookies and third-party scripts to enhance website functionality, analyze performance, and personalize your experience. You can accept all cookies or manage your preferences.
-  </span>
-  <div class="cookie-notice__btns">
-    <button class="btn btn_cookie"><a href="#" id="cookie-notice-accept">Approve</a></button>
-    <button class="btn btn_cookie"><a href="/privacy">More info</a></button>
+{%- comment -%}
+  ===========================================================================
+  Cookie consent banner.
+
+  Rules this implementation follows:
+    • Nothing non-essential runs before a choice is made (see analytics.html —
+      consent defaults are DENIED).
+    • Refusing is exactly as easy as accepting: same size, same prominence,
+      one click. GDPR Art. 7(3) / EDPB guidance.
+    • The choice is remembered for 6 months, then re-asked.
+    • No page reload — the tag upgrades in place, so the pageview is kept.
+    • The choice is revocable at any time from the "Cookie settings" link in
+      the footer, which re-opens this banner.
+  ===========================================================================
+{%- endcomment -%}
+{%- if site.analytics.ga4_id and site.analytics.ga4_id != "" -%}
+<div class="wx-cookie" id="wx-cookie" data-open="false" role="dialog" aria-modal="false"
+       aria-labelledby="wx-cookie-title" aria-describedby="wx-cookie-desc">
+  <p id="wx-cookie-title" class="wx-cookie__title">Cookies on woltix.com</p>
+  <p id="wx-cookie-desc">
+    We use strictly necessary cookies to run this site. With your permission we
+    also use Google Analytics to understand which pages are useful. We do not
+    use advertising cookies and we do not sell your data. See our
+    <a href="/cookies/">Cookie Policy</a> and <a href="/privacy/">Privacy Policy</a>.
+  </p>
+  <div class="wx-cookie__btns">
+    <button type="button" class="wx-btn wx-btn--primary" data-consent="granted">Accept analytics</button>
+    <button type="button" class="wx-btn wx-btn--ghost" data-consent="denied">Reject</button>
   </div>
 </div>
+
 <script>
-  function createCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
+(function () {
+  var KEY     = 'wx-consent';
+  var STAMP   = 'wx-consent-at';
+  var MAX_AGE = 1000 * 60 * 60 * 24 * 182; // re-ask after ~6 months
+  var el      = document.getElementById('wx-cookie');
+  if (!el) return;
+
+  function readStore(k) {
+    try { return window.localStorage.getItem(k); } catch (e) { return null; }
   }
-  function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-  }
-  function eraseCookie(name) {
-    createCookie(name,"",-1);
+  function writeStore(k, v) {
+    try { window.localStorage.setItem(k, v); } catch (e) { /* storage blocked */ }
   }
 
-  if(readCookie('cookie-notice-dismissed')=='true') {
-    {% include metrika.js %}
-  } else {
-    document.getElementById('cookie-notice').style.display = 'flex';
+  function stored() {
+    var v  = readStore(KEY);
+    var at = parseInt(readStore(STAMP) || '0', 10);
+    if (!v) return null;
+    if (!at || (Date.now() - at) > MAX_AGE) return null; // expired — ask again
+    return v;
   }
-  document.getElementById('cookie-notice-accept').addEventListener("click",function() {
-    createCookie('cookie-notice-dismissed','true',31);
-    document.getElementById('cookie-notice').style.display = 'none';
-    location.reload();
+
+  function apply(choice) {
+    var granted = choice === 'granted';
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage:          granted ? 'granted' : 'denied',
+        ad_user_data:        granted ? 'granted' : 'denied',
+        ad_personalization:  granted ? 'granted' : 'denied',
+        analytics_storage:   granted ? 'granted' : 'denied'
+      });
+    }
+    // If consent is withdrawn, clear the cookies GA already set.
+    if (!granted) clearAnalyticsCookies();
+  }
+
+  function clearAnalyticsCookies() {
+    var host  = location.hostname;
+    var roots = [host, '.' + host];
+    var bare  = host.split('.').slice(-2).join('.');
+    if (bare !== host) roots.push(bare, '.' + bare);
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!/^(_ga|_gid|_gat)/.test(name)) return;
+      roots.forEach(function (d) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=' + d;
+      });
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+    });
+  }
+
+  function open()  { el.setAttribute('data-open', 'true'); }
+  function close() { el.setAttribute('data-open', 'false'); }
+
+  function choose(choice) {
+    writeStore(KEY, choice);
+    writeStore(STAMP, String(Date.now()));
+    apply(choice);
+    close();
+  }
+
+  el.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-consent]');
+    if (btn) choose(btn.getAttribute('data-consent'));
   });
 
+  // Esc closes without recording a choice, so the banner returns next visit.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && el.getAttribute('data-open') === 'true') close();
+  });
+
+  // Footer "Cookie settings" link re-opens the banner at any time.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-cookie-settings]');
+    if (!link) return;
+    e.preventDefault();
+    open();
+    el.querySelector('[data-consent]').focus();
+  });
+
+  if (!stored()) open();
+})();
 </script>
+{%- endif -%}

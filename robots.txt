@@ -1,0 +1,73 @@
+---
+permalink: /robots.txt
+layout: null
+sitemap: false
+---
+# ============================================================================
+# woltix.com
+# ============================================================================
+
+# ── Search engines ──────────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# ── AI crawlers: training ───────────────────────────────────────────────────
+# Explicitly allowed. This is a marketing site — being quoted by an assistant
+# when someone asks about portfolio management software is the point.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── AI crawlers: live retrieval for answers and citations ───────────────────
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

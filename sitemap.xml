@@ -1,0 +1,22 @@
+---
+permalink: /sitemap.xml
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.pages | sort: 'url' -%}
+{%- for p in pages -%}
+{%- if p.sitemap == false or p.noindex or p.url contains '404' -%}{%- continue -%}{%- endif -%}
+{%- unless p.url contains '.html' or p.url contains '.xml' or p.url contains '.txt' or p.url == '/' -%}
+{%- unless p.layout -%}{%- continue -%}{%- endunless -%}
+{%- endunless -%}
+{%- if p.url contains '.xml' or p.url contains '.txt' or p.url contains '.json' -%}{%- continue -%}{%- endif -%}
+  <url>
+    <loc>{{ p.url | replace: 'index.html', '' | absolute_url }}</loc>
+    <lastmod>{{ p.updated | default: site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>{% if p.url == '/' %}weekly{% else %}yearly{% endif %}</changefreq>
+    <priority>{% if p.url == '/' %}1.0{% else %}0.4{% endif %}</priority>
+  </url>
+{%- endfor %}
+</urlset>

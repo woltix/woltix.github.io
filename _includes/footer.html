@@ -1,0 +1,67 @@
+{%- if page.url == '/' -%}{%- assign home = '' -%}{%- else -%}{%- assign home = '/' -%}{%- endif -%}
+<footer class="wx-footer">
+  <div class="wx-container">
+    <div class="wx-footer__top">
+      <div>
+        <span class="wx-footer__logo">
+          <img src="/assets/images/logo.svg" width="120" height="33" alt="Woltix" class="wx-footer__logo-svg" loading="lazy">
+        </span>
+        <p class="wx-footer__about">
+          The unified wealth management platform: every custodian, every asset
+          class, one real-time book of records.
+        </p>
+        <p class="wx-footer__addr">
+          {{ site.company.street }}<br>
+          {{ site.company.city }}, {{ site.company.country }}
+        </p>
+      </div>
+
+      <div>
+        <h2 class="wx-footer__h">Platform</h2>
+        <ul>
+          <li><a href="{{ home }}#modules">Products</a></li>
+          <li><a href="{{ home }}#why">Why Woltix</a></li>
+          <li><a href="{{ home }}#use-case">Custom flows</a></li>
+          <li><a href="{{ home }}#agents">Agents &amp; MCP</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="wx-footer__h">Company</h2>
+        <ul>
+          <li><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></li>
+          <li><a href="{{ home }}#demo">Request a demo</a></li>
+          <li><a href="{{ site.company.linkedin }}" rel="noopener me">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="wx-footer__h">Legal</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/cookies/">Cookie Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+          {% if site.analytics.ga4_id and site.analytics.ga4_id != "" %}
+          <li><a href="#" data-cookie-settings>Cookie settings</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="wx-footer__bottom">
+      <span class="wx-footer__legal">
+        <span>&copy; {{ site.time | date: '%Y' }} {{ site.company.legal_name }} &middot; All rights reserved</span>
+        <span>
+          Woltix provides software. Nothing on this site is investment, legal,
+          tax or accounting advice. Third-party product names are trademarks of
+          their respective owners; Woltix is not affiliated with or endorsed by
+          them.
+        </span>
+      </span>
+      <span class="wx-footer__links">
+        <a href="/privacy/">Privacy</a>
+        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+      </span>
+    </div>
+  </div>
+</footer>

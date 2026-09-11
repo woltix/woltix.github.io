@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% include head.html %}
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %} data-hero="gradient" data-density="default" data-accent="default">
+  <a class="wx-skip" href="#top">Skip to content</a>
+  {% include topbar.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="/assets/js/site.js?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+  {% include cookie-consent.html %}
+</body>
+</html>

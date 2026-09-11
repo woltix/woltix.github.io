@@ -1,0 +1,71 @@
+# Builds the site with the Jekyll version pinned in the Gemfile and deploys it
+# to GitHub Pages.
+#
+# ONE-TIME SETUP: in the repository, go to
+#   Settings → Pages → Build and deployment → Source
+# and change it from "Deploy from a branch" to "GitHub Actions".
+# Until that is done this workflow will build and validate on every push but
+# the old classic build is what actually serves the site.
+name: Deploy site
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
+
+      - name: Check the build produced what we expect
+        run: |
+          set -e
+          for f in index.html privacy/index.html cookies/index.html \
+                   terms/index.html 404.html robots.txt sitemap.xml \
+                   llms.txt site.webmanifest assets/css/woltix.css \
+                   assets/js/site.js; do
+            test -s "_site/$f" || { echo "::error::missing or empty _site/$f"; exit 1; }
+          done
+          # The canonical must be the live domain, not a localhost leak.
+          grep -q 'rel="canonical" href="https://woltix.com/"' _site/index.html \
+            || { echo "::error::home page canonical is wrong"; exit 1; }
+          # Nothing should reference localhost.
+          ! grep -rn "localhost:4000" _site --include="*.html" \
+            || { echo "::error::localhost URL leaked into the build"; exit 1; }
+          echo "Build checks passed."
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

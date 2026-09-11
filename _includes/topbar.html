@@ -1,0 +1,44 @@
+{%- comment -%}
+  Sticky site header. On the home page the nav links are in-page anchors;
+  on every other page they are prefixed with "/" so they navigate home first.
+{%- endcomment -%}
+{%- if page.url == '/' -%}{%- assign home = '' -%}{%- else -%}{%- assign home = '/' -%}{%- endif -%}
+<header class="wx-topbar">
+  <div class="wx-container wx-topbar__inner">
+    <a href="{{ home }}#top" class="wx-topbar__logo" aria-label="Woltix — home">
+      <img src="/assets/images/logo.svg" width="120" height="33" alt="Woltix" class="wx-topbar__logo-svg" fetchpriority="high">
+    </a>
+
+    <nav class="wx-topbar__nav" aria-label="Primary">
+      <a href="{{ home }}#modules">Platform</a>
+      <a href="{{ home }}#why">Why Woltix</a>
+      <a href="{{ home }}#use-case">Custom flows</a>
+      <a href="{{ home }}#agents">Agents</a>
+    </nav>
+
+    <span class="wx-topbar__spacer"></span>
+
+    <button class="wx-navtoggle" type="button" aria-label="Open menu"
+            aria-expanded="false" aria-controls="wx-mobnav" data-navtoggle>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+
+    <a href="{{ home }}#demo" class="wx-btn wx-btn--primary wx-btn--small">Request a demo
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+        <path d="M3 7h8M8 4l3 3-3 3"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="wx-mobnav" id="wx-mobnav" data-open="false">
+    <div class="wx-container wx-mobnav__inner">
+      <a href="{{ home }}#modules">Platform</a>
+      <a href="{{ home }}#why">Why Woltix</a>
+      <a href="{{ home }}#use-case">Custom flows</a>
+      <a href="{{ home }}#agents">Agents</a>
+      <a href="{{ home }}#demo">Request a demo</a>
+    </div>
+  </div>
+</header>

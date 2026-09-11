@@ -1,3 +1,65 @@
-<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNPYHBG9EQ"></script>
-<noscript><div><img src="https://mc.yandex.ru/watch/99029622" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{%- comment -%}
+  ===========================================================================
+  Google Analytics 4 via Google Consent Mode v2.
+
+  Why it is built this way
+  ------------------------
+  The previous setup loaded gtag.js in <head> but only ran gtag('config', …)
+  inside the cookie banner's accept branch. Visitors who never clicked
+  "Approve" — the large majority — were therefore never counted at all, and
+  the accept path then called location.reload(), so the one pageview that did
+  fire was attributed to a reload. That is why the numbers looked broken.
+
+  Now: consent defaults are declared DENIED *before* gtag.js loads, so no
+  analytics cookie and no identifier is written until the visitor opts in.
+  Google still receives cookieless, non-identifying pings it can use for
+  modelled traffic, and the moment consent is granted the tag upgrades in
+  place — no reload, no lost pageview.
+
+  Set analytics.ga4_id to "" in _config.yml to remove analytics entirely.
+  ===========================================================================
+{%- endcomment -%}
+{%- if site.analytics.ga4_id and site.analytics.ga4_id != "" -%}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  // Read a previously stored choice before anything else runs.
+  var wxConsent = null;
+  try { wxConsent = window.localStorage.getItem('wx-consent'); } catch (e) { /* storage blocked */ }
+
+  // Defaults are DENIED. This must execute before gtag.js is fetched.
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  // Returning visitor who already opted in — upgrade immediately, so the
+  // first pageview of the session is measured properly.
+  if (wxConsent === 'granted') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+
+  // Redact ad identifiers and pass click IDs in the URL instead of cookies
+  // while consent is denied.
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+
+  gtag('js', new Date());
+  gtag('config', {{ site.analytics.ga4_id | jsonify }}, {
+    send_page_view: true,
+    anonymize_ip: true
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4_id }}"></script>
+{%- endif -%}

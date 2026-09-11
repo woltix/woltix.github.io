@@ -1,25 +1,71 @@
+{%- comment -%}
+  Shared <head>. Every page gets a canonical URL, an accurate title and
+  description, Open Graph / Twitter cards and the site-wide JSON-LD graph.
+  Pages can override with front matter: title, description, og_image, noindex.
+{%- endcomment -%}
+{%- comment -%}
+  The home page's title is pinned rather than taken from page.title, so that
+  GitHub Pages' classic build — which force-enables jekyll-titles-from-headings
+  — cannot replace it with the hero H1.
+{%- endcomment -%}
+{%- if page.url == '/' -%}
+  {%- assign seo_title = site.title | append: ' — ' | append: site.tagline -%}
+{%- elsif page.title -%}
+  {%- assign seo_title = page.title | append: ' — ' | append: site.title -%}
+{%- else -%}
+  {%- assign seo_title = site.title | append: ' — ' | append: site.tagline -%}
+{%- endif -%}
+{%- assign desc = page.description | default: site.description | strip_newlines | strip -%}
+{%- assign canonical = page.url | replace: 'index.html', '' | absolute_url -%}
+{%- assign og_img = page.og_image | default: site.og_image | absolute_url -%}
 <head>
-  {% include analytics.html %}
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description | escape }}">
-  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
-  <meta name="author" content="{{ page.author.name | default: site.author.name }}">
-  <meta name="yandex-verification" content="7f5d9e35262393e5" />
-  <meta name="google-site-verification" content="UwcAsghYVeWxHOHeE1snkkfFICt-3PGln0P0CUeU8oc" />
 
+  <title>{{ seo_title }}</title>
+  <meta name="description" content="{{ desc | escape }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% if page.noindex %}<meta name="robots" content="noindex,follow">
+  {% else %}<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  {% endif %}
 
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
-  
-  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  
-  <script type="text/javascript"
-          id="MathJax-script"
-          async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  {%- comment -%} Domain verification — not analytics, no consent needed. {%- endcomment -%}
+  {% if site.verification.google %}<meta name="google-site-verification" content="{{ site.verification.google }}">{% endif %}
+  {% if site.verification.yandex %}<meta name="yandex-verification" content="{{ site.verification.yandex }}">{% endif %}
+
+  {%- comment -%} Open Graph / Twitter {%- endcomment -%}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ seo_title }}">
+  <meta property="og:description" content="{{ desc | escape }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ og_img }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Woltix — unified wealth management platform">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ seo_title }}">
+  <meta name="twitter:description" content="{{ desc | escape }}">
+  <meta name="twitter:image" content="{{ og_img }}">
+
+  {%- comment -%} Icons {%- endcomment -%}
+  <link rel="icon" href="/assets/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2F324A">
+
+  {%- comment -%}
+    Fonts are self-hosted, so there is no third-party font request and no
+    IP address leaves the visitor's browser before they have consented.
+    Preloading the latin subset removes the flash of fallback text.
+  {%- endcomment -%}
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/woltix.css?v={{ site.time | date: '%Y%m%d%H%M' }}">
+
+  {%- comment -%} Structured data — helps Google and gives LLMs a clean summary. {%- endcomment -%}
+  {% include structured-data.html %}
+
+  {% include analytics.html %}
 </head>

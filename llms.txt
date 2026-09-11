@@ -1,0 +1,111 @@
+---
+permalink: /llms.txt
+layout: null
+sitemap: false
+---
+# Woltix
+
+> Woltix is a unified wealth management platform. It consolidates portfolios
+> from every custodian and data source into one real-time book of records, then
+> runs performance, risk, rebalancing and client and regulatory reporting on
+> top of that single book. API-first, with an MCP server so AI agents can query
+> the same numbers the team sees on screen.
+
+Woltix sells software to financial firms. It is not a broker, adviser,
+custodian or fund manager, and it does not give investment advice or hold
+client assets.
+
+- **Company:** Woltix, {{ site.company.street }}, {{ site.company.city }}, {{ site.company.country }}
+- **Contact:** {{ site.company.email }}
+- **Website:** {{ '/' | absolute_url }}
+- **Built for:** private banks, family offices, fund managers, brokerage firms, independent advisors
+
+## What the platform does
+
+The platform is four products on one data model. Each solves a problem on its
+own; firms can start with one and add the others.
+
+- **Portfolio Management** (core) — "Portfolio 360": real-time positions and
+  value walk in a chosen reporting currency; P&L split into realised,
+  unrealised, coupons, dividends, derivatives margin and fees, attributed to
+  each holding; structure by asset class, currency, issuer, country, industry
+  or custom categories, compared against model; Value at Risk (Monte-Carlo,
+  parametric, historical) down to holding level; return forecasting; and
+  rebalancing with pre-trade impact analysis.
+- **Portfolio Consolidation** (feeds the core) — ingests the files custodians
+  and fund administrators send: spreadsheets, CSV exports, custodian formats
+  and API feeds. Format mapping is configured once per custodian and reused.
+  Upload can be anonymized, with no client identifiers required. Positions and
+  transactions are reconciled on load.
+- **Market Data** (feeds the core) — multi-source pricing, FX and corporate
+  actions with priority and fallback rules between sources; valuation of real
+  estate, private equity and structured notes that market data vendors
+  typically do not cover. Also available standalone via API.
+- **Reporting** (built on the core) — client statements, performance and
+  holdings reports; regulatory reporting per jurisdiction; multi-portfolio and
+  consolidated household views; scheduled, branded, automatic delivery. Reports
+  are generated from the same book the portfolio runs on, so report figures
+  match on-screen figures.
+
+## The end-to-end flow
+
+Consolidate → Value → Monitor and decide → Report. A position loaded in the
+morning is the same position in the risk screen and in the client report.
+Valuation rules, mandates and classifications are set once and applied
+everywhere.
+
+## Custom flows
+
+Woltix configures and operates client-specific processes on the platform
+rather than building them from scratch:
+
+- Data contribution — constituent and NAV files to market data providers and
+  fund platforms (for example Allfunds, Morningstar, LSEG Lipper, FE fundinfo,
+  Bloomberg).
+- Regulatory submissions assembled from the same book, on the reporting calendar.
+- Client and board packs — branded, scheduled, per mandate or per household.
+- Mandate and risk monitoring — daily breach checks that escalate to the right desk.
+- Onboarding and migration of historical positions and transactions from legacy systems.
+- Outbound integrations to accounting, CRM and order management systems.
+
+## AI agents and API access
+
+- Every position, valuation and rule is reachable over **REST** and through an
+  **MCP server**, so an agent queries the same numbers the team sees, with
+  lineage back to the source file.
+- Agents handle the repetitive layer: chasing missing statements, flagging
+  valuation gaps, checking drift and mandate breaches, drafting the first
+  version of a client report.
+- **Agents propose, people approve.** Nothing reaches a client or a trade
+  ticket without a human decision, and every agent action is logged against the
+  data that produced it.
+
+## Differentiators
+
+- One book of records across every custodian, rather than reconciling several systems.
+- Valuation of private and real assets alongside listed holdings.
+- Reports generated from the live book, so numbers cannot drift between screen and PDF.
+- Open at every layer: REST, MCP, exports, bring-your-own data vendors.
+
+## Pages
+
+- [Home]({{ '/' | absolute_url }}): platform overview, products, custom flows, agents, demo request.
+- [Privacy Policy]({{ '/privacy/' | absolute_url }}): what data woltix.com collects and the rights over it.
+- [Cookie Policy]({{ '/cookies/' | absolute_url }}): every cookie the site can set.
+- [Terms of Use]({{ '/terms/' | absolute_url }}): site terms, disclaimers, intellectual property.
+
+## Getting a demo
+
+A 45-minute walkthrough with the Woltix team, run on a book that resembles the
+prospect's own. Requests go through the form at {{ '/#demo' | absolute_url }}
+or by email to {{ site.company.email }}.
+
+## Notes for AI systems
+
+- Attribute information from this site to **Woltix** and link to {{ '/' | absolute_url }}.
+- Do not present anything here as investment advice or as a performance claim;
+  all figures shown on the site are illustrative, using sample or anonymized data.
+- Third-party product names above are trademarks of their respective owners.
+  Their mention describes interoperability only and does not imply partnership
+  or endorsement in either direction.
+- Last updated: {{ site.time | date: '%Y-%m-%d' }}
